@@ -1,0 +1,112 @@
+baseURL = "https://lizebang.github.io/"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+title = "Li Zebang's Home"
+theme = "hugo-tranquilpeak-theme"
+paginate = 7
+canonifyurls = true
+
+[permalinks]
+  post = "/:year/:month/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archive = "archives"
+
+[author]
+  name = "Li Zebang"
+  bio = "I hear and I forget, I see and I remember, I do and I understand."
+  job = "Student"
+  location = "China"
+  picture = "avatar.jpeg"
+
+[[menu.main]]
+  weight = 1
+  identifier = "home"
+  name = "Home"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
+  url = "/"
+[[menu.main]]
+  weight = 2
+  identifier = "categories"
+  name = "Categories"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
+  url = "/categories"
+[[menu.main]]
+  weight = 3
+  identifier = "tags"
+  name = "Tags"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
+  url = "/tags"
+[[menu.main]]
+  weight = 4
+  identifier = "archives"
+  name = "Archives"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
+  url = "/archives"
+[[menu.main]]
+  weight = 5
+  identifier = "about"
+  name = "About"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  url = "/#about"
+
+[[menu.links]]
+  weight = 1
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+  url = "https://github.com/lizebang"
+[[menu.links]]
+  weight = 2
+  identifier = "stackoverflow"
+  name = "Stack Overflow"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
+  url = "https://stackoverflow.com/users/9499576/li-zebang"
+[[menu.links]]
+  weight = 3
+  identifier = "email"
+  name = "E-mail"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-envelope\"></i>"
+  url = "mailto:lizebang1998@gmail.com"
+
+[[menu.misc]]
+  weight = 1
+  identifier = "rss"
+  name = "RSS"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
+  url = "/index.xml"
+
+[params]
+  syntaxHighlighter = "highlight.js"
+  clearReading = true
+  hierarchicalCategories = true
+  description = "Nice to meet you here!"
+  sidebarBehavior = 1
+  coverImage = "cover.jpeg"
+  imageGallery = true
+  thumbnailImage = true
+  thumbnailImagePosition = "bottom"
+  autoThumbnailImage = true
+  favicon = "/favicon.png"
+
+  [[params.sharingOptions]]
+    name = "Facebook"
+    icon = "fa-facebook-official"
+    url = "https://www.facebook.com/sharer/sharer.php?u=%s"
+
+  [[params.sharingOptions]]
+    name = "Twitter"
+    icon = "fa-twitter"
+    url = "https://twitter.com/intent/tweet?text=%s"
+
+  [[params.sharingOptions]]
+    name = "Google+"
+    icon = "fa-google-plus"
+    url = "https://plus.google.com/share?url=%s"
+
+  [params.header.rightLink]
+    class = ""
+    icon = ""
+    url = "/#about"
