@@ -1,6 +1,7 @@
 ---
 title: "ATT 汇编 (一)"
 date: 2017-12-13
+markup: mmark
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

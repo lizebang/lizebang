@@ -19,7 +19,7 @@ canonifyurls = true
   bio = "I hear and I forget, I see and I remember, I do and I understand."
   job = "Student"
   location = "China"
-  picture = "avatar.jpeg"
+  picture = "avatar.jpg"
 
 [[menu.main]]
   weight = 1
