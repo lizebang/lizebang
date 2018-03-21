@@ -31,4 +31,9 @@ echo "push"
 git push --force origin HEAD
 git status
 
+cd ..
+git add .
+git commit -m "update"
+git push
+
 echo "done"
