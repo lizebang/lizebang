@@ -19,7 +19,7 @@ keywords:
 
 1.浏览器访问 [https://www.ipaddress.com/](https://www.ipaddress.com/), 获取 github.global.ssl.fastly.net、global-ssl.fastly.net、assets-cdn.github.com 和 github.com 的 ip
 
-2.修改 hosts, 增加host映射
+2.修改 hosts, 增加 host 映射
 
 /etc/hosts
 
@@ -30,7 +30,7 @@ xxx.xxx.xxx.xxx assets-cdn.github.com
 xxx.xxx.xxx.xxx github.com
 ```
 
-3.更新DNS缓存
+3.更新 DNS 缓存
 
 ``` shell
 # MacOS
