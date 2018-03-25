@@ -14,7 +14,7 @@ keywords:
 - ssl
 ---
 
-``` shell
+```shell
 $ go get golang.org/x/tour
 package golang.org/x/tour: unrecognized import path "golang.org/x/tour" (https fetch: Get https://golang.org/x/tour?go-get=1: x509: certificate signed by unknown authority)
 ```

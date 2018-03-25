@@ -25,7 +25,7 @@ Hugo 不支持 LaTeX, 这时我们可以使用 MathJAX 和 Mmark 来让 Hugo 支
 
 footer.html 包含一下内容 :
 
-``` html
+```html
 {{ if .Params.markup }}
 <script type="text/javascript" async
 src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

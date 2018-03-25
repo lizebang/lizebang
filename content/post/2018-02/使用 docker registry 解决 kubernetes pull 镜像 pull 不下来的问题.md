@@ -34,13 +34,13 @@ kubernetes 默认会去 gcr.io 上拉取镜像, 由于 GFW 的原因, kubernetes
 
 创建好之后点击管理, 使用命令行登陆 docker login.
 
-``` shell
+```shell
 docker login --username=**** registry.cn-qingdao.aliyuncs.com
 ```
 
 # 将镜像推送到 registry
 
-``` shell
+```shell
 docker pull [ImageId]
 docker tag [ImageId] registry.cn-qingdao.aliyuncs.com/abang/k8s:[镜像版本号]
 docker push registry.cn-qingdao.aliyuncs.com/abang/k8s:[镜像版本号]
@@ -48,7 +48,7 @@ docker push registry.cn-qingdao.aliyuncs.com/abang/k8s:[镜像版本号]
 
 例如：
 
-``` shell
+```shell
 docker pull mysql
 docker tag mysql registry.cn-qingdao.aliyuncs.com/abang/k8s:mysql
 docker push registry.cn-qingdao.aliyuncs.com/abang/k8s:mysql
@@ -56,7 +56,7 @@ docker push registry.cn-qingdao.aliyuncs.com/abang/k8s:mysql
 
 # 使用 kubectl 创建 secret
 
-``` shell
+```shell
 kubectl create secret docker-registry [secret name] \
   --docker-server=[registry.cn-qingdao.aliyuncs.com] \
   --docker-username=[阿里云登录账号] \
@@ -66,7 +66,7 @@ kubectl create secret docker-registry [secret name] \
 
 # 使用镜像
 
-``` shell
+```shell
 apiVersion: v1
 kind: ReplicationController
 metadata:

@@ -40,21 +40,21 @@ keywords:
 
 1.依赖问题
 
-``` shell
+```shell
 sudo dpkg -i xxx.deb
 sudo apt-get intsall -f
 ```
 
 2.移除软件
 
-``` shell
+```shell
 sudo dpkg -r xxx    # 保留软件配置
 sudo dpkg -P xxx    # 不保留软件配置
 ```
 
 3.删除内核
 
-``` shell
+```shell
 sudo dpkg --get-selections | grep linux # 查看所安装的内核
 sudo apt-get remove xxx
 ```
@@ -78,27 +78,27 @@ sudo apt-get remove xxx
 
 1.依赖问题
 
-``` shell
+```shell
 sudo rpm -ivh xxx.rpm
 sudo yum install -y xxx.rpm
 ```
 
 2.移除软件
 
-``` shell
+```shell
 sudo yum -y remove xxx
 ```
 
 or
 
-``` shell
+```shell
 sudo yum history list xxx
 sudo yum history undo n
 ```
 
 3.删除内核
 
-``` shell
+```shell
 sudo rpm -qa | grep kernel  # 查看所安装的内核
 sudo yum remove xxx
 ```
@@ -109,7 +109,7 @@ sudo yum remove xxx
 
 1.编辑 /etc/pacman.conf, 添加以下内容
 
-``` conf
+```conf
 [archlinuxcn]
 packages.SigLevel = Optional TrustAll
 Server = [https://mirrors.ustc.edu.cn/archlinuxcn/$arch]
@@ -117,7 +117,7 @@ Server = [https://mirrors.ustc.edu.cn/archlinuxcn/$arch]
 
 2.安装 yaourt 并导入 keyring
 
-``` shell
+```shell
 sudo pacman -Syu yaourt
 sudo pacman -Sy archlinux-keyring archlinuxcn-keyring
 sudo pacman-key --populate archlinux archlinuxcn
@@ -139,7 +139,7 @@ sudo pacman-key --refresh-keys
 
 ## 删除内核
 
-``` shell
+```shell
 pacman -Q | grep linux  # 查看所安装的内核
 pacman -R xxx
 ```

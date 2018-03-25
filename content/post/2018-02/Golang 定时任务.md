@@ -27,7 +27,7 @@ keywords:
 
 1.AddFunc
 
-``` go
+```go
 package main
 
 import (
@@ -46,7 +46,7 @@ func main() {
 
 2.AddJob
 
-``` go
+```go
 package main
 
 import (
@@ -73,7 +73,7 @@ func main() {
 
 cron 表达式表示一组时间, 使用6个空格分隔的字段.
 
-``` go
+```go
 * * * * * * 分别对应 秒 分 时 日 月 周
 ```
 
@@ -120,7 +120,7 @@ cron 表达式表示一组时间, 使用6个空格分隔的字段.
 
 3.间隔时间
 
-``` go
+```go
     @every <duration>
 ```
 

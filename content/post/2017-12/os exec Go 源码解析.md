@@ -27,7 +27,7 @@ go version go1.9.2 darwin/amd64
 
 # type Cmd
 
-``` go
+```go
 type Cmd struct {
     Path string
 
@@ -66,7 +66,7 @@ Cmd 这个结构中主要包含了命令的路径、参数、标准输入输出�
 
 ## Command(name string, arg …string) *Cmd
 
-``` go
+```go
 func Command(name string, arg ...string) *Cmd {
     cmd := &Cmd{
         Path: name,
@@ -87,7 +87,7 @@ Command 需要两个参数, 一个是命令, 一个是参数.
 
 Args 用传入的 arg 进行初始化, Path 暂时被初始化成 name. 先判断 filepath.Base(name) 是否和 name 相同, 用于保证它是一条 Unix shells 命令, 接着调用了 LookPath 这个函数, LookPath 在后面再看. LookPath 返回了真正的 Path 和一个 error.
 
-``` go
+```go
 func LookPath(file string) (string, error) {
     if strings.Contains(file, "/") {
         err := findExecutable(file)
@@ -125,7 +125,7 @@ func findExecutable(file string) error {
 
 ## CommandContext(ctx context.Context, name string, arg …string) *Cmd
 
-``` go
+```go
 func CommandContext(ctx context.Context, name string, arg ...string) *Cmd {
     if ctx == nil {
         panic("nil Context")
@@ -140,7 +140,7 @@ func CommandContext(ctx context.Context, name string, arg ...string) *Cmd {
 
 ## (c *Cmd) Start() error
 
-``` go
+```go
 func (c *Cmd) Start() error {
     if c.lookPathErr != nil {
         c.closeDescriptors(c.closeAfterStart)
@@ -228,7 +228,7 @@ func (c *Cmd) Start() error {
 
 接下来的操作可能呢会疑惑, 这是干了些什么啊!!!!!
 
-``` go
+```go
     type F func(*Cmd) (*os.File, error)
     for _, setupFd := range []F{(*Cmd).stdin, (*Cmd).stdout, (*Cmd).stderr} {
         fd, err := setupFd(c)
@@ -252,7 +252,7 @@ func (c *Cmd) Start() error {
 
 然后, 调用 os.StartProcess() 创建一个新进程.
 
-``` go
+```go
     var err error
     c.Process, err = os.StartProcess(c.Path, c.argv(), &os.ProcAttr{
         Dir:   c.Dir,
@@ -269,7 +269,7 @@ func (c *Cmd) Start() error {
 
 先看传入的参数, c.argv() 判断了 c.Argv 是否为空, 为空将 c.Path 作为参数. dedupEnv(c.envv()) 处理了环境属性, 下面看一下到底是如何处理的环境属性.
 
-``` go
+```go
 func dedupEnv(env []string) []string {
     return dedupEnvCase(runtime.GOOS == "windows", env)
 }

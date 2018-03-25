@@ -22,7 +22,7 @@ keywords:
 
 # 安装 Matlab
 
-``` shell
+```shell
 cd ~
 mkdir matlab
 sudo mount -t auto -o loop <path to MATHWORKS_R2017b.iso> matlab/
@@ -33,11 +33,11 @@ sudo ./matlab/install
 
 # 创建桌面快捷方式
 
-``` shell
+```shell
 sudo gedit /usr/share/applications/MATLAB\ R2017b.desktop
 ```
 
-``` desktop
+```desktop
 [Desktop Entry]
 Type=Application
 Name=MATLAB R2017b
@@ -51,7 +51,7 @@ Categories=Development;Matlab;
 
 # 警告
 
-``` shell
+```shell
 sudo chmod -R a+rw ~/.matlab
 ```
 
@@ -63,7 +63,7 @@ sudo chmod -R a+rw ~/.matlab
 
 2.doc help 出现下面错误提示
 
-``` shell
+```shell
 Exception in thread "XPCOMMessageLoop" java.lang.UnsatisfiedLinkError: /usr/local/MATLAB/R2017b/sys/jxbrowser/glnxa64/xulrunner/xulrunner-linux-64/libxul.so: /usr/lib/libharfbuzz.so.0: undefined symbol: FT_Get_Var_Blend_Coordinates
   at java.lang.ClassLoader$NativeLibrary.load(Native Method)
   at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1941)
@@ -78,7 +78,7 @@ Exception in thread "XPCOMMessageLoop" java.lang.UnsatisfiedLinkError: /usr/loca
 
 上面两种错误的解决方法
 
-``` shell
+```shell
 cd  /usr/local/MATLAB/R2017b
 cd bin/glnxa64
 sudo mkdir exclude

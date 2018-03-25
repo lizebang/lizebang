@@ -26,7 +26,7 @@ Hugo 是一个快速灵活的静态网站生成器. Github Pages 是面向用户
 
 # 搭建博客
 
-``` shell
+```shell
 hugo new site AbangSD
 cd AbangSD
 ```
@@ -39,7 +39,7 @@ cd AbangSD
 
 `theme` : 我们可以将喜欢的主题放到这里面
 
-``` shell
+```shell
 cd theme
 git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
 cp hugo-tranquilpeak-theme/exampleSite/config.toml ..
@@ -47,13 +47,13 @@ cp hugo-tranquilpeak-theme/exampleSite/config.toml ..
 
 2.我选着的主题是 `hugo-tranquilpeak-theme`, 克隆到 theme 文件夹. 为了方便, 可以使用示例提供的配置文件再加以修改.
 
-``` shell
+```shell
 hugo server --theme=hugo-tranquilpeak-theme --buildDrafts --watch
 ```
 
 3.此命令可以在 [http://localhost:1313/](http://localhost:1313/) 预览博客的效果.
 
-``` shell
+```shell
 hugo
 ```
 

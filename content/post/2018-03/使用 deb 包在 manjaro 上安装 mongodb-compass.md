@@ -23,7 +23,7 @@ keywords:
 
 逐条以下命令执行
 
-``` shell
+```shell
 curl https://downloads.mongodb.com/compass/mongodb-compass_1.12.0_amd64.deb -o mongodb-compass.deb \
 && bsdtar -xf mongodb-compass.deb \
 && bsdtar -xJf data.tar.xz -C / \
