@@ -1,5 +1,6 @@
 ---
 title: "Golang 定时任务"
+slug: golang-cronjob
 date: 2018-02-25
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

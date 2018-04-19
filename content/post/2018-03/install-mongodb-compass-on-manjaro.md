@@ -1,5 +1,6 @@
 ---
 title: "使用 deb 包在 manjaro 上安装 mongodb-compass"
+slug: install-mongodb-compass-on-manjaro
 date: 2018-03-06
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -21,7 +22,7 @@ keywords:
 
 <!--more-->
 
-逐条以下命令执行
+执行以下命令
 
 ```shell
 curl https://downloads.mongodb.com/compass/mongodb-compass_1.12.0_amd64.deb -o mongodb-compass.deb \

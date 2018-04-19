@@ -1,5 +1,6 @@
 ---
 title: "使用 docker registry 解决 kubernetes pull 镜像 pull 不下来的问题"
+slug: kubernetes-pull-image-error
 date: 2018-02-07
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

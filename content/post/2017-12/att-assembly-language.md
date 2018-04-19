@@ -1,5 +1,6 @@
 ---
-title: "ATT 汇编 (一)"
+title: "AT&T 汇编 (一)"
+slug: att-assembly-language
 date: 2017-12-13
 markup: mmark
 autoThumbnailImage: false

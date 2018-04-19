@@ -1,5 +1,6 @@
 ---
-title: "os exec Go 源码解析"
+title: "os/exec Go 源码解析"
+slug: go-standard-library-os-exec
 date: 2017-12-02
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -244,7 +245,7 @@ func (c *Cmd) Start() error {
 
 其实, 只是调用了 Cmd 的三个方法 (c *Cmd) stdin() (f *os.File, err error)、(c *Cmd) stdout() (f *os.File, err error) 和 (c *Cmd) stderr() (f *os.File, err error), 而直接各调用他们一次代码不太美观, 所以就定义了一个 type F func(*Cmd) (*os.File, error) 类型, 然后遍历遍历这样类型的切片.
 
-不过, 这里还有一个疑问 F 是 *Cmd 为参数并带两个返回值的类型, 为什么可以使用 *Cmd 类型为接收者的方法初始化 F 类型的切片, 并且可以传入一个 *Cmd 类型实例调用?
+不过, 这里还有一个疑问 F 是 *Cmd 为参数并带两个返回值的类型, 为什么可以使用 *Cmd 类型为接收者的方法初始化 F 类型的切片, 并且可以传入一个 *Cmd 类型实例调用？
 
 事实上, 在方法调用时, 接收者是作为参数传入的, 见下图.
 

@@ -1,5 +1,6 @@
 ---
 title: "apt、dpkg && yum、rpm && pacman 使用详解"
+slug: apt-dpkg-yum-rpm-pacman-usage
 date: 2018-02-24
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

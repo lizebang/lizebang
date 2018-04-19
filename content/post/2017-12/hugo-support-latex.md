@@ -1,5 +1,6 @@
 ---
 title: "Hugo 支持 LaTeX"
+slug: hugo-support-latex
 date: 2017-12-16
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

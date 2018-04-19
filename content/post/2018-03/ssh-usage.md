@@ -1,5 +1,6 @@
 ---
 title: "ssh 的使用"
+slug: ssh-usage
 date: 2018-03-17
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -24,7 +25,7 @@ ssh 是每一台 Linux 电脑的标配，学习它的使用是非常有必要的
 ssh-keygen
 ```
 
-2.联接容易断开，可以编辑 /etc/ssh/sshd_config，加入下面三个参数，最后重启 ssh 服务
+2.由于防火墙的存在 ssh 连接容易断开，可以编辑 /etc/ssh/sshd_config，加入下面三个参数，最后重启 ssh 服务
 
 ```sshd_config
 TCPKeepAlive yes

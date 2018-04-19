@@ -1,16 +1,22 @@
 ---
-title: "耦合与解藕"
-draft: true
-date: 2018-03-16
+title: "Data Race in Go"
+slug: data-race-in-go
+date: 2018-04-19
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- design
+- go
 tags:
-- design
+- go
+- concurrent
 keywords:
-- design
+- go
+- concurrent
+- data race
 ---
 
+
+
 <!--more-->
+
