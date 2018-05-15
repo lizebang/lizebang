@@ -2,7 +2,6 @@
 title: "如何访问维基百科"
 slug: "how-to-access-wikipedia"
 date: 2018-05-15
-draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
