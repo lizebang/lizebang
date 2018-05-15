@@ -2,6 +2,8 @@
 title: "Regular Expressions"
 slug: regular-expressions
 date: 2018-05-10
+draft: true
+autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:

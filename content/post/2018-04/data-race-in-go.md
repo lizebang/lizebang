@@ -2,6 +2,7 @@
 title: "Data Race in Go"
 slug: data-race-in-go
 date: 2018-04-19
+draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

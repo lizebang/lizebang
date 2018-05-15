@@ -1,8 +1,8 @@
 ---
 title: "耦合与解耦"
 slug: coupling-and-solution
-draft: true
 date: 2018-03-16
+draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
