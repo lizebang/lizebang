@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "rm"
 
 rm -rf .DS_Store
