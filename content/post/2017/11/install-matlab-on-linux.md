@@ -16,7 +16,6 @@ keywords:
 - matlab
 ---
 
-
 在 Windows 和 Mac 上安装 Matlab 比较容易, 而在 linux 上却并没那么简单了.
 
 <!--more-->
@@ -26,7 +25,7 @@ keywords:
 ```shell
 cd ~
 mkdir matlab
-sudo mount -t auto -o loop <path to MATHWORKS_R2017b.iso> matlab/
+sudo mount -t auto -o loop <path-to-MATHWORKS_R2017b.iso> matlab/
 sudo ./matlab/install
 ```
 

@@ -22,14 +22,16 @@ kubernetes 默认会去 gcr.io 上拉取镜像, 由于 GFW 的原因, kubernetes
 我使用的是 [阿里云](https://cr.console.aliyun.com/) 的 docker registry.
 
 # 登陆阿里云
+
 点击上面链接注册登陆即可.
 
-![login](/images/2018-02/aliyun-01.png)
+![login](/images/2018/02/aliyun-01.png)
 
 # 创建仓库
+
 登陆后直接点击创建仓库, 然后按要求填好即可.
 
-![create](/images/2018-02/aliyun-02.png)
+![create](/images/2018/02/aliyun-02.png)
 
 # 登录阿里云 docker registry
 

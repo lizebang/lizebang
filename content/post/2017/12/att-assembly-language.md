@@ -25,9 +25,9 @@ ATT 格式的汇编根据 AT&T 命名, AT&T 是运营贝尔实验室多年的公
 
 # 数据格式
 
-Intel 用术语 `字` (word)表示 16 位数据类型. 称 32 位数为 `双字` (double words), 称 64 位数为 `四字` (quad words). 下表给出了 C 语言基本数据类型对应的 x86-64 表示. (char * 表示指针)
+Intel 用术语 `字` (word)表示 16 位数据类型. 称 32 位数为 `双字` (double words), 称 64 位数为 `四字` (quad words). 下表给出了 C 语言基本数据类型对应的 x86-64 表示. (char \* 表示指针)
 
-$$\begin{array} {| c | c | c | c |} \hline \mathrm{C\;声明} & \mathrm{Intel\;数据类型} & \mathrm{汇编代码后缀} & \mathrm{大小(字节)} \\ \hline char & 字节 & b & 1 \\ \hline short & 字 & w & 2 \\ \hline int & 双字 & l & 4 \\ \hline long & 四字 & q & 8 \\ \hline char* & 四字 & q & 8 \\ \hline float & 单精度 & s & 4 \\ \hline double & 双精度 & l & 8 \\ \hline \end{array}$$
+$$\begin{array} {| c | c | c | c |} \hline \mathrm{C\;声明} & \mathrm{Intel\;数据类型} & \mathrm{汇编代码后缀} & \mathrm{大小(字节)} \\ \hline char & 字节 & b & 1 \\ \hline short & 字 & w & 2 \\ \hline int & 双字 & l & 4 \\ \hline long & 四字 & q & 8 \\ \hline char\* & 四字 & q & 8 \\ \hline float & 单精度 & s & 4 \\ \hline double & 双精度 & l & 8 \\ \hline \end{array}$$
 
 注意 : 汇编代码使用后缀 `l` 来表示 4 字节整数和 8 字节双精度浮点数. 这不会产生歧义, 因为浮点数使用的是一组完全不同的指令和寄存器.
 
@@ -41,15 +41,15 @@ $$\begin{array} {| l | l | l | l | l |} \hline \;\,\mathrm{四字} & \;\;\mathrm
 
 两条规则 :
 
-1. 生成 1 字节和 2 字节数字的指令会保持剩下的字节不变.
+1.  生成 1 字节和 2 字节数字的指令会保持剩下的字节不变.
 
-2. 生成 4 字节数字的指令会把高位 4 个字节置为 0.
+2.  生成 4 字节数字的指令会把高位 4 个字节置为 0.
 
 # 操作数指示符
 
 各种不同的操作数的可能性被分为三种类型, 分别是 立即数、寄存器 和 内存引用.
 
-$$\begin{array} {| l | l | l | l |} \hline \;\,\mathrm{类型} & \qquad\mathrm{格式} & \qquad\qquad\,\mathrm{操作数值} & \qquad\quad\mathrm{名称} \\ \hline 立即数 & \$I_{mm} & I_{mm} & 立即数寻址 \\ \hline 寄存器 & r_a & R[r_a] & 寄存器寻址 \\ \hline 存储器 & I_{mm} & M[I_{mm}] & 绝对寻址 \\ \hline 存储器 & (r_a) & M[R[r_a]] & 间接寻址 \\ \hline 存储器 & I_{mm}(r_b) & M[I_{mm}+R[r_b]] & (基址+偏移量)寻址\qquad \\ \hline 存储器 & (r_b, r_i) & M[R[r_b]+R[r_i]] & 变址寻址 \\ \hline 存储器 & I_{mm}(r_b, r_i) & M[I_{mm}+R[r_b]+R[r_i]] & 变址寻址 \\ \hline 存储器 & (, r_i, s) & M[R[r_i]*s] & 比例变址寻址 \\ \hline 存储器 & I_{mm}(, r_i, s) & M[I_{mm}+R[r_b]+R[r_i]] & 比例变址寻址 \\ \hline 存储器 & (r_b, r_i, s) & M[R[r_b]+R[r_i]*s] & 比例变址寻址 \\ \hline 存储器 & I_{mm}(r_b, r_i, s) & M[I_{mm}+R[r_b]+R[r_i]*s] & 比例变址寻址 \\ \hline \end{array}$$
+$$\begin{array} {| l | l | l | l |} \hline \;\,\mathrm{类型} & \qquad\mathrm{格式} & \qquad\qquad\,\mathrm{操作数值} & \qquad\quad\mathrm{名称} \\ \hline 立即数 & \$I*{mm} & I*{mm} & 立即数寻址 \\ \hline 寄存器 & r*a & R[r_a] & 寄存器寻址 \\ \hline 存储器 & I*{mm} & M[I_{mm}] & 绝对寻址 \\ \hline 存储器 & (r*a) & M[R[r_a]] & 间接寻址 \\ \hline 存储器 & I*{mm}(r*b) & M[I*{mm}+R[r_b]] & (基址+偏移量)寻址\qquad \\ \hline 存储器 & (r*b, r_i) & M[R[r_b]+R[r_i]] & 变址寻址 \\ \hline 存储器 & I*{mm}(r*b, r_i) & M[I*{mm}+R[r_b]+R[r_i]] & 变址寻址 \\ \hline 存储器 & (, r*i, s) & M[R[r_i]\*s] & 比例变址寻址 \\ \hline 存储器 & I*{mm}(, r*i, s) & M[I*{mm}+R[r_b]+R[r_i]] & 比例变址寻址 \\ \hline 存储器 & (r*b, r_i, s) & M[R[r_b]+R[r_i]\*s] & 比例变址寻址 \\ \hline 存储器 & I*{mm}(r*b, r_i, s) & M[I*{mm}+R[r_b]+R[r_i]\*s] & 比例变址寻址 \\ \hline \end{array}$$
 
 为了更好的理解三种操作数的表示, 请看下面例题.
 
@@ -79,7 +79,7 @@ $$\begin{array} {| l | l | l |} \hline \qquad\;\;\;\,\mathrm{指令} & \qquad\,\
 
 MOVZ 类中的指令把目的中剩余的字节填充为 0. 每条命令名字的后两个字符都是大小指示符 : 第一个字符指定源的大小, 而第二个指明目的的大小.
 
-注意 : 没有 movzlq 指令, 由于生成 4 字节值并以寄存器作为目的的指令会把高 4 字节置为0, 所以可以用以寄存器为目的的 movl 指令来实现
+注意 : 没有 movzlq 指令, 由于生成 4 字节值并以寄存器作为目的的指令会把高 4 字节置为 0, 所以可以用以寄存器为目的的 movl 指令来实现
 
 ## MOVS 类
 

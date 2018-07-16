@@ -103,6 +103,10 @@ sudo tlmgr install genmisc
 
 至此，你就可以愉快地在 macOS 上使用 LaTeX 了。
 
+## 后续
+
+推荐一款 macOS 上非常友好的 app -- [Texpad](https://www.texpad.com/)
+
 ## Reference
 
 - [install latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)

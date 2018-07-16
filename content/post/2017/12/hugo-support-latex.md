@@ -63,9 +63,9 @@ MathJax.Hub.Config({
 
 有两种方法使用 Mmark :
 
-1. 直接创建以 .mmark 为扩展名的文件
+1.  直接创建以 .mmark 为扩展名的文件
 
-2. 在 markdown 内容前面添加属性 markup: mmark
+2.  在 markdown 内容前面添加属性 markup: mmark
 
 ## 注意
 

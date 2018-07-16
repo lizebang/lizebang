@@ -65,7 +65,7 @@ type Cmd struct {
 
 Cmd 这个结构中主要包含了命令的路径、参数、标准输入输出错误输出接口等
 
-## Command(name string, arg …string) *Cmd
+## Command(name string, arg …string) \*Cmd
 
 ```go
 func Command(name string, arg ...string) *Cmd {
@@ -124,7 +124,7 @@ func findExecutable(file string) error {
 
 如果 file 即 Command 中的 name 包含 “/”, 就返回错误, 这里是为了它是一条 Unix shells 命令. os.Getenv(“PATH”) 获取到 PATH, 然后遍历所有的 PATH 看是否存在满足要求的可执行的文件. 存在满足要求的可执行的文件立即返回路径, 其他情况返回 nil 和一个未找到的 error.
 
-## CommandContext(ctx context.Context, name string, arg …string) *Cmd
+## CommandContext(ctx context.Context, name string, arg …string) \*Cmd
 
 ```go
 func CommandContext(ctx context.Context, name string, arg ...string) *Cmd {
@@ -139,7 +139,7 @@ func CommandContext(ctx context.Context, name string, arg ...string) *Cmd {
 
 内部调用了 Command(name, arg…), 只是给 cmd.ctx 进行了赋值.
 
-## (c *Cmd) Start() error
+## (c \*Cmd) Start() error
 
 ```go
 func (c *Cmd) Start() error {
@@ -245,11 +245,11 @@ func (c *Cmd) Start() error {
 
 其实, 只是调用了 Cmd 的三个方法 (c *Cmd) stdin() (f *os.File, err error)、(c *Cmd) stdout() (f *os.File, err error) 和 (c *Cmd) stderr() (f *os.File, err error), 而直接各调用他们一次代码不太美观, 所以就定义了一个 type F func(*Cmd) (*os.File, error) 类型, 然后遍历遍历这样类型的切片.
 
-不过, 这里还有一个疑问 F 是 *Cmd 为参数并带两个返回值的类型, 为什么可以使用 *Cmd 类型为接收者的方法初始化 F 类型的切片, 并且可以传入一个 *Cmd 类型实例调用？
+不过, 这里还有一个疑问 F 是 *Cmd 为参数并带两个返回值的类型, 为什么可以使用 *Cmd 类型为接收者的方法初始化 F 类型的切片, 并且可以传入一个 \*Cmd 类型实例调用？
 
 事实上, 在方法调用时, 接收者是作为参数传入的, 见下图.
 
-![reciver]()
+![reciver](/images/2017/12/reciver.png)
 
 然后, 调用 os.StartProcess() 创建一个新进程.
 
@@ -299,8 +299,8 @@ func dedupEnvCase(caseInsensitive bool, env []string) []string {
 }
 ```
 
-dedupEnv 内部实际调用了 dedupEnvCase. dedupEnvCase 遍历了 env 切片, 先找了一下是否存在 “=”, 如果不存在就将参数放到 out 中然后进入下一次循环. 如果存在就声明一个 k 将 = 前的部分存起来, 若系统为 windows 将 k 转换成小写. 在 map saw 中查找 k , 如果未找到, 就将 k 存入 saw, 并且其对应的 value 为 kv 在 out 中的索引. 如果找到了, 从 saw 拿到 dupIdx, 而 dupIdx 是之前存入的 kv 在 out 中的索引, 修改 out 中的kv 然后进入下一次循环.
+dedupEnv 内部实际调用了 dedupEnvCase. dedupEnvCase 遍历了 env 切片, 先找了一下是否存在 “=”, 如果不存在就将参数放到 out 中然后进入下一次循环. 如果存在就声明一个 k 将 = 前的部分存起来, 若系统为 windows 将 k 转换成小写. 在 map saw 中查找 k , 如果未找到, 就将 k 存入 saw, 并且其对应的 value 为 kv 在 out 中的索引. 如果找到了, 从 saw 拿到 dupIdx, 而 dupIdx 是之前存入的 kv 在 out 中的索引, 修改 out 中的 kv 然后进入下一次循环.
 
-os.StartProcess() 调用了 startProcess(), startProcess 中先对 attr (attr 中存有用于 StartProcess 创建新进程的属性) 进行了判断. attr != nil && attr.Sys == nil && attr.Dir != “” 时, 调用了 Stat(attr.Dir) 检查需要的文件夹是否存在, Stat(attr.Dir) 中的调用就比较底层了, 就不深究了. 然后, 创建了 sysattr 用于存放系统调用创建新进程需要的参数. 遍历 attr.Files, 将引用打开文件的文件描述符放到 sysattr. 最后, 系统调用创建新进程并将系统调用返回值用 newProcess() 存在一个 *Process 实例中.
+os.StartProcess() 调用了 startProcess(), startProcess 中先对 attr (attr 中存有用于 StartProcess 创建新进程的属性) 进行了判断. attr != nil && attr.Sys == nil && attr.Dir != “” 时, 调用了 Stat(attr.Dir) 检查需要的文件夹是否存在, Stat(attr.Dir) 中的调用就比较底层了, 就不深究了. 然后, 创建了 sysattr 用于存放系统调用创建新进程需要的参数. 遍历 attr.Files, 将引用打开文件的文件描述符放到 sysattr. 最后, 系统调用创建新进程并将系统调用返回值用 newProcess() 存在一个 \*Process 实例中.
 
 c.closeDescriptors(c.closeAfterStart) 因为 os.StartProcess() -> startProcess() -> attr.Files , 新进程已经将资源继承, 所以关掉描述符释放部分资源.
