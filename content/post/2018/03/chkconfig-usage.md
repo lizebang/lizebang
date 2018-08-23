@@ -1,18 +1,18 @@
 ---
-title: "在 Linux 设置开机启动项"
+title: '在 Linux 设置开机启动项'
 slug: chkconfig-usage
 date: 2018-03-21
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- linux
+  - linux
 tags:
-- linux
-- chkconfig
+  - linux
+  - chkconfig
 keywords:
-- linux
-- chkconfig
+  - linux
+  - chkconfig
 ---
 
 在服务器上怎样添加一个开机启动项呢？我们可以使用 chkconfig 来做到这一切，下面给大家介绍介绍 chkconfig 的使用方法。

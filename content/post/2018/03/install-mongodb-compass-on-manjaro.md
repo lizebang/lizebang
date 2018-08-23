@@ -1,24 +1,24 @@
 ---
-title: "使用 deb 包在 manjaro 上安装 mongodb-compass"
+title: '使用 deb 包在 manjaro 上安装 mongodb-compass'
 slug: install-mongodb-compass-on-manjaro
 date: 2018-03-06
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- linux
+  - linux
 tags:
-- linux
-- arch
-- install
+  - linux
+  - arch
+  - install
 keywords:
-- linux
-- arch
-- install
-- mongodb-compass
+  - linux
+  - arch
+  - install
+  - mongodb-compass
 ---
 
-今天在 manjaro 上安装 mongodb-compass 时发现 yaourt mongodb-compass 搜到的两个库都已经无法使用了, 下面我介绍一种安装方法.
+今天在 manjaro 上安装 mongodb-compass 时发现 yaourt mongodb-compass 搜到的两个库都已经无法使用了, 下面我介绍一种安装方法。
 
 <!--more-->
 

@@ -69,7 +69,7 @@ canonifyurls = true
   identifier = "email"
   name = "E-mail"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-envelope\"></i>"
-  url = "mailto:lizebang1998@gmail.com"
+  url = "mailto:lizebang.china@gmail.com"
 
 [[menu.misc]]
   weight = 1

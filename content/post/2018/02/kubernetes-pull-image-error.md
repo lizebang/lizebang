@@ -1,41 +1,41 @@
 ---
-title: "使用 docker registry 解决 kubernetes pull 镜像 pull 不下来的问题"
+title: '使用 docker registry 解决 kubernetes pull 镜像 pull 不下来的问题'
 slug: kubernetes-pull-image-error
 date: 2018-02-07
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- kubernetes
+  - kubernetes
 tags:
-- kubernetes
+  - kubernetes
 keywords:
-- kubernetes
-- pull error
-- docker registry
+  - kubernetes
+  - pull error
+  - docker registry
 ---
 
-kubernetes 默认会去 gcr.io 上拉取镜像, 由于 GFW 的原因, kubernetes 拉取镜像会失败. 这时, 我们可以让其拉取 docker registry 中的镜像来解决这个问题.
+kubernetes 默认会去 gcr.io 上拉取镜像, 由于 GFW 的原因, kubernetes 拉取镜像会失败。这时, 我们可以让其拉取 docker registry 中的镜像来解决这个问题。
 
 <!--more-->
 
-我使用的是 [阿里云](https://cr.console.aliyun.com/) 的 docker registry.
+我使用的是 [阿里云](https://cr.console.aliyun.com/) 的 docker registry。
 
 # 登陆阿里云
 
-点击上面链接注册登陆即可.
+点击上面链接注册登陆即可。
 
-![login](/images/2018/02/aliyun-01.png)
+<img src="images/aliyun-01.png" width="50%" height="50%">
 
 # 创建仓库
 
-登陆后直接点击创建仓库, 然后按要求填好即可.
+登陆后直接点击创建仓库, 然后按要求填好即可。
 
-![create](/images/2018/02/aliyun-02.png)
+<img src="images/aliyun-02.png" width="50%" height="50%">
 
 # 登录阿里云 docker registry
 
-创建好之后点击管理, 使用命令行登陆 docker login.
+创建好之后点击管理, 使用命令行登陆 docker login。
 
 ```shell
 docker login --username=**** registry.cn-qingdao.aliyuncs.com
@@ -93,4 +93,4 @@ spec:
             value: "123456"
 ```
 
-将 `spec.template.spec.containers.image` 的 `mysql` 改成 `registry.cn-qingdao.aliyuncs.com/abang/k8s:mysql` 即可.
+将 `spec.template.spec.containers.image` 的 `mysql` 改成 `registry.cn-qingdao.aliyuncs.com/abang/k8s:mysql` 即可。

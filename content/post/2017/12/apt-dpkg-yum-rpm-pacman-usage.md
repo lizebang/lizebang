@@ -1,21 +1,21 @@
 ---
-title: "apt、dpkg && yum、rpm && pacman 使用详解"
+title: 'apt、dpkg && yum、rpm && pacman 使用详解'
 slug: apt-dpkg-yum-rpm-pacman-usage
-date: 2018-02-24
+date: 2017-12-24
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- linux
+  - linux
 tags:
-- linux
-- command
+  - linux
+  - command
 keywords:
-- linux
-- command
+  - linux
+  - command
 ---
 
-我在这里总结了一下三个比较流行的包管理器的命令, apt、dpkg、yum、rpm 和 ArchLinux 中使用的 pacman, 以及 yaourt.
+我在这里总结了一下三个比较流行的包管理器的命令, apt、dpkg、yum、rpm 和 ArchLinux 中使用的 pacman, 以及 yaourt。
 
 <!--more-->
 
@@ -73,7 +73,7 @@ sudo apt-get remove xxx
 | yum remove       | 删除软件包               |
 | yum search       | 搜寻软件包               |
 | yum list         | 列出所有可安装的软件包   |
-| yum history      | yum事务历史记录          |
+| yum history      | yum 事务历史记录         |
 
 ## rpm 安装包
 

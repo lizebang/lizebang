@@ -1,18 +1,18 @@
 ---
-title: "ssh 的使用"
+title: 'ssh 的使用'
 slug: ssh-usage
 date: 2018-03-17
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- linux
+  - linux
 tags:
-- linux
-- ssh
+  - linux
+  - ssh
 keywords:
-- linux
-- ssh
+  - linux
+  - ssh
 ---
 
 ssh 是每一台 Linux 电脑的标配，学习它的使用是非常有必要的！

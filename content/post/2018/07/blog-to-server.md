@@ -1,20 +1,20 @@
 ---
-title: "把博客迁移到服务器上"
+title: '把博客迁移到服务器上'
 slug: blog-to-server
 date: 2018-07-15
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- blog
+  - blog
 tags:
-- blog
-- server
-- nginx
+  - blog
+  - server
+  - nginx
 keywords:
-- blog
-- server
-- nginx
+  - blog
+  - server
+  - nginx
 ---
 
 之前一直使用 GitHub Pages 托管博客，但是国内访问 GitHub 速度太慢了。恰逢腾讯云前段时间服务器做活动，便买了服务器把博客迁移到服务器上。
@@ -63,7 +63,7 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 nginx
 
 访问 http://<-server-ip->/ 出现如下界面时可以成功访问。
 
-![nginx-test](/images/2018/07/nginx-ok.png)
+<img src="images/nginx-ok.png" width="60%" height="60%" />
 
 把这个容器终止，由于 `--rm` 参数的作用，容器文件会自动删除。
 
@@ -71,7 +71,7 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 nginx
 
 1.腾讯云主机默认开放 80 端口，若使用的是其他端口例如 8080，这时我们得去[腾讯云控制台](https://console.cloud.tencent.com/cvm/index)在主机的安全组里添加一条规则
 
-![tencent-console](/images/2018/07/tencent-console.png)
+<img src="images/tencent-console.png" width="60%" height="60%" />
 
 2.docker 端口映射不能使用 127.0.0.1 必须使用 0.0.0.0
 
@@ -126,6 +126,6 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 --volume /root/nginx-web:/
 
 我在阿里云买的域名，最后得去阿里云上添加一条 DNS 解析的 A 类记录，如下：
 
-![aliyun-console](/images/2018/07/aliyun-console.png)
+<img src="images/aliyun-console.png" width="60%" height="60%" />
 
 访问 http://www.lizebang.top/ 出现 Hello World 时可以成功访问。

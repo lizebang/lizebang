@@ -1,6 +1,6 @@
 ---
-title: "Token Bucket"
-slug: token-bucket
+title: "GitHub Client Pool"
+slug: github-client-pool
 date: 2018-07-12
 draft: true
 autoThumbnailImage: false

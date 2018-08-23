@@ -1,17 +1,17 @@
 ---
-title: "git clone 速度很慢的解决方法"
+title: 'git clone 速度很慢的解决方法'
 slug: git-clone-slow
 date: 2018-02-24
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- git
+  - git
 tags:
-- git
+  - git
 keywords:
-- git clone
-- slow
+  - git clone
+  - slow
 ---
 
 使用 GitHub 学习、管理代码十分方便，但是有时候 git clone 速度非常慢，只有几 Kb 的速度。
@@ -34,8 +34,14 @@ xxx.xxx.xxx.xxx github.com
 3.更新 DNS 缓存
 
 ```shell
-# MacOS
-sudo dscacheutil -flushcache
+# macOS
+dscacheutil -flushcache
+# Windows
+ipconfig /flushdns
+# Linux
+service nscd restart
+# Ubuntu
+sudo /etc/init.d/dns-clean start
 ```
 
 4.只获取代码的最新版，再获取完整历史信息
