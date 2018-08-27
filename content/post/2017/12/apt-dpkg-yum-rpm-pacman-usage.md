@@ -15,7 +15,7 @@ keywords:
   - command
 ---
 
-我在这里总结了一下三个比较流行的包管理器的命令, apt、dpkg、yum、rpm 和 ArchLinux 中使用的 pacman, 以及 yaourt。
+我在这里总结了一下三个比较流行的包管理器的命令，apt、dpkg、yum、rpm 和 ArchLinux 中使用的 pacman，以及 yaourt。
 
 <!--more-->
 
@@ -34,7 +34,7 @@ keywords:
 | apt full-upgrade | apt-get dist-upgrade | 在升级软件包时自动处理依赖关系      |
 | apt search       | apt-cache search     | 搜索软件包                          |
 | apt show         | apt-cache show       | 显示装细节                          |
-| apt list         |                      | 列出包含条件的包 (已安装, 可升级等) |
+| apt list         |                      | 列出包含条件的包 (已安装，可升级等) |
 | apt edit-sources |                      | 编辑源列表                          |
 
 ## deb 安装包
@@ -108,7 +108,7 @@ sudo yum remove xxx
 
 ## 使用 aur
 
-1.编辑 /etc/pacman.conf, 添加以下内容
+1.编辑 /etc/pacman.conf，添加以下内容
 
 ```conf
 [archlinuxcn]

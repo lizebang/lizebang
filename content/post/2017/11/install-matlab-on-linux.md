@@ -16,13 +16,13 @@ keywords:
   - matlab
 ---
 
-在 Windows 和 Mac 上安装 Matlab 比较容易, 而在 linux 上却并没那么简单了。
+在 Windows 和 Mac 上安装 Matlab 比较容易，而在 linux 上却并没那么简单了。
 
 <!--more-->
 
 ## 安装 Matlab
 
-将安装镜像挂载到 matlab 文件夹, 然后运行 install, 后续安装步骤同 Windows 和 Mac。
+将安装镜像挂载到 matlab 文件夹，然后运行 install，后续安装步骤同 Windows 和 Mac。
 
 ```shell
 cd ~
@@ -53,7 +53,7 @@ Categories=Development;Matlab;
 
 ## 注意
 
-若仅按上述方法创建好图标，你会发现它并不能运行。这一切都因为 ~/.matlab 的读写权限。使用上述命令, 可使其正常运行。
+若仅按上述方法创建好图标，你会发现它并不能运行。这一切都因为 ~/.matlab 的读写权限。使用上述命令，可使其正常运行。
 
 ```shell
 sudo chmod -R a+rw ~/.matlab

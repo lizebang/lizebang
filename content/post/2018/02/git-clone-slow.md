@@ -18,9 +18,9 @@ keywords:
 
 <!--more-->
 
-1.浏览器访问 [https://www.ipaddress.com/](https://www.ipaddress.com/), 获取 github.global.ssl.fastly.net、global-ssl.fastly.net、assets-cdn.github.com 和 github.com 的 ip
+1.浏览器访问 [https://www.ipaddress.com/](https://www.ipaddress.com/)，获取 github.global.ssl.fastly.net、global-ssl.fastly.net、assets-cdn.github.com 和 github.com 的 ip
 
-2.修改 hosts, 增加 host 映射
+2.修改 hosts，增加 host 映射
 
 /etc/hosts
 

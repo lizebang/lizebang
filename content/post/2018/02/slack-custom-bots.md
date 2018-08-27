@@ -14,4 +14,4 @@ keywords:
   - custom bots
 ---
 
-创建 slack custom bots 网址：https://my.slack.com/services/new/bot
+创建 slack custom bots 网址：[https://my.slack.com/services/new/bot](https://my.slack.com/services/new/bot)

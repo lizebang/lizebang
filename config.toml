@@ -3,7 +3,7 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Li Zebang's Home"
 theme = "hugo-tranquilpeak-theme"
-paginate = 7
+paginate = 10
 canonifyurls = true
 
 [permalinks]

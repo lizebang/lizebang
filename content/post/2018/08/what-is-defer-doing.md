@@ -2,7 +2,9 @@
 title: 'defer 在做什么'
 slug: what-is-defer-doing
 date: 2018-08-05
+draft: true
 autoThumbnailImage: false
+coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
   - go

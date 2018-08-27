@@ -1,20 +1,20 @@
 ---
-title: "Latex in Mac"
+title: 'Latex in Mac'
 slug: latex-in-mac
 date: 2018-06-27
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-- mac
+  - mac
 tags:
-- mac
-- latex
-- vscode
+  - mac
+  - latex
+  - vscode
 keywords:
-- mac
-- latex
-- vscode
+  - mac
+  - latex
+  - vscode
 ---
 
 LaTeX 是一个高质量的排版系统，它包含为生产技术和科学文档而设计的功能。LaTeX 是科学文件通讯和出版的事实标准。
@@ -99,7 +99,7 @@ sudo tlmgr install enumitem
 sudo tlmgr install genmisc
 ```
 
-这上面包含  了 xifthen.sty, ifmtarg.sty, progressbar.sty, titlesec.sty, enumitem, nth.sty，注意 nth.sty 缺失是安装 genmisc 解决的。
+这上面包含 了 xifthen.sty, ifmtarg.sty, progressbar.sty, titlesec.sty, enumitem, nth.sty，注意 nth.sty 缺失是安装 genmisc 解决的。
 
 至此，你就可以愉快地在 macOS 上使用 LaTeX 了。
 

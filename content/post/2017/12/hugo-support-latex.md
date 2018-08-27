@@ -14,7 +14,7 @@ keywords:
   - latex
 ---
 
-Hugo 不支持 LaTeX, 这时我们可以使用 MathJAX 和 Mmark 来让 Hugo 支持 LaTeX。
+Hugo 不支持 LaTeX，这时我们可以使用 MathJAX 和 Mmark 来让 Hugo 支持 LaTeX。
 
 <!--more-->
 
@@ -22,7 +22,7 @@ Hugo 不支持 LaTeX, 这时我们可以使用 MathJAX 和 Mmark 来让 Hugo 支
 
 创建文件 footer.html 放置在 layouts/partials/ 目录中。
 
-footer.html 包含一下内容，以下内容来自 https://raw.githubusercontent.com/laozhu/hugo-nuo/master/layouts/partials/footer.html :
+footer.html 包含一下内容，以下内容来自 https://raw.githubusercontent.com/laozhu/hugo-nuo/master/layouts/partials/footer.html
 
 ```html
 <script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -49,7 +49,7 @@ footer.html 包含一下内容，以下内容来自 https://raw.githubuserconten
 </script>
 ```
 
-由于 MathJax 语法与 LaTeX 不完全相同, 所以请仔细 MathJax 命令
+由于 MathJax 语法与 LaTeX 不完全相同，所以请仔细 MathJax 命令。
 
 ### 注意
 

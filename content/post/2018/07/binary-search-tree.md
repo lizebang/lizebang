@@ -2,6 +2,7 @@
 title: '二叉搜索树'
 slug: binary-search-tree
 date: 2018-07-16
+draft: true
 mathjax: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
