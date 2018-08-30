@@ -17,7 +17,7 @@ keywords:
   - setup
 ---
 
-怎样使用 kubeadm 创建 kubernetes 集群呢？请阅读下面内容。
+怎样使用 kubeadm 创建 Kubernetes 集群呢？请阅读下面内容。
 
 <!--more-->
 
@@ -80,7 +80,7 @@ Worker node(s)
 
 ### [安装 docker](https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-docker)
 
-kubernetes 官方建议 docker 使用 17.03 版本。（最新版本 docker 可以正常运行）
+Kubernetes 官方建议 docker 使用 17.03 版本。（最新版本 docker 可以正常运行）
 
 安装 17.03 版本 docker（其他系统请查看 [guides](https://docs.docker.com/install/)）
 

@@ -27,7 +27,7 @@ keywords:
 
 顾名思义，一棵二叉搜索树是以一棵二叉树来组织的，如下图。这样一棵树可以使用一个链表数据结构表示，其中每个结点就是一个对象。除了 key 和卫星数据外，每个结点还包含属性 left、right 和 p，分别指向结点的左孩子、右孩子和双亲。如果某个孩子结点和父结点不存在，则相应属性的值为 NIL。根结点是树中唯一父指针为 NIL 的结点。
 
-<img src="images/binary-search-tree-0.svg" width="60%" height="60%" />
+![binary search tree 0](/images/2018/07/binary-search-tree-0.svg)
 
 对于任何结点 x，其左子树中的关键字最大不超过 x.key，其右子树中的关键字最小不低于 x.key。
 

@@ -2,6 +2,7 @@
 title: 'AWK 快速入门'
 slug: awk-quick-start
 date: 2018-08-27
+mathjax: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
@@ -23,7 +24,7 @@ awk 是一种使用方便且表现力很强的编程语言，它可以应用在�
 
 ## 开始
 
-emp.data 这个文件包含有名字，每小 时工资 (以美元为单位)，工作时长，每一行代表一个雇员的记录。你可以使用它运行本文中所有程序。
+输入文件 emp.data 这个文件包含有名字，每小 时工资 (以美元为单位)，工作时长，每一行代表一个雇员的记录。你可以使用它运行本文中所有程序。
 
 ```data
 Beth    4.00    0

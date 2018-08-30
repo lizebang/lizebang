@@ -63,7 +63,7 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 nginx
 
 访问 http://<-server-ip->/ 出现如下界面时可以成功访问。
 
-<img src="images/nginx-ok.png" width="60%" height="60%" />
+![nginx](/images/2018/07/nginx-ok.png)
 
 把这个容器终止，由于 `--rm` 参数的作用，容器文件会自动删除。
 
@@ -71,7 +71,7 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 nginx
 
 1.腾讯云主机默认开放 80 端口，若使用的是其他端口例如 8080，这时我们得去[腾讯云控制台](https://console.cloud.tencent.com/cvm/index)在主机的安全组里添加一条规则
 
-<img src="images/tencent-console.png" width="60%" height="60%" />
+![tencent console](/images/2018/07/tencent-console.png)
 
 2.docker 端口映射不能使用 127.0.0.1 必须使用 0.0.0.0
 
@@ -126,6 +126,6 @@ docker run -d --rm --name nginx-test -p 0.0.0.0:80:80 --volume /root/nginx-web:/
 
 我在阿里云买的域名，最后得去阿里云上添加一条 DNS 解析的 A 类记录，如下：
 
-<img src="images/aliyun-console.png" width="60%" height="60%" />
+![aliyun console](/images/2018/07/aliyun-console.png)
 
 访问 http://www.lizebang.top/ 出现 Hello World 时可以成功访问。

@@ -1,5 +1,5 @@
 ---
-title: 'cobra 使用入门'
+title: 'Cobra 使用入门'
 slug: how-to-use-cobra
 date: 2018-06-15
 autoThumbnailImage: false
@@ -144,7 +144,7 @@ a count and a string.`,
 }
 ```
 
-<img src="images/cobra.svg" width="80%" height="80%" />
+![cobra](/images/2018/06/cobra.svg)
 
 这个命令是这样的，print 和 echo 都是 app 的子命令，并且行为相同都是输出 “Print: 参数”。times 是 echo 的子参数，它有一个标志型参数，默认值是 1，它会输出 x 次（-t x）“Echo: 参数”。所有命令最后都会将所有的标志型参数输出。
 

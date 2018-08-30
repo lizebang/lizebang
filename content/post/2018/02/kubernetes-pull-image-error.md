@@ -15,7 +15,7 @@ keywords:
   - docker registry
 ---
 
-kubernetes 默认会去 gcr.io 上拉取镜像，由于 GFW 的原因，kubernetes 拉取镜像会失败。这时，我们可以让其拉取 docker registry 中的镜像来解决这个问题。
+Kubernetes 默认会去 gcr.io 上拉取镜像，由于 GFW 的原因，Kubernetes 拉取镜像会失败。这时，我们可以让其拉取 docker registry 中的镜像来解决这个问题。
 
 <!--more-->
 
@@ -25,13 +25,13 @@ kubernetes 默认会去 gcr.io 上拉取镜像，由于 GFW 的原因，kubernet
 
 点击上面链接注册登陆即可。
 
-<img src="images/aliyun-01.png" width="50%" height="50%">
+![aliyun 1](/images/2018/02/aliyun-01.png)
 
 # 创建仓库
 
 登陆后直接点击创建仓库，然后按要求填好即可。
 
-<img src="images/aliyun-02.png" width="50%" height="50%">
+![aliyun 2](/images/2018/02/aliyun-02.png)
 
 # 登录阿里云 docker registry
 

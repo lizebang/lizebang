@@ -53,9 +53,9 @@ Y86-64 模拟器编译成 `终端` 和 `图形界面` 两种。
 
 注释不需要的变量
 
-| <img src="images/makefile.png" width="100%" height="55%" /> | <img src="images/makefile-tty.png" width="100%" height="55%" /> |
-| :---------------------------------------------------------: | :----------------------------------------------------------: |
-|                           修改前                            |                            修改后                            |
+| ![makefile](/images/2018/07/makefile.png) | ![makefile tty](/images/2018/07/makefile-tty.png) |
+| :---------------------------------------: | :-----------------------------------------------: |
+|                  修改前                   |                      修改后                       |
 
 编译
 
@@ -73,9 +73,9 @@ make clean; make
 
 把 `TKINC` 值设为 `TKINC=-isystem /System/Library/Frameworks/Tk.framework/Versions/8.5/Headers`。
 
-| <img src="images/makefile.png" width="100%" height="55%" /> | <img src="images/makefile-gui.png" width="100%" height="55%" /> |
-| :---------------------------------------------------------: | :----------------------------------------------------------: |
-|                           修改前                            |                            修改后                            |
+| ![makefile](/images/2018/07/makefile.png) | ![makefile gui](/images/2018/07/makefile-gui.png) |
+| :---------------------------------------: | :-----------------------------------------------: |
+|                  修改前                   |                      修改后                       |
 
 #### 错误 ld: library not found for -lfl
 

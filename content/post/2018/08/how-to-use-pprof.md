@@ -194,7 +194,7 @@ Showing top 5 nodes out of 89
 
 [the full graph](images/cpuprofile1.svg)
 
-<img src="images/cpuprofile1.svg" width="60%" height="40%" />
+![cpuprofile1](/images/2018/08/cpuprofile1.svg)
 
 图中每个框对应一个函数，框的大小根据函数运行的时间决定。一个框 x 指向另一个框 y 代表，函数 x 调用函数 y，连线上的数字代表执行时间。
 
@@ -206,7 +206,7 @@ Showing top 5 nodes out of 89
 (pprof) web runtime.mapaccess1_fast64
 ```
 
-<img src="images/cpuprofile1-mapaccess1_fast64.svg" width="60%" height="40%" />
+![cpuprofile1 mapaccess1_fast64](/images/2018/08/cpuprofile1-mapaccess1_fast64.svg)
 
 我们可以看到 main.FindLoops 和 main.DFS 对 runtime.mapaccess1_fast64 的调用。
 

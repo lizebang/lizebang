@@ -249,7 +249,7 @@ func (c *Cmd) Start() error {
 
 事实上，在方法调用时，接收者是作为参数传入的，见下图。
 
-<img src="images/reciver.png" width="50%" height="50%" />
+![reciver](/images/2017/12/reciver.png)
 
 然后，调用 os.StartProcess() 创建一个新进程。
 

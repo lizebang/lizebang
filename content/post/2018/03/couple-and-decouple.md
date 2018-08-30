@@ -31,11 +31,11 @@ keywords:
 
 以我所写的项目为例，它是一个爬虫的项目，定时爬取几个网站的数据并存到数据库，项目看起来非常简单，实际要做的事情也不复杂。
 
-<img src="images/crawler.svg" width="50%" height="50%" />
+![crawler](/images/2018/03/crawler.svg)
 
 将读取配置（config）和控制定时执行（crontab）的模块作为插件独立出来，不同的客户端向 Client Set 注册之后，分别爬取自己的数据，最后统一存入数据库。这一切的一切都看起来非常的美好。crontab 以及数据的存储都与具体爬取信息的客户端分离开了，各个客户端之间也分离开了。但是，这之中有一个巨大的缺陷。每个客户端中包所有的爬取逻辑和控制逻辑，只有爬取到 URL 后才能去爬取具体到数据。当爬取逻辑出现问题需要修改时，可能会影响到控制逻辑，需要对控制逻辑进行修改。这时维护到成本非常到高，所以我们需要将这部分到耦合解开。
 
-<img src="images/better-crawler.svg" width="50%" height="50%" />
+![better crawler](/images/2018/03/better-crawler.svg)
 
 改进之后，将任务划分封装成小任务，然后通过 Collecter 搜集起来，再由 Filter 分发到每个更小的模块，每一个小模块只专注于处理自己的业务，最终实现逻辑上的耦合。Search、Crawlers 会向 Collecter 发送任务。
 

@@ -60,7 +60,7 @@ func example() {
 
 看下面的图，defer 先将 Print 函数放到一个列表中，等到 example 返回时按照后进先出的规则依次执行。
 
-<img src="images/defer-simple-example.svg" width="50%" height="50%" />
+![defer simple example](/images/2018/08/defer-simple-example.svg)
 
 ## 以函数返回值做 defer 函数的参数时
 
