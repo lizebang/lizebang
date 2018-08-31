@@ -1,5 +1,5 @@
 ---
-title: '使用 kubeadm 创建单 master 群集'
+title: '使用 kubeadm 创建单 master 集群'
 slug: create-cluster-kubeadm
 date: 2018-08-26
 autoThumbnailImage: false

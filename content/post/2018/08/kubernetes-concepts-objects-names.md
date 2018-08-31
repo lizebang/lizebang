@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes 对象名称'
-slug: kubernetes-objects-names
+slug: kubernetes-concepts-objects-names
 date: 2018-08-30
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

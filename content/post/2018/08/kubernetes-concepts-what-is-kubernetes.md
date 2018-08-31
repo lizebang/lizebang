@@ -1,6 +1,6 @@
 ---
 title: '什么是 Kubernetes ？'
-slug: what-is-kubernetes
+slug: kubernetes-concepts-what-is-kubernetes
 date: 2018-08-27
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
