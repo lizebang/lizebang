@@ -75,23 +75,29 @@ England 94   56   Europe
 
 模式控制着动作的执行：当模式匹配时，相应的动作便会执行。
 
-1. `BEGIN{ statements}`
-   在输入被读取之前，statements 执行一次。
+1.`BEGIN{ statements}`
 
-2. `END{ statements}`
-   当所有输入被读取完毕之后，statements 执行一次。
+在输入被读取之前，statements 执行一次。
 
-3. `expression{ statements}`
-   每碰到一个使 expression 为真的输入行，statements 就执行。expression 为真指的是其值非零或非空。
+2.`END{ statements}`
 
-4. `/regular expression/ { statements}`
-   当碰到这样一个输入行时，statements 就执行，输入行含有一段字符串，而该字符串可以被 regular expression 匹配。
+当所有输入被读取完毕之后，statements 执行一次。
 
-5. `compound pattern { statements}`
-   一个复合模式将表达式用 &&（AND）、||（OR）、!（NOT），以及括号组合起来，当 compound pattern 为真时，statements 执行。
+3.`expression{ statements}`
 
-6. `pattern1, pattern2 { statements}`
-   一个范围模式匹配多个输入行，这些输入行从匹配 pattern1 的行开始，到匹配 pattern2 的行结束（包括这两行），对这其中的每一行执行 statements。（pattern1 与 pattern2 可以匹配同一行）
+每碰到一个使 expression 为真的输入行，statements 就执行。expression 为真指的是其值非零或非空。
+
+4.`/regular expression/ { statements}`
+
+当碰到这样一个输入行时，statements 就执行，输入行含有一段字符串，而该字符串可以被 regular expression 匹配。
+
+5.`compound pattern { statements}`
+
+一个复合模式将表达式用 &&（AND）、||（OR）、!（NOT），以及括号组合起来，当 compound pattern 为真时，statements 执行。
+
+6.`pattern1, pattern2 { statements}`
+
+一个范围模式匹配多个输入行，这些输入行从匹配 pattern1 的行开始，到匹配 pattern2 的行结束（包括这两行），对这其中的每一行执行 statements。（pattern1 与 pattern2 可以匹配同一行）
 
 BEGIN 与 END 不与其他模式组合。一个范围模式不能是其他模式的一部分。BEGIN 与 END 是唯一两个不能省略动作的模式。
 
@@ -149,14 +155,17 @@ awk 提供了一种称为 **正则表达式** 的表示法，它可以用来指�
 
 字符串匹配模式：
 
-1. /regexpr/
-   当当前输入行包含一段能够被 regexpr 匹配的子字符串时，该模式被匹配。
+1.`/regexpr/`
 
-2. expression ~ /regexpr/
-   如果 expression 的字符串值包含一段能够被 regexpr 匹配的子字符时，该模式被匹配。
+当当前输入行包含一段能够被 regexpr 匹配的子字符串时，该模式被匹配。
 
-3. expression !~ /regexpr/
-   如果 expression 的字符串值不包含能够被 regexpr 匹配的子字符串，该模式被匹配。
+2.`expression ~ /regexpr/`
+
+如果 expression 的字符串值包含一段能够被 regexpr 匹配的子字符时，该模式被匹配。
+
+3.`expression !~ /regexpr/`
+
+如果 expression 的字符串值不包含能够被 regexpr 匹配的子字符串，该模式被匹配。
 
 在 ~ 与 !~ 的语境中，任意一个表达式都可以用来替换 /regexpr/。
 
@@ -178,28 +187,29 @@ $4 !~ /Asia/
 
 正则表达式：
 
-1. 正则表达式的元字符包括：
-   `\ ^ $ . [ ] | ( ) * + ?`
+1.正则表达式的元字符包括：
+`\ ^ $ . [ ] | ( ) * + ?`
 
-2. 一个基本的正则表达式包括下面几种：
+2.一个基本的正则表达式包括下面几种：
 
-   - 一个不是元字符的字符，例如 `A`，这个正则表达式匹配的就是它本身。
-   - 一个匹配特殊符号的转义字符：`\t` 匹配一个制表符。
-   - 一个被引用的元字符，例如 `\*`，按字面意义匹配元字符。
-   - `^` 匹配一行的开始。
-   - `$` 匹配一行的结束。
-   - `.` 匹配任意一个字符。
-   - 一个字符类：`[ABC]` 匹配字符 A、B 或 C。
-   - 字符类可能包含缩写形式：`[A-Za-z]` 匹配单个字母。
-   - 一个互补的字符类：`[^0-9]` 匹配任意一个不是数字的字符。
+- 一个不是元字符的字符，例如 `A`，这个正则表达式匹配的就是它本身。
+- 一个匹配特殊符号的转义字符：`\t` 匹配一个制表符。
+- 一个被引用的元字符，例如 `\*`，按字面意义匹配元字符。
+- `^` 匹配一行的开始。
+- `$` 匹配一行的结束。
+- `.` 匹配任意一个字符。
+- 一个字符类：`[ABC]` 匹配字符 A、B 或 C。
+- 字符类可能包含缩写形式：`[A-Za-z]` 匹配单个字母。
+- 一个互补的字符类：`[^0-9]` 匹配任意一个不是数字的字符。
 
-3. 这些运算符将正则表达式组合起来：
-   - 选择：`A|B` 匹配 A 或 B。
-   - 拼接：`AB` 匹配后面紧跟着 B 的 A。
-   - 闭包：`A*` 匹配 0 个或多个 A。
-   - 正闭包：`A+` 匹配一个或多个 A。
-   - 零或一：`A?` 匹配空字符串或 A。
-   - 括号：被 `(r)` 匹配的字符串，与 r 所匹配的字符串相同。
+  3.这些运算符将正则表达式组合起来：
+
+  - 选择：`A|B` 匹配 A 或 B。
+  - 拼接：`AB` 匹配后面紧跟着 B 的 A。
+  - 闭包：`A*` 匹配 0 个或多个 A。
+  - 正闭包：`A+` 匹配一个或多个 A。
+  - 零或一：`A?` 匹配空字符串或 A。
+  - 括号：被 `(r)` 匹配的字符串，与 r 所匹配的字符串相同。
 
 字符 `\ ^ $ . [ ] | ( ) * + ?` 叫作 **元字符**，之所以这样称呼是因为它们具有特殊的意义。为了在正则表达式中保留元字符的字面意义，需要在字符的前面加上反斜杠。于是，`\$` 匹配普通字符 $。如果某个字符前面冠有 \，我们就说该字符是被 **引用** 的。
 

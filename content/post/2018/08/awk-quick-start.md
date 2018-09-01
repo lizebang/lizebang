@@ -395,136 +395,136 @@ END { for (i = NR; i > 0; i = i - 1)
 
 虽然 awk 可以写出非常复杂的程序，但是许多实用的程序并不比我们目前为止看到的复杂多少。这里有 一些小程序集合，对读者应该会有一些参考价值。
 
-1. 输入行的总行数
+1.输入行的总行数
 
-   ```awk
-   END { print NR }
-   ```
+```awk
+END { print NR }
+```
 
-2. 打印第 10 行
+2.打印第 10 行
 
-   ```awk
-   NR == 10
-   ```
+```awk
+NR == 10
+```
 
-3. 打印每一个输入行的最后一个字段
+3.打印每一个输入行的最后一个字段
 
-   ```awk
-   { print $NF }
-   ```
+```awk
+{ print $NF }
+```
 
-4. 打印最后一行的最后一个字段
+4.打印最后一行的最后一个字段
 
-   ```awk
-   { field = $NF }
-   END { print field }
-   ```
+```awk
+{ field = $NF }
+END { print field }
+```
 
-5. 打印字段数多于 4 个的输入行
+5.打印字段数多于 4 个的输入行
 
-   ```awk
-   NF > 4
-   ```
+```awk
+NF > 4
+```
 
-6. 打印最后一个字段值大于 4 的输入行
+6.打印最后一个字段值大于 4 的输入行
 
-   ```awk
-   $NF > 4
-   ```
+```awk
+$NF > 4
+```
 
-7. 打印所有输入行的字段数的总和
+7.打印所有输入行的字段数的总和
 
-   ```awk
-   { nf = nf + NF } END { print nf }
-   ```
+```awk
+{ nf = nf + NF } END { print nf }
+```
 
-8. 打印包含 Beth 的行的数量
+8.打印包含 Beth 的行的数量
 
-   ```awk
-   /Beth/ { nlines = nlines + 1 }
-   END { print nlines }
-   ```
+```awk
+/Beth/ { nlines = nlines + 1 }
+END { print nlines }
+```
 
-9. 打印具有最大值的第一个字段，以及包含它的行（假设 $1 总是 正的）
+9.打印具有最大值的第一个字段，以及包含它的行（假设 $1 总是 正的）
 
-   ```awk
-   $1 > max { max = $1; maxline = $0 }
-   END { print max, maxline }
-   ```
+```awk
+$1 > max { max = $1; maxline = $0 }
+END { print max, maxline }
+```
 
-10. 打印至少包含一个字段的行
+10.打印至少包含一个字段的行
 
-    ```awk
-    NF > 0
-    ```
+```awk
+NF > 0
+```
 
-11. 打印长度超过 80 个字符的行
+11.打印长度超过 80 个字符的行
 
-    ```awk
-    length($0) > 80
-    ```
+```awk
+length($0) > 80
+```
 
-12. 在每一行的前面加上它的字段数
+12.在每一行的前面加上它的字段数
 
-    ```awk
-    { print NF, $0 }
-    ```
+```awk
+{ print NF, $0 }
+```
 
-13. 打印每一行的第 1 与第 2 个字段，但顺序相反
+13.打印每一行的第 1 与第 2 个字段，但顺序相反
 
-    ```awk
-    { print $2, $1 }
-    ```
+```awk
+{ print $2, $1 }
+```
 
-14. 交换每一行的第 1 与第 2 个字段，并打印该行
+14.交换每一行的第 1 与第 2 个字段，并打印该行
 
-    ```awk
-    { temp = $1; $1 = $2; $2 = temp; print }
-    ```
+```awk
+{ temp = $1; $1 = $2; $2 = temp; print }
+```
 
-15. 将每一行的第一个字段用行号代替
+15.将每一行的第一个字段用行号代替
 
-    ```awk
-    { $1 = NR; print }
-    ```
+```awk
+{ $1 = NR; print }
+```
 
-16. 打印删除了第 2 个字段后的行
+16.打印删除了第 2 个字段后的行
 
-    ```awk
-    { $2 = ""; print }
-    ```
+```awk
+{ $2 = ""; print }
+```
 
-17. 将每一行的字段按逆序打印
+17.将每一行的字段按逆序打印
 
-    ```awk
-    { for (i = NF; i > 0; i = i - 1) printf("%s ", $i)
-         printf("\n")
-    }
-    ```
+```awk
+{ for (i = NF; i > 0; i = i - 1) printf("%s ", $i)
+     printf("\n")
+}
+```
 
-18. 打印每一行的所有字段值之和
+18.打印每一行的所有字段值之和
 
-    ```awk
-    { sum = 0
-        for (i = 1; i <= NF; i = i + 1) sum = sum + $i
-        print sum
-    }
-    ```
+```awk
+{ sum = 0
+    for (i = 1; i <= NF; i = i + 1) sum = sum + $i
+    print sum
+}
+```
 
-19. 将所有行的所有字段值累加起来
+19.将所有行的所有字段值累加起来
 
-    ```awk
-        { for (i = 1; i <= NF; i = i + 1) sum = sum + $i }
-    END { print sum }
-    ```
+```awk
+    { for (i = 1; i <= NF; i = i + 1) sum = sum + $i }
+END { print sum }
+```
 
-20. 将每一行的每一个字段用它的绝对值替换
+20.将每一行的每一个字段用它的绝对值替换
 
-    ```awk
-    { for (i = 1; i <= NF; i = i + 1) if ($i < 0) $i = -$i
+```awk
+{ for (i = 1; i <= NF; i = i + 1) if ($i < 0) $i = -$i
     print
-    }
-    ```
+}
+```
 
 ## Reference
 

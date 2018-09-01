@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes 组件'
-slug: kubernetes-concepts-components
+slug: kubernetes_concepts_overview_components
 date: 2018-08-28
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -23,7 +23,7 @@ keywords:
 
 ## Master 组件
 
-Master 组件提供了集群的控制平台。Master 组件对集群做出全局性决策（例如：调度），并且检测和响应集群事件（当副本控制器的 `replicas` 字段不满足时，启动新的 pod）。
+Master 组件提供了集群的控制平台。Master 组件对集群做出全局性决策（例如，调度），并且检测和响应集群事件（当副本控制器的 `replicas` 字段不满足时，启动新的 pod）。
 
 Master 组件能运行在集群中任何机器上。然而，为了简单起见，设置脚本通常会在同一台机器上启动所有主组件，并且不在此机器上运行用户容器。多主节点 VM 的设置请看 [构建高可用性集群](https://kubernetes.io/docs/admin/high-availability/)。
 

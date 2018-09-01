@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes 命名空间'
-slug: kubernetes-concepts-objects-namespaces
+slug: kubernetes_concepts_overview_working-with-objects_namespaces
 date: 2018-08-30
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -82,7 +82,7 @@ $ kubectl config view | grep namespace:
 
 ## 并非所有对象都在命名空间中
 
-大部分的 Kubernetes 资源（例如：pods、services、replication controllers 以及一些其他的资源）都在命名空间里。然而，命名空间资源本身并不在命名空间中。低级别的资源并不在任何命名空间，例如 [nodes](https://kubernetes.io/docs/admin/node) 和持久卷。
+大部分的 Kubernetes 资源（例如，pods、services、replication controllers 以及一些其他的资源）都在命名空间里。然而，命名空间资源本身并不在命名空间中。低级别的资源并不在任何命名空间，例如 [nodes](https://kubernetes.io/docs/admin/node) 和持久卷。
 
 可以用下面命令查看哪些 Kubernetes 资源在命名空间，哪些不在：
 

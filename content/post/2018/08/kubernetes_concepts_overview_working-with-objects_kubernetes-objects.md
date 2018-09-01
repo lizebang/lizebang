@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes 对象'
-slug: kubernetes-concepts-objects
+slug: kubernetes_concepts_overview_working-with-objects_kubernetes-objects
 date: 2018-08-28
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -43,7 +43,7 @@ Kubernetes 对象是一个 “目标性记录”，一旦创建了对象，Kuber
 
 ### 描述一个 Kubernetes 对象
 
-当你在 Kubernetes 创建一个对象时，你必须提供一个对象的规约，描述了期望的状态和一些对象的基础信息（例如名称）。当你使用 Kubernetes API 创建对象时（直接或通过 `kubectl`），API 请求必须在请求体中包含 JSON 格式的这些信息。**通常，你通过一个 `.yaml` 的文件提供这些信息给 `kubectl`。**当进行 API 请求时，`kubectl` 将这些信息转化成 JSON 格式。
+当你在 Kubernetes 创建一个对象时，你必须提供一个对象的规约，描述了期望的状态和一些对象的基础信息（例如，名称）。当你使用 Kubernetes API 创建对象时（直接或通过 `kubectl`），API 请求必须在请求体中包含 JSON 格式的这些信息。**通常，你通过一个 `.yaml` 的文件提供这些信息给 `kubectl`。**当进行 API 请求时，`kubectl` 将这些信息转化成 JSON 格式。
 
 这里有一个 `.yaml` 示例文件，展示了 Kubernetes Deployment 的必需字段和对象规约：
 

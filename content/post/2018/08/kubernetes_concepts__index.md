@@ -1,6 +1,6 @@
 ---
 title: 'kubernetes 概念'
-slug: kubernetes-concepts
+slug: kubernetes_concepts__index
 date: 2018-08-27
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

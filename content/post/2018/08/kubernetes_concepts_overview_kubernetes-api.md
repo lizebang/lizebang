@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes API'
-slug: kubernetes-concepts-api
+slug: kubernetes_concepts_overview_kubernetes-api
 date: 2018-08-28
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
@@ -72,7 +72,7 @@ Kubernetes 实现了另一种基于 Protobuf 的序列化格式，该格式主�
 
 - Alpha 测试版本：
 
-  - 版本名称包含了 `alpha`（例如：`v1alpha1`）。
+  - 版本名称包含了 `alpha`（例如 `v1alpha1`）。
   - 可能是有缺陷的。启用该功能可能会带来隐含的问题，默认情况是关闭的。
   - 支持的功能可能在没有通知的情况下随时删除。
   - API 的更改可能会带来兼容性问题，但是在后续的软件发布中不会有任何通知。
@@ -80,7 +80,7 @@ Kubernetes 实现了另一种基于 Protobuf 的序列化格式，该格式主�
 
 - Beta 测试版本：
 
-  - 版本名称包含了 `beta`（例如：`v2beta3`）。
+  - 版本名称包含了 `beta`（例如 `v2beta3`）。
   - 代码已经测试过。启用该功能被认为是安全的，功能默认已启用。
   - 所有已支持的功能不会被删除，细节可能会发生变化。
   - 对象的模式和/或语义可能会在后续的 beta 测试版或稳定版中以不兼容的方式进行更改。 发生这种情况时，我们将提供迁移到下一个版本的说明。 这可能需要删除、编辑和重新创建 API 对象。执行编辑操作时需要谨慎行事，这可能需要停用依赖该功能的应用程序。
@@ -98,13 +98,15 @@ Kubernetes 实现了另一种基于 Protobuf 的序列化格式，该格式主�
 
 目前有几个 API 组正在使用中：
 
-1. 核心组，通常被称为遗留组，位于 REST 路径 `/api/v1` 并使用 `apiVersion: v1`。
-2. 命名组，位于 REST 路径 `/apis/$GROUP_NAME/$VERSION`，并使用 `apiVersion: $GROUP_NAME/$VERSION`（例如 `apiVersion: batch/v1`）。在 [Kubernetes API 参考](https://kubernetes.io/docs/reference/) 中可以看到支持的 API 组的完整列表。
+1.核心组，通常被称为遗留组，位于 REST 路径 `/api/v1` 并使用 `apiVersion: v1`。
+
+2.命名组，位于 REST 路径 `/apis/$GROUP_NAME/$VERSION`，并使用 `apiVersion: $GROUP_NAME/$VERSION`（例如 `apiVersion: batch/v1`）。在 [Kubernetes API 参考](https://kubernetes.io/docs/reference/) 中可以看到支持的 API 组的完整列表。
 
 有以下两种方式来提供 [自定义资源](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) 对 API 进行扩展：
 
-1. [CustomResourceDefinition](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/) 适用于具有非常基本的 CRUD 需求的用户。
-2. 需要完整 Kubernetes API 语义的用户可以实现自己的 apiserver，并使用 [聚合器](https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/) 为客户端提供无缝的服务。
+1.[CustomResourceDefinition](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/) 适用于具有非常基本的 CRUD 需求的用户。
+
+2.需要完整 Kubernetes API 语义的用户可以实现自己的 apiserver，并使用 [聚合器](https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/) 为客户端提供无缝的服务。
 
 ## 启用 API 组
 

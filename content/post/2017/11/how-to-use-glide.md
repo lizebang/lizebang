@@ -23,13 +23,13 @@ glide 是很常用的 go 包管理工具，让我们看看然后使用它。
 
 常用命令
 
-1. `glide init` 初始化，创建 glide.yaml 文件。
+1.`glide init` 初始化，创建 glide.yaml 文件。
 
-2. `glide install` 安装项目依赖库。
+2.`glide install` 安装项目依赖库。
 
-3. `glide get xxx` 安装一个或多个库并添加依赖到 glide.yaml。
+3.`glide get xxx` 安装一个或多个库并添加依赖到 glide.yaml。
 
-4. `glide update` 升级项目依赖库。
+4.`glide update` 升级项目依赖库。
 
 使用方法
 

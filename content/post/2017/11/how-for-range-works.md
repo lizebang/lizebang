@@ -146,9 +146,11 @@ func example() {
 
 为什么如此奇怪，输出的值全是一样的？这是由多个因素共同导致的。
 
-1. goroutine 中使用的 key 和 val 是外部的 key 和 val，所有 goroutine 共用一组值。
-2. 调度器锁定在 main，所以在 for range 执行完之前并没有调度执行 goroutine。
-3. for range 一直在更新 key 和 val 直到更新到最后一个。
+1.goroutine 中使用的 key 和 val 是外部的 key 和 val，所有 goroutine 共用一组值。
+
+2.调度器锁定在 main，所以在 for range 执行完之前并没有调度执行 goroutine。
+
+3.for range 一直在更新 key 和 val 直到更新到最后一个。
 
 看下面的例子。[Play](https://play.golang.org/p/_S0RCLsaGVo)
 
