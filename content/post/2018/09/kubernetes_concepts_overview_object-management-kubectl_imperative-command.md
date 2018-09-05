@@ -1,5 +1,5 @@
 ---
-title: '使用命令式命令管理 Kubernetes 对象'
+title: '使用命令式指令管理 Kubernetes 对象'
 slug: kubernetes_concepts_overview_object-management-kubectl_imperative-command
 date: 2018-09-02
 autoThumbnailImage: false
@@ -17,11 +17,11 @@ keywords:
 
 原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
 
-直接使用内置于 `kubectl` 命令行工具的命令式指令，可以快速地创建、更新和删除 Kubernetes 对象。本文介绍了任何组织这些命令，以及如何使用它们管理活动对象。
+直接使用内置于 `kubectl` 命令行工具的命令式指令，可以快速地创建、更新和删除 Kubernetes 对象。本文介绍了任何组织这些命令，以及如何使用它们管理实时对象。
 
 <!--more-->
 
-## 权衡
+## 权衡利弊
 
 `kubectl` 工具支持三种对象管理的方式：
 
@@ -69,12 +69,12 @@ kubectl create service nodeport -h
 
 - `set`：设置对象的某个方面。
 
-> 注意：在 Kubernetes 1.5 版本中，不是每个动词驱动的命令都有一个相关的方面驱动命令。
+> 注意：从 Kubernetes 1.5 版本开始，不是每个动词驱动的命令都有一个相关的方面驱动命令。
 
-`kubectl` 工具支持这些额外的方法来直接更新活动对象，但是它们需要更好地了解 Kubernetes 对象架构。
+`kubectl` 工具支持这些额外的方法来直接更新实时对象，但是它们需要更好地了解 Kubernetes 对象架构。
 
-- `edit`：通过在编辑器中打开其配置直接编辑活动对象的原始配置。
-- `patch`：使用 patch 字符串直接修改活动对象的特定字段。有关 patch 字符串的详细信息，请参考 [API 约定](https://git.k8s.io/community/contributors/devel/api-conventions.md#patch-operations) patch 部分。
+- `edit`：通过在编辑器中打开其配置直接编辑实时对象的原始配置。
+- `patch`：使用 patch 字符串直接修改实时对象的特定字段。有关 patch 字符串的详细信息，请参考 [API 约定](https://git.k8s.io/community/contributors/devel/api-conventions.md#patch-operations) patch 部分。
 
 ## 如何删除对象
 
