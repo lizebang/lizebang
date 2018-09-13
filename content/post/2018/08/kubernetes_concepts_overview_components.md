@@ -79,7 +79,7 @@ Node 组件运行在每个节点上，用于维护运行的 pods 并提供 Kuber
 
 ### kubelet
 
-kubelet 是运行在集群中每个节点上的代理。它确保每个 pod 中的容器正常运行。
+kubelet 是运行在集群中每个节点上的代理。它确保每个 Pod 中的容器正常运行。
 
 kubelet 采用通过各种机制提供的一组 PodSpecs，并确保这些 PodSpecs 中描述的容器运行且健康。kubelet 不管理不是由 Kubernetes 创建的容器。
 

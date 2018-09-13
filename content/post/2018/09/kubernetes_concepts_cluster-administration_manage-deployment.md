@@ -226,7 +226,7 @@ guestbook-redis-slave-qgazl   1/1       Running   0          3m
 
 ## 金丝雀部署
 
-需要多个标签的另一种情况是区分不同版本的部署或同一组件的配置。通常的做法是将新应用程序版本的 canary（通过 pod 模板中的图像标志指定）与先前版本并排部署，以便新版本可以在完全推出之前接收实时生产流量。
+需要多个标签的另一种情况是区分不同版本的部署或同一组件的配置。通常的做法是将新应用程序版本的 canary（通过 Pod 模板中的图像标志指定）与先前版本并排部署，以便新版本可以在完全推出之前接收实时生产流量。
 
 例如，你可以使用 `track` 标签区分不同的版本。
 
@@ -244,7 +244,7 @@ guestbook-redis-slave-qgazl   1/1       Running   0          3m
      image: gb-frontend:v3
 ```
 
-然后你可以创建 `track` 标签带有不同值（如 `canary`）的留言簿前端新版本，这样两组 pod 就不会重复：
+然后你可以创建 `track` 标签带有不同值（如 `canary`）的留言簿前端新版本，这样两组 Pod 就不会重复：
 
 ```yaml
      name: frontend-canary
@@ -272,7 +272,7 @@ selector:
 
 ## 更新标签
 
-在创建新资源之前，有时需要重新标记现有的 pod 和其他资源。这可以使用 `kubectl label` 来完成。例如，如果要将所有 nginx pods 标记为前端层，只需运行：
+在创建新资源之前，有时需要重新标记现有的 Pod 和其他资源。这可以使用 `kubectl label` 来完成。例如，如果要将所有 nginx pods 标记为前端层，只需运行：
 
 ```shell
 $ kubectl label pods -l app=nginx tier=fe
@@ -291,7 +291,7 @@ my-nginx-2035384211-u2c7e   1/1       Running   0          23m       fe
 my-nginx-2035384211-u3t6x   1/1       Running   0          23m       fe
 ```
 
-这将输出所有 "app=nginx" 的 pod，并 pod 包含 tier 附加标签列（使用 `-L` 或 `--label-columns`）。
+这将输出所有 "app=nginx" 的 Pod，并 Pod 包含 tier 附加标签列（使用 `-L` 或 `--label-columns`）。
 
 有关更多信息，请参考 [标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) 和 [kubectl 标签](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#label)。
 
@@ -338,7 +338,7 @@ horizontalpodautoscaler.autoscaling/my-nginx autoscaled
 
 现在, 你的 nginx 副本可以根据需要自动缩放。
 
-更多信息，请查看 [kubectl scale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#scale)、[kubectl autoscale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale) 和 [horizontal pod autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) 的文档。
+更多信息，请查看 [kubectl scale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#scale)、[kubectl autoscale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale) 和 [horizontal Pod autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) 的文档。
 
 ## 就地更新资源
 
@@ -417,4 +417,4 @@ deployment.apps/my-nginx created
 $ kubectl edit deployment/my-nginx
 ```
 
-就是这样！Deployment 将以声明方式逐步更新已部署的 nginx 应用程序。它确保在更新时只有一定数量的旧副本可能会关闭，并且在所需数量的 pod 之上只能创建一定数量的新副本。要了解有关它的更多详细信息，请访问 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)。
+就是这样！Deployment 将以声明方式逐步更新已部署的 nginx 应用程序。它确保在更新时只有一定数量的旧副本可能会关闭，并且在所需数量的 Pod 之上只能创建一定数量的新副本。要了解有关它的更多详细信息，请访问 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)。

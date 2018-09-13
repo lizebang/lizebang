@@ -75,7 +75,7 @@ metadata:
 
 考虑使用 `Deployment` 和 `Service` 对象部署简单的无状态服务的情况。下面两个代码片段展示了如何以最简单的形式使用标签。
 
-此 `Deployment` 用于监视运行应用程序本身的 pod。
+此 `Deployment` 用于监视运行应用程序本身的 Pod。
 
 ```yaml
 apiVersion: apps/v1

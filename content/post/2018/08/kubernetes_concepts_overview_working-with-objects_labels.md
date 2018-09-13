@@ -17,7 +17,7 @@ keywords:
 
 原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Labels 是关联到像 pod 这样对象上的键值对。标签旨在用于指定对用户有意义且相关对象的标识属性，但不对核心系统直接使用隐含语义。标签可用于组织和选择对象的子集。标签可以在创建时关联到对象上，也可以在之后的任何时间添加和修改。每个对象都可以定义一组键值标签。每个对象标签的 key 必须唯一。
+Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指定对用户有意义且相关对象的标识属性，但不对核心系统直接使用隐含语义。标签可用于组织和选择对象的子集。标签可以在创建时关联到对象上，也可以在之后的任何时间添加和修改。每个对象都可以定义一组键值标签。每个对象标签的 key 必须唯一。
 
 <!--more-->
 
@@ -154,7 +154,7 @@ $ kubectl get pods -l 'environment,environment notin (frontend)'
 
 #### Service 和 ReplicationController
 
-`service` 通过标签选择器定义作为目标的一组 pods。类似地，`replicationcontroller` 应该管理的 pod 的数量也使用标签选择器定义。
+`service` 通过标签选择器定义作为目标的一组 Pods。类似地，`replicationcontroller` 应该管理的 Pod 的数量也使用标签选择器定义。
 
 标签选择器对于 `service` 和 `replicationcontroller` 这两个对象使用 json 或者 yaml 文件映射的方式来被定义，并且只支持基于等式的需求选择器：
 
@@ -190,4 +190,4 @@ selector:
 
 #### 选择节点的集合
 
-一个通过标签选择的使用场景是约束 pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)。
+一个通过标签选择的使用场景是约束 Pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)。

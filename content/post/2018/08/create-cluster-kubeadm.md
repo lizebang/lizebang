@@ -171,9 +171,9 @@ kubeadm init <args>
   export KUBECONFIG=/etc/kubernetes/admin.conf
   ```
 
-### [安装 pod 网络组件](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network)
+### [安装 Pod 网络组件](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network)
 
-必须安装 pod 网络组件，pods 间才能通讯。
+必须安装 Pod 网络组件，Pods 间才能通讯。
 
 网络必须在任何之前部署。同时，CoreDNS 也不会在网络部署好前启动。kubeadm 只支持基于容器网络接口（CNI）的网络（不支持 kubenet）。
 
