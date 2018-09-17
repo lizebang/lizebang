@@ -51,7 +51,7 @@ Pod 由一个 PodStatus 对象，此对象包含一个 [PodConditions](https://k
 - `type` 字段是一个带有下列可能值的字符串:
   - `PodScheduled`：Pod 已经被调度到一个节点上。
   - `Ready`：Pod 可以处理请求，并且应该被添加到所有匹配服务的负载均衡池中。
-  - `Initialized`：所有 [初始化容器](https://kubernetes.io/docs/concepts/workloads/pods/init-containers) 都已经成功启动。
+  - `Initialized`：所有 [Init 容器](https://kubernetes.io/docs/concepts/workloads/pods/init-containers) 都已经成功启动。
   - `Unschedulable`：调度器现在不能调度 Pod，例如缺少资源或其他限制。
   - `ContainersReady`：Pod 中的所有容器都已准备就绪。
 

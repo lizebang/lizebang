@@ -57,7 +57,7 @@ Pod 中的应用程序都使用同样的网络命名空间（相同的 IP 和端
 
 Pod 里的应用容器的主机名被设置为 Pod 的名字，更多细节查看 [网络](https://kubernetes.io/docs/concepts/cluster-administration/networking/)。
 
-除了定义在 Pod 中运行的应用程序容器之外，Pod 还指定了一组共享存储卷。卷使数据能够在容器重启后继续存在，并且可以让数据在 Pod 中的应用程序之间共享。
+除了定义在 Pod 中运行的应用容器之外，Pod 还指定了一组共享存储卷。卷使数据能够在容器重启后继续存在，并且可以让数据在 Pod 中的应用程序之间共享。
 
 ## Pod 的使用
 
@@ -148,7 +148,7 @@ Pod 作为暴露的单元，有以下好处：
 Error validating pod "FooPodName"."FooPodNamespace" from api, ignoring: spec.containers[0].securityContext.privileged: forbidden '<*>(0xc2089d3248)true'
 ```
 
-如果主节点运行的版本低于 v1.1，则特权 Pod 不能被创建。如果用户尝试创建具有特权容器的Pod，用户将收到以下错误：
+如果主节点运行的版本低于 v1.1，则特权 Pod 不能被创建。如果用户尝试创建具有特权容器的 Pod，用户将收到以下错误：
 
 ```shell
 The Pod "FooPodName" is invalid. spec.containers[0].securityContext.privileged: forbidden '<*>(0xc20b222db0)true'
