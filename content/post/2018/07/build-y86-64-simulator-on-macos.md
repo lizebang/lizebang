@@ -6,16 +6,17 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
+  - mac
   - csapp
 tags:
   - csapp
   - y86-64
-  - macos
+  - mac
   - build
 keywords:
   - csapp
   - y86-64
-  - macos
+  - mac
   - build
 ---
 
@@ -55,7 +56,7 @@ Y86-64 模拟器编译成 `终端` 和 `图形界面` 两种。
 
 | ![makefile](/images/2018/07/makefile.png) | ![makefile tty](/images/2018/07/makefile-tty.png) |
 | :---------------------------------------: | :-----------------------------------------------: |
-|                  修改前                   |                      修改后                       |
+| 修改前                                    | 修改后                                            |
 
 编译
 
@@ -75,7 +76,7 @@ make clean; make
 
 | ![makefile](/images/2018/07/makefile.png) | ![makefile gui](/images/2018/07/makefile-gui.png) |
 | :---------------------------------------: | :-----------------------------------------------: |
-|                  修改前                   |                      修改后                       |
+| 修改前                                    | 修改后                                            |
 
 #### 错误 ld: library not found for -lfl
 
