@@ -1,6 +1,7 @@
 ---
 title: '容器生命周期的钩子'
-date: 2018-09-09T14:20:52+08:00
+slug: kubernetes_concepts_containers_container-container-lifecycle-hooks
+date: 2018-09-09
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
