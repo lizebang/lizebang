@@ -243,7 +243,7 @@ message Outer {      // Level 0
 在不破坏任何现有代码的情况下更新消息需遵循以下规则：
 
 - 请勿更改任何现有字段的编号。
-- 如果添加新字段，则旧格式的消息仍然被新生成的代码解析。你应该记住这些元素的 [默认值]()，以便新代码可以正确地与旧代码生成的消息进行交互。同样地，新代码生成的消息也可以被旧代码解析：旧二进制文件在解析式忽略新字段。有关信息请查看 [未知字段](https://developers.google.com/protocol-buffers/docs/proto3#unknowns)。
+- 如果添加新字段，则旧格式的消息仍然被新生成的代码解析。你应该记住这些元素的 [默认值](https://developers.google.com/protocol-buffers/docs/proto3#default)，以便新代码可以正确地与旧代码生成的消息进行交互。同样地，新代码生成的消息也可以被旧代码解析：旧二进制文件在解析式忽略新字段。有关信息请查看 [未知字段](https://developers.google.com/protocol-buffers/docs/proto3#unknowns)。
 - 只要在更新的消息类型中不再使用此字段编号，就字段就可以被移除。你可能想重命名该字段，可以添加前缀 "OBSOLETE\_"，或者让字段编号 [保留](https://developers.google.com/protocol-buffers/docs/proto3#reserved)，以便 `.proto` 不会在未来意外地重复使用该字段编号。
 - `int32`、`uint32`、`int64`、`uint64` 和 `bool` 都是兼容的 -- 这代表你可以任意改变字段类型而不破坏向前、向后的兼容性。如果从线路中解析出一个不符合相应类型的数字，你将获得与 C++ 中将数字转换成所定义类型相同的效果（例如，如果将 64 位数字作为 int32 读取，他将被截断为 32 位数字）。
 - `sint32` 和 `sint64` 彼此兼容，但不与其他整型兼容。
