@@ -318,7 +318,7 @@ message SampleMessage {
   sub_message->set_...      // Crashes here
   ```
 - 同样在 C++ 中，如果你使用 `oneofs` 来 `Swap()` 两个消息。两个消息最终将变成对方所拥有的 `oneof` 字段，在下面的示例中：`msg1` 将拥有 `sub_message` 而 `msg2` 将拥有 `name`。
-  ```proto
+  ```protobuf
   SampleMessage msg1;
   msg1.set_name("name");
   SampleMessage msg2;

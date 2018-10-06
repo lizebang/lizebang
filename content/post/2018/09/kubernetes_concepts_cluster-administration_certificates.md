@@ -2,7 +2,6 @@
 title: 'Kubernetes 证书'
 slug: kubernetes_concepts_cluster-administration_certificates
 date: 2018-09-05
-draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

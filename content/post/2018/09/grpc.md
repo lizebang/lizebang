@@ -6,13 +6,15 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - proto3
+  - grpc
 tags:
+  - grpc
+  - go
   - proto3
-  - guide
 keywords:
+  - grpc
+  - go
   - proto3
-  - guide
 ---
 
 本文将向你介绍 gRPC 和 protocol buffers。代码示例：[demo](https://github.com/lizebang/learning-grpc)
@@ -23,7 +25,7 @@ keywords:
 
 在 gRPC 中，客户端可以直接调用其他机器上的提供方法，并且客户端感觉就像是本地调用一样，这使得创建分布式应用程序和服务更加轻松。
 
-[gRPC](images/2018/09/grpc.svg)
+![gRPC](images/2018/09/grpc.svg)
 
 在服务器端，服务器实现此接口并运行 gRPC Server 来处理客户端调用。在客户端，客户端有一个 Stub（有些地方称为 Client），它提供与服务器相同的方法。
 
@@ -47,7 +49,7 @@ $ go get -u github.com/golang/protobuf/protoc-gen-go
 
 我们可以直接在 `.proto` 文件中定义服务，请看下面的示例：
 
-```proto
+```protobuf
 message HelloRequest {
   string Data = 1;
 }
@@ -68,22 +70,29 @@ service Hello {
 gRPC 允许定义四种服务方法：
 
 - 一元 RPC
-  ```proto
+
+  ```protobuf
   rpc SayHello(HelloRequest) returns (HelloResponse){
   }
   ```
+
 - 服务器流式 RPC
-  ```proto
+
+  ```protobuf
   rpc LotsOfReplies(HelloRequest) returns (stream HelloResponse){
   }
   ```
+
 - 客户端流式 RPC
-  ```proto
+
+  ```protobuf
   rpc LotsOfGreetings(stream HelloRequest) returns (HelloResponse) {
   }
   ```
+
 - 双向流式 RPC
-  ```proto
+
+  ```protobuf
   rpc BidiHello(stream HelloRequest) returns (stream HelloResponse){
   }
   ```
@@ -92,7 +101,7 @@ gRPC 允许定义四种服务方法：
 
 - 服务器流式 RPC
 
-  ```proto
+  ```go
   func (s *routeGuideServer) ListFeatures(rect *pb.Rectangle, stream pb.RouteGuide_ListFeaturesServer) error {
   	for ... {
   		// ...
@@ -109,7 +118,7 @@ gRPC 允许定义四种服务方法：
 
 - 客户端流式 RPC
 
-  ```proto
+  ```go
   func (s *routeGuideServer) RecordRoute(stream pb.RouteGuide_RecordRouteServer) error {
   	for {
   		point, err := stream.Recv()
@@ -127,7 +136,7 @@ gRPC 允许定义四种服务方法：
 
 - 双向流式 RPC
 
-  ```proto
+  ```go
   func (s *routeGuideServer) RouteChat(stream pb.RouteGuide_RouteChatServer) error {
   	for {
   		in, err := stream.Recv()
