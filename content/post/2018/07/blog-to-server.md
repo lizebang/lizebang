@@ -15,6 +15,7 @@ keywords:
   - blog
   - server
   - nginx
+  - docker
 ---
 
 之前一直使用 GitHub Pages 托管博客，但是国内访问 GitHub 速度太慢了。恰逢腾讯云前段时间服务器做活动，便买了服务器把博客迁移到服务器上。

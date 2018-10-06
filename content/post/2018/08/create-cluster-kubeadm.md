@@ -9,8 +9,6 @@ categories:
   - kubernetes
 tags:
   - kubernetes
-  - kubeadm
-  - setup
 keywords:
   - kubernetes
   - kubeadm

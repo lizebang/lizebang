@@ -10,11 +10,8 @@ categories:
   - blog
 tags:
   - blog
-  - https
-  - certbot
-  - letsencrypt
+  - tool
 keywords:
-  - blog
   - https
   - certbot
   - letsencrypt

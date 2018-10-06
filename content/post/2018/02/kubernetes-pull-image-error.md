@@ -11,7 +11,6 @@ tags:
   - kubernetes
 keywords:
   - kubernetes
-  - pull error
   - docker registry
 ---
 

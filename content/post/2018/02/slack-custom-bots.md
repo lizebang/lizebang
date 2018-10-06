@@ -6,7 +6,7 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - slack
+  - tool
 tags:
   - slack
 keywords:

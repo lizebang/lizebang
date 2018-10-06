@@ -6,12 +6,13 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - git
+  - tool
 tags:
+  - tool
   - git
 keywords:
-  - git clone
-  - slow
+  - tool
+  - git
 ---
 
 使用 GitHub 学习、管理代码十分方便，但是有时候 git clone 速度非常慢，只有几 Kb 的速度。

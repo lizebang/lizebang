@@ -6,8 +6,9 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - proto3
+  - tool
 tags:
+  - go
   - proto3
   - guide
 keywords:

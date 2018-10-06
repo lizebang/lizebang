@@ -17,6 +17,8 @@ keywords:
   - install
 ---
 
+gdb 无法在 macOS Mojave 上正常使用。
+
 最近在 mac 上使用 gdb 调试程序的时候，突然发现 gdb 不能很好的运行。下面是我遇到的一些坑。
 
 <!--more-->

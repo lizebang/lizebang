@@ -7,16 +7,14 @@ coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
   - mac
-  - csapp
 tags:
-  - csapp
+  - tool
   - y86-64
-  - mac
   - build
 keywords:
+  - mac
   - csapp
   - y86-64
-  - mac
   - build
 ---
 

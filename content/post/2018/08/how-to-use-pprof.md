@@ -8,11 +8,14 @@ coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
   - go
+  - tool
 tags:
   - go
+  - tool
   - pprof
 keywords:
   - go
+  - tool
   - pprof
 ---
 

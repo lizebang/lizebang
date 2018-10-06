@@ -7,12 +7,12 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - csapp
+  - skill
 tags:
-  - csapp
+  - skill
   - assembly language
 keywords:
-  - csapp
+  - skill
   - assembly language
 ---
 

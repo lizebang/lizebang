@@ -6,14 +6,16 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - grpc
-tags:
-  - grpc
   - go
+tags:
+  - go
+  - library
+  - grpc
   - proto3
 keywords:
-  - grpc
   - go
+  - library
+  - grpc
   - proto3
 ---
 

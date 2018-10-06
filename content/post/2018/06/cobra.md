@@ -9,9 +9,11 @@ categories:
   - go
 tags:
   - go
+  - library
   - cobra
 keywords:
   - go
+  - library
   - cobra
 ---
 
