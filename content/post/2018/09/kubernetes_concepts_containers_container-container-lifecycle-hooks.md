@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/
 
 本文介绍了由 kubelet 管理的容器是如何使用容器生命周期的钩子框架通过其管理的生命周期内的事件触发来运行代码的。
 
@@ -37,7 +37,7 @@ keywords:
 
 这个钩子在容器终止之前立即被调用。它是阻塞的，意味着它是同步的，所以它必须在删除容器的调用发出之前完成。没有参数传递给该处理程序。
 
-更多有关终止行为的详细描述可以在 [容器的终止](https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods) 里找到。
+更多有关终止行为的详细描述可以在 [容器的终止](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods) 里找到。
 
 ### 钩子处理程序的实现
 

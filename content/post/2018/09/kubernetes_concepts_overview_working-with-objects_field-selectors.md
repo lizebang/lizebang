@@ -15,9 +15,9 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/
 
-字段选择器允许你根据一个或多个资源字段的值 [选择 Kubernetes 资源](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects)。
+字段选择器允许你根据一个或多个资源字段的值 [选择 Kubernetes 资源](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects)。
 
 <!--more-->
 
@@ -27,7 +27,7 @@ keywords:
 - `metadata.namespace!=default`
 - `status.phase=Pending`
 
-下面 `kubectl` 命令可以选择所有 [`status.phase`](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase) 字段值为 `Running` 的 Pods：
+下面 `kubectl` 命令可以选择所有 [`status.phase`](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase) 字段值为 `Running` 的 Pods：
 
 ```shell
 $ kubectl get pods --field-selector status.phase=Running
@@ -51,7 +51,7 @@ Error from server (BadRequest): Unable to find "ingresses" that match label sele
 
 ## 支持的操作
 
-与 [标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels) 和其他选择器一样，字段选择器的条件可以链接成一个逗号列表。用下面命令可以选择所有 `status.phase` 不等于 `Running` 且 `spec.restartPolicy` 等于 `Always` 的 Pods：
+与 [标签](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels) 和其他选择器一样，字段选择器的条件可以链接成一个逗号列表。用下面命令可以选择所有 `status.phase` 不等于 `Running` 且 `spec.restartPolicy` 等于 `Always` 的 Pods：
 
 ```shell
 $ kubectl get pods --field-selector=status.phase!=Running,spec.restartPolicy=Always

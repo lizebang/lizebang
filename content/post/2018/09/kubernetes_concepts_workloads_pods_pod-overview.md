@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 
 本文概述了 Pod，它是 Kubernetes 对象模型中最小可部署对象。
 
@@ -38,9 +38,9 @@ Kubernetes 集群中的 Pod 有以下两种主要的使用方式：
 [Kubernetes Blog](http://blog.kubernetes.io/)
 
 - [分布式系统工具箱：混合容器模式](http://blog.kubernetes.io/2015/06/the-distributed-system-toolkit-patterns.html)
-- [容器设计模式](https://kubernetes.io/blog/2016/06/container-design-patterns)
+- [容器设计模式](https://v1-11.docs.kubernetes.io/blog/2016/06/container-design-patterns)
 
-每个 Pod 都用于运行给定应用程序的单个实例。如果你想水平扩展应用（例如，运行多个实例），你应该使用多个 Pod，每个 Pod 对应一个实例。在 Kubernetes 中，这通常被称为 **replication**。复制的 Pod 通常是由一个被称为 Controller 的抽象创建和管理。更多信息请参考 [Pods 和 Controllers](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pods-and-controllers)
+每个 Pod 都用于运行给定应用程序的单个实例。如果你想水平扩展应用（例如，运行多个实例），你应该使用多个 Pod，每个 Pod 对应一个实例。在 Kubernetes 中，这通常被称为 **replication**。复制的 Pod 通常是由一个被称为 Controller 的抽象创建和管理。更多信息请参考 [Pods 和 Controllers](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pods-and-controllers)
 
 ### Pod 如何管理多个容器
 
@@ -66,7 +66,7 @@ Pod 可以指定一系列共享存储 **卷**。Pad 中的所有容器都可以�
 
 > 注意：在 Pod 中重启容器不应该与重启 Pod 混淆。Pod 本身不会运行，但是它是容器运行的环境并且它一直存在直到被删除。
 
-Pod 本身不能自我修复。如果一个 Pod 调度到一个失败的节点上，或调度操作本身失败了，这个 Pod 就会被删除。同样地，由于缺乏资源或节点维护，Pod 将被驱逐删除。Kubernetes 使用了一种被称为 Controller 的高级抽象来管理相对短暂的 Pod 实例。因此，尽管可以直接使用 Pod，但在 Kubernetes 中使用 Controller 管理 Pod 要常见得多。更多有关 Kubernetes 任何使用 Controller 实现 Pod 的缩放和自我恢复请查看 [Pods 和 Controllers](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pods-and-controllers)
+Pod 本身不能自我修复。如果一个 Pod 调度到一个失败的节点上，或调度操作本身失败了，这个 Pod 就会被删除。同样地，由于缺乏资源或节点维护，Pod 将被驱逐删除。Kubernetes 使用了一种被称为 Controller 的高级抽象来管理相对短暂的 Pod 实例。因此，尽管可以直接使用 Pod，但在 Kubernetes 中使用 Controller 管理 Pod 要常见得多。更多有关 Kubernetes 任何使用 Controller 实现 Pod 的缩放和自我恢复请查看 [Pods 和 Controllers](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pods-and-controllers)
 
 ### Pods 和 Controllers
 
@@ -74,15 +74,15 @@ Controller 可以为你创建和管理多个 Pod，也提供复制、部署，�
 
 下面这些是 Controller 里包含一个或多个 Pod：
 
-- [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-- [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
-- [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
+- [Deployment](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+- [StatefulSet](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+- [DaemonSet](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
 通常来说，Controller 使用你提供的 Pod 模板来创建它负责的 Pod。
 
 ## Pod 模版
 
-Pod 模版是包含其他对象的 Pod 规范，例如，[Replication Controllers](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/)、[Jobs](https://kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/) 和 [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)。Controllers 使用 Pod 模版生成 Pod。下面是一个简单的示例，一个 Pod 包含一个打印消息的容器。
+Pod 模版是包含其他对象的 Pod 规范，例如，[Replication Controllers](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/)、[Jobs](https://v1-11.docs.kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/) 和 [DaemonSets](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/daemonset/)。Controllers 使用 Pod 模版生成 Pod。下面是一个简单的示例，一个 Pod 包含一个打印消息的容器。
 
 ```yaml
 apiVersion: v1

@@ -6,15 +6,12 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - c
-  - cpp
+  - c/cpp
 tags:
-  - c
-  - cpp
+  - c/cpp
   - pointer
 keywords:
-  - c
-  - cpp
+  - c/cpp
   - pointer
 ---
 

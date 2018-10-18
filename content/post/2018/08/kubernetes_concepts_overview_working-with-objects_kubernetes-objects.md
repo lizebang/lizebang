@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
 
 本文介绍了如何使用 Kubernetes API 表示 Kubernetes 对象，以及如何以 `.yaml` 格式表达它们。
 
@@ -31,7 +31,7 @@ keywords:
 
 Kubernetes 对象是一个 “目标性记录”，一旦创建了对象，Kubernetes 系统将不断努力确保对象存在。通过创建对象，你可以有效地告诉 Kubernetes 系统所需要的集群工作负载看起来是什么样子的，这就是集群的期望状态。
 
-操作 Kubernetes 对象，无论是创建、修改还是删除它们，都需要使用 [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)。例如，当你使用 `kubectl` 命令行接口时，CLI 会执行必要的 Kubernetes API 调用。你也可以在程序中直接调用 Kubernetes API。[Client Libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/)
+操作 Kubernetes 对象，无论是创建、修改还是删除它们，都需要使用 [Kubernetes API](https://v1-11.docs.kubernetes.io/docs/concepts/overview/kubernetes-api/)。例如，当你使用 `kubectl` 命令行接口时，CLI 会执行必要的 Kubernetes API 调用。你也可以在程序中直接调用 Kubernetes API。[Client Libraries](https://v1-11.docs.kubernetes.io/docs/reference/using-api/client-libraries/)
 
 ### 对象的规约与状态
 
@@ -89,4 +89,4 @@ deployment.apps/nginx-deployment created
 - `kind` -- 想要创建的对象的类型
 - `metadata` -- 帮助识别对象唯一性的数据，包括一个 `name` 字符串、UID 和可选的 `namespace`
 
-你还需要提供对象的 `spec` 字段。对于每个 Kubernetes 对象，对象 `spec` 的精确格式是不同的。[Kubernetes API Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/) 可以帮助你找到任何想创建的对象的 `spec` 格式。例如，`Pod` 对象的 `spec` 格式在 [这里](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podspec-v1-core) 找到，`Deployment` 对象的 `spec` 格式在 [这里](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#deploymentspec-v1-apps) 找到。
+你还需要提供对象的 `spec` 字段。对于每个 Kubernetes 对象，对象 `spec` 的精确格式是不同的。[Kubernetes API Reference](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/) 可以帮助你找到任何想创建的对象的 `spec` 格式。例如，`Pod` 对象的 `spec` 格式在 [这里](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podspec-v1-core) 找到，`Deployment` 对象的 `spec` 格式在 [这里](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#deploymentspec-v1-apps) 找到。

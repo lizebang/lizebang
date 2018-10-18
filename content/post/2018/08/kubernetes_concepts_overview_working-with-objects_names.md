@@ -15,13 +15,13 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/names/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/names/
 
 在 Kubernetes REST API 中的所有对象都由 Name 和 UID 明确标识。
 
 <!--more-->
 
-对于不唯一的用户提供的属性，Kubernetes 提供了 [labels](https://kubernetes.io/docs/user-guide/labels) 和 [annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 字段。
+对于不唯一的用户提供的属性，Kubernetes 提供了 [labels](https://v1-11.docs.kubernetes.io/docs/user-guide/labels) 和 [annotations](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 字段。
 
 有关 Names 和 UIDs 的精确语法规则，请看 [标识符设计文档](https://git.k8s.io/community/contributors/design-proposals/architecture/identifiers.md)
 

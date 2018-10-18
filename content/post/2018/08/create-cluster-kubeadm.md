@@ -19,11 +19,11 @@ keywords:
 
 <!--more-->
 
-## [安装 kubeadm](https://kubernetes.io/docs/setup/independent/install-kubeadm/)
+## [安装 kubeadm](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/)
 
 我使用的机器：4 台 8 GB E3-1220 v5 CentOS 7 服务器
 
-### [开始前单准备](https://kubernetes.io/docs/setup/independent/install-kubeadm/#before-you-begin)
+### [开始前单准备](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#before-you-begin)
 
 要求：
 
@@ -49,15 +49,15 @@ swapoff -a
 
 永久关闭 `vim /etc/fstab` 将 swap 那一行注释掉。
 
-### [检验 MAC 地址、product_uuid 是否唯一](https://kubernetes.io/docs/setup/independent/install-kubeadm/#verify-the-mac-address-and-product-uuid-are-unique-for-every-node)
+### [检验 MAC 地址、product_uuid 是否唯一](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#verify-the-mac-address-and-product-uuid-are-unique-for-every-node)
 
 通过 `ip link` 或 `ifconfig -a` 命令获取 MAC 地址。
 
 通过 `cat /sys/class/dmi/id/product_uuid` 获取 product_uuid。
 
-### [检查网络适配器](https://kubernetes.io/docs/setup/independent/install-kubeadm/#check-network-adapters)
+### [检查网络适配器](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#check-network-adapters)
 
-### [检查所需的端口](https://kubernetes.io/docs/setup/independent/install-kubeadm/#check-required-ports)
+### [检查所需的端口](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#check-required-ports)
 
 Master node(s)
 
@@ -76,7 +76,7 @@ Worker node(s)
 | TCP      | Inbound   | 10250       | Kubelet API           | Self, Control plane |
 | TCP      | Inbound   | 30000-32767 | NodePort Services\*\* | All                 |
 
-### [安装 docker](https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-docker)
+### [安装 docker](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#installing-docker)
 
 Kubernetes 官方建议 docker 使用 17.03 版本。（最新版本 docker 可以正常运行）
 
@@ -89,7 +89,7 @@ yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages
 yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.03.2.ce-1.el7.centos.x86_64.rpm
 ```
 
-### [安装 kubeadm、kubelet 和 kubectl](https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
+### [安装 kubeadm、kubelet 和 kubectl](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
 
 CentOS 上安装过程
 
@@ -127,7 +127,7 @@ privoxy -- 桥接 HTTP 代理到 Socks5
 
 privoxy 将 `forward-socks5t / 127.0.0.1:1080 .` 加到 `/etc/privoxy/config` 中，其中 1080 为端口号。
 
-### [配置 kubelet 使用的 cgroup 驱动](https://kubernetes.io/docs/setup/independent/install-kubeadm/#configure-cgroup-driver-used-by-kubelet-on-master-node)
+### [配置 kubelet 使用的 cgroup 驱动](https://v1-11.docs.kubernetes.io/docs/setup/independent/install-kubeadm/#configure-cgroup-driver-used-by-kubelet-on-master-node)
 
 使用 docker 时，kubeadm 会自动检测 kubelet 的 cgroup 驱动程序，并在运行时将其设置在 `/var/lib/kubelet/kubeadm-flags.env` 中。
 
@@ -146,9 +146,9 @@ systemctl daemon-reload
 systemctl restart kubelet
 ```
 
-## [创建集群](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
+## [创建集群](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 
-### [初始化主节点](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#initializing-your-master)
+### [初始化主节点](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#initializing-your-master)
 
 ```shell
 kubeadm init <args>
@@ -169,7 +169,7 @@ kubeadm init <args>
   export KUBECONFIG=/etc/kubernetes/admin.conf
   ```
 
-### [安装 Pod 网络组件](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network)
+### [安装 Pod 网络组件](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network)
 
 必须安装 Pod 网络组件，Pods 间才能通讯。
 
@@ -189,7 +189,7 @@ kubectl get pods --all-namespaces
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
 
-### [添加节点](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#join-nodes)
+### [添加节点](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#join-nodes)
 
 ```shell
 kubeadm join <master-ip>:<master-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
@@ -213,47 +213,47 @@ kubeadm token create
 openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
 
-#### [让非主节点控制集群（可选的）](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#optional-controlling-your-cluster-from-machines-other-than-the-master)
+#### [让非主节点控制集群（可选的）](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#optional-controlling-your-cluster-from-machines-other-than-the-master)
 
 ```shell
 scp root@<master ip>:/etc/kubernetes/admin.conf .
 kubectl --kubeconfig ./admin.conf get nodes
 ```
 
-#### [代理 API Server 到 localhost（可选的）](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#optional-proxying-api-server-to-localhost)
+#### [代理 API Server 到 localhost（可选的）](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#optional-proxying-api-server-to-localhost)
 
 ```shell
 scp root@<master ip>:/etc/kubernetes/admin.conf .
 kubectl --kubeconfig ./admin.conf proxy
 ```
 
-### [销毁](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#tear-down)
+### [销毁](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#tear-down)
 
-node [drain the node](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#drain)
+node [drain the node](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#drain)
 
 ```shell
 kubectl drain <node name> --delete-local-data --force --ignore-daemonsets
 kubectl delete node <node name>
 ```
 
-master [kubeadm reset](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-reset/)
+master [kubeadm reset](https://v1-11.docs.kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-reset/)
 
 ```shell
 kubeadm reset
 ```
 
-### [维护集群](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#lifecycle)
+### [维护集群](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#lifecycle)
 
-[Instructions](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm)
+[Instructions](https://v1-11.docs.kubernetes.io/docs/tasks/administer-cluster/kubeadm)
 
-### [探索其他插件](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#other-addons)
+### [探索其他插件](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#other-addons)
 
-[list of add-ons](https://kubernetes.io/docs/concepts/cluster-administration/addons/)
+[list of add-ons](https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/addons/)
 
-### [扩展](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#whats-next)
+### [扩展](https://v1-11.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#whats-next)
 
 - 检验集群是否运行正常 -- [Sonobuoy](https://github.com/heptio/sonobuoy)
-- kubeadm 高级用法 -- [reference](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm)
+- kubeadm 高级用法 -- [reference](https://v1-11.docs.kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm)
 - 配置日志轮换，使用 logrotate -- 使用 docker 时，可以为 Docker 守护程序指定日志轮换选项，例子 `--log-driver=json-file --log-opt=max-size=10m --log-opt=max-file=5`，[for details](https://docs.docker.com/config/daemon/)。
 
 ## 题外话

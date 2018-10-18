@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
 你可以使用 Kubernetes 注解将任何非标识性元数据关联到对象上。使用客户端（如工具和库）可以检索到这些元数据。
 

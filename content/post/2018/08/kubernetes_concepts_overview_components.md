@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/components/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/components/
 
 本文档概述了 Kubernetes 所需的各种二进制组件, 用于提供齐全的功能。
 
@@ -25,13 +25,13 @@ keywords:
 
 Master 组件提供了集群的控制平台。Master 组件对集群做出全局性决策（例如，调度），并且检测和响应集群事件（当副本控制器的 `replicas` 字段不满足时，启动新的 pod）。
 
-Master 组件能运行在集群中任何机器上。然而，为了简单起见，设置脚本通常会在同一台机器上启动所有主组件，并且不在此机器上运行用户容器。多主节点 VM 的设置请看 [构建高可用性集群](https://kubernetes.io/docs/admin/high-availability/)。
+Master 组件能运行在集群中任何机器上。然而，为了简单起见，设置脚本通常会在同一台机器上启动所有主组件，并且不在此机器上运行用户容器。多主节点 VM 的设置请看 [构建高可用性集群](https://v1-11.docs.kubernetes.io/docs/admin/high-availability/)。
 
 ### kube-apiserver
 
 kube-apiserver 是主节点上暴露 Kubernetes API 的组件。它是 Kubernetes 控制平台的前端控制层。
 
-它被设计为水平扩展，即通过部署更多实例来缩放。请看 [构建高可用性集群](https://kubernetes.io/docs/admin/high-availability/)。
+它被设计为水平扩展，即通过部署更多实例来缩放。请看 [构建高可用性集群](https://v1-11.docs.kubernetes.io/docs/admin/high-availability/)。
 
 ### etcd
 
@@ -60,7 +60,7 @@ kube-controller-manager 是主节点上运行控制器的组件。
 
 ### cloud-controller-manager
 
-[cloud-controller-manager](https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/) 运行与底层云提供商交互的控制器。cloud-controller-manager 二进制文件是 Kubernetes v1.6 版本中引入的 alpha 功能。
+[cloud-controller-manager](https://v1-11.docs.kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/) 运行与底层云提供商交互的控制器。cloud-controller-manager 二进制文件是 Kubernetes v1.6 版本中引入的 alpha 功能。
 
 cloud-controller-manager 仅运行云提供商特定的控制器循环。您必须在 kube-controller-manager 中禁用这些控制器循环，您可以通过在启动 kube-controller-manager 时将 `--cloud-provider` 标志设置为`external`来禁用控制器循环。
 
@@ -85,7 +85,7 @@ kubelet 采用通过各种机制提供的一组 PodSpecs，并确保这些 PodSp
 
 ### kube-proxy
 
-[kube-proxy](https://kubernetes.io/docs/admin/kube-proxy/) 通过维护主机上的网络规则和执行连接转发来实现 Kubernetes 服务抽象。
+[kube-proxy](https://v1-11.docs.kubernetes.io/docs/admin/kube-proxy/) 通过维护主机上的网络规则和执行连接转发来实现 Kubernetes 服务抽象。
 
 ### Container Runtime
 
@@ -95,7 +95,7 @@ Container Runtime 是负责运行容器的软件。Kubernetes 支持多种运行
 
 插件是实现集群功能的 Pod 和 Service。这些 Pods 可以通过 Deployments，ReplicationControllers 等管理。插件对象在 `kube-system` 命名空间中创建。
 
-下面有部分插件的描述。有关可用插件的扩展列表，请参阅 [Addons](https://kubernetes.io/docs/concepts/cluster-administration/addons/)。
+下面有部分插件的描述。有关可用插件的扩展列表，请参阅 [Addons](https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/addons/)。
 
 ### DNS
 
@@ -107,12 +107,12 @@ Kubernetes 启动的容器自动将 DNS 服务器包含在 DNS 搜索中。
 
 ### Dashboard
 
-[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) 是 Kubernetes 集群的基于 Web 的通用 UI。它允许用户管理集群中运行的应用程序以及集群本身，并可以为其排除故障。
+[Dashboard](https://v1-11.docs.kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) 是 Kubernetes 集群的基于 Web 的通用 UI。它允许用户管理集群中运行的应用程序以及集群本身，并可以为其排除故障。
 
 ### Container Resource Monitoring
 
-[Container Resource Monitoring](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/) 将关于容器的一些常见的时间序列度量值保存到一个集中的数据库中，并提供用于浏览这些数据的界面。
+[Container Resource Monitoring](https://v1-11.docs.kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/) 将关于容器的一些常见的时间序列度量值保存到一个集中的数据库中，并提供用于浏览这些数据的界面。
 
 ### Cluster-level Logging
 
-[Cluster-level Logging](https://kubernetes.io/docs/concepts/cluster-administration/logging/) 机制负责将容器的日志数据保存到一个集中的日志存储中，该存储能够提供搜索和浏览接口。
+[Cluster-level Logging](https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/logging/) 机制负责将容器的日志数据保存到一个集中的日志存储中，该存储能够提供搜索和浏览接口。

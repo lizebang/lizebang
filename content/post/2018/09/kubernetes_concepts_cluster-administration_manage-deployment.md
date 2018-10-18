@@ -15,9 +15,9 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
 
-你已经部署了你的应用程序并通过服务暴露它。现在干什么呢？Kubernetes 提供了许多工具帮助你管理应用程序的部署，包括缩放和升级。我们将更深入地讨论的功能包括 [配置文件](https://kubernetes.io/docs/concepts/configuration/overview/) 和 [标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)。
+你已经部署了你的应用程序并通过服务暴露它。现在干什么呢？Kubernetes 提供了许多工具帮助你管理应用程序的部署，包括缩放和升级。我们将更深入地讨论的功能包括 [配置文件](https://v1-11.docs.kubernetes.io/docs/concepts/configuration/overview/) 和 [标签](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/)。
 
 <!--more-->
 
@@ -172,7 +172,7 @@ deployment "my-deployment" created
 persistentvolumeclaim "my-pvc" created
 ```
 
-如果你有兴趣了解更多信息 `kubectl`，请继续阅读 [kubectl 概述](https://kubernetes.io/docs/reference/kubectl/overview/)。
+如果你有兴趣了解更多信息 `kubectl`，请继续阅读 [kubectl 概述](https://v1-11.docs.kubernetes.io/docs/reference/kubectl/overview/)。
 
 ## 有效使用标签
 
@@ -293,7 +293,7 @@ my-nginx-2035384211-u3t6x   1/1       Running   0          23m       fe
 
 这将输出所有 "app=nginx" 的 Pod，并 Pod 包含 tier 附加标签列（使用 `-L` 或 `--label-columns`）。
 
-有关更多信息，请参考 [标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) 和 [kubectl 标签](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#label)。
+有关更多信息，请参考 [标签](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/) 和 [kubectl 标签](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#label)。
 
 ## 更新注解
 
@@ -310,7 +310,7 @@ metadata:
 ...
 ```
 
-有关更多信息，请参考 [注解](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 和 [kubectl 注释](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#annotate) 的文档。
+有关更多信息，请参考 [注解](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 和 [kubectl 注释](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#annotate) 的文档。
 
 ## 缩放应用程序
 
@@ -338,7 +338,7 @@ horizontalpodautoscaler.autoscaling/my-nginx autoscaled
 
 现在, 你的 nginx 副本可以根据需要自动缩放。
 
-更多信息，请查看 [kubectl scale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#scale)、[kubectl autoscale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale) 和 [horizontal Pod autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) 的文档。
+更多信息，请查看 [kubectl scale](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#scale)、[kubectl autoscale](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale) 和 [horizontal Pod autoscaler](https://v1-11.docs.kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) 的文档。
 
 ## 就地更新资源
 
@@ -346,7 +346,7 @@ horizontalpodautoscaler.autoscaling/my-nginx autoscaled
 
 ### kubectl apply
 
-建议在源码管理系统中维护一组配置文件（请看 [配置即代码](http://martinfowler.com/bliki/InfrastructureAsCode.html)），以便可以对它们配置资源的代码进行维护和版本化。然后，你可以使用 [kubectl](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#apply) 将配置更改推送到集群。
+建议在源码管理系统中维护一组配置文件（请看 [配置即代码](http://martinfowler.com/bliki/InfrastructureAsCode.html)），以便可以对它们配置资源的代码进行维护和版本化。然后，你可以使用 [kubectl](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#apply) 将配置更改推送到集群。
 
 此命令将比较正在推送的配置版本与先前版本，并应用你所做的更改，而不会覆盖对尚未指定的属性的任何自动更改。
 
@@ -386,7 +386,7 @@ $ rm /tmp/nginx.yaml
 
 ### kubectl patch
 
-你可以使用 `kubectl patch` 更新 API 对象。此命令支持 JSON 补丁、JSON 合并补丁和战略合并补丁。请看 [使用 kubectl patch 更新 API 对象](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/) 和 [kubectl patch](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#patch)。
+你可以使用 `kubectl patch` 更新 API 对象。此命令支持 JSON 补丁、JSON 合并补丁和战略合并补丁。请看 [使用 kubectl patch 更新 API 对象](https://v1-11.docs.kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/) 和 [kubectl patch](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#patch)。
 
 ## 破坏性更新
 
@@ -402,7 +402,7 @@ deployment.apps/my-nginx replaced
 
 在某些时候，你最终需要更新已部署的应用程序，通常是通过指定新的图像或图像标记，就像上面的金丝雀部署方案一样。`kubectl` 支持多种更新操作，每种操作都适用于不同的场景。
 
-我们将指导你如何使用 Deployments 创建和更新应用程序。如果部署的应用程序由 Replication Controllers 管理，则应阅读 [如何使用 `kubectl rolling-update`](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)。
+我们将指导你如何使用 Deployments 创建和更新应用程序。如果部署的应用程序由 Replication Controllers 管理，则应阅读 [如何使用 `kubectl rolling-update`](https://v1-11.docs.kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)。
 
 假设你运行 1.7.9 版本的 nginx：
 
@@ -417,4 +417,4 @@ deployment.apps/my-nginx created
 $ kubectl edit deployment/my-nginx
 ```
 
-就是这样！Deployment 将以声明方式逐步更新已部署的 nginx 应用程序。它确保在更新时只有一定数量的旧副本可能会关闭，并且在所需数量的 Pod 之上只能创建一定数量的新副本。要了解有关它的更多详细信息，请访问 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)。
+就是这样！Deployment 将以声明方式逐步更新已部署的 nginx 应用程序。它确保在更新时只有一定数量的旧副本可能会关闭，并且在所需数量的 Pod 之上只能创建一定数量的新副本。要了解有关它的更多详细信息，请访问 [Deployment](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment/)。

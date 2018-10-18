@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/containers/images/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/containers/images/
 
 你可以构建 docker 镜像并将它推到仓库中，以供之后 Kubernetes Pod 使用。
 
@@ -29,7 +29,7 @@ keywords:
 
 - 容器的 `imagePullPolicy` 设置为 `Always`。
 - 使用 `:latest` 作为镜像使用的标签。
-- 开启 [AlwaysPullImages](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 准入控制器。
+- 开启 [AlwaysPullImages](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 准入控制器。
 
 如果你没有指定镜像的标签，则将其视为 `:latest`，相应的镜像拉取策略为 `Always`。
 
@@ -238,7 +238,7 @@ Pod 只能在自己的命名空间使用拉取镜像用的 secrets，因此每�
 
 #### 绕过 kubectl 创建 secrets
 
-如果由于某种原因你需要多个项在同一个 `.docker/config.json` 中，或者需要上面命令没有提供的控制，那么你可以 [使用 json 或 yaml 创建 secret](https://kubernetes.io/docs/user-guide/secrets/#creating-a-secret-manually)。
+如果由于某种原因你需要多个项在同一个 `.docker/config.json` 中，或者需要上面命令没有提供的控制，那么你可以 [使用 json 或 yaml 创建 secret](https://v1-11.docs.kubernetes.io/docs/user-guide/secrets/#creating-a-secret-manually)。
 
 请确保：
 
@@ -281,7 +281,7 @@ spec:
 
 这需要对每个使用私有仓库的 Pod 进行操作。
 
-但是，通过在 [serviceAccount](https://kubernetes.io/docs/user-guide/service-accounts) 资源中设置 imagePullSecrets，可以自动设置此字段。
+但是，通过在 [serviceAccount](https://v1-11.docs.kubernetes.io/docs/user-guide/service-accounts) 资源中设置 imagePullSecrets，可以自动设置此字段。
 
 你可以将其与每个节点的 `.docker/config.json` 结合使用。凭证将会被合并。这种方法适用于 Google Kubernetes 引擎。
 
@@ -308,12 +308,12 @@ spec:
 
   3.拥有专有镜像的集群，其中一些需要更严格的访问控制。
 
-- 确保 [AlwaysPullImages 准入控制器](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages 准入控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 将敏感数据移动到 "Secret" 资源中，而不是将其打包在镜像中。
 
   4.多租户集群，每个租户都需要自己的私有仓库。
 
-- 确保 [AlwaysPullImages 准入控制器](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages 准入控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 运行需要授权的私有仓库。
 - 为每个租户生成仓库凭证，将其放到 secret 中，并将 secret 填充到每个租户命名空间。
 - 租户将 secret 添加到每个命名空间的 imagePullSecrets 中。

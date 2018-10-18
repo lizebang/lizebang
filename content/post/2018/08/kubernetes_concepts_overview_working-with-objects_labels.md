@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
 Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指定对用户有意义且相关对象的标识属性，但不对核心系统直接使用隐含语义。标签可用于组织和选择对象的子集。标签可以在创建时关联到对象上，也可以在之后的任何时间添加和修改。每个对象都可以定义一组键值标签。每个对象标签的 key 必须唯一。
 
@@ -30,7 +30,7 @@ Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指�
 }
 ```
 
-我们最终为了有效的查询和监视将把标签进行索引和反向索引，使用索引和反向索引通过接口（UI 和 CLI 等）排序和分组。我们不想让不具有标识性的，尤其是大的或结构化的数据破坏了标签。不具有标识性的信息应该使用 [注解](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)。
+我们最终为了有效的查询和监视将把标签进行索引和反向索引，使用索引和反向索引通过接口（UI 和 CLI 等）排序和分组。我们不想让不具有标识性的，尤其是大的或结构化的数据破坏了标签。不具有标识性的信息应该使用 [注解](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)。
 
 ## 动机
 
@@ -56,7 +56,7 @@ Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指�
 
 ## 标签选择器
 
-不像 [名称和 UIDs](https://kubernetes.io/docs/user-guide/identifiers)，标签不保证唯一性。通常情况下，我们希望很多对象携带相同的标签。
+不像 [名称和 UIDs](https://v1-11.docs.kubernetes.io/docs/user-guide/identifiers)，标签不保证唯一性。通常情况下，我们希望很多对象携带相同的标签。
 
 通过标签选择器，客户端/用户可以指定一个对象集合。标签选择器是 Kubernetes 中的核心分组原语。
 
@@ -150,7 +150,7 @@ $ kubectl get pods -l 'environment,environment notin (frontend)'
 
 ### 设置 API 对象的参考
 
-某些 Kubernetes 对象，例如 [services](https://kubernetes.io/docs/user-guide/services) 和 [replicationcontrollers](https://kubernetes.io/docs/user-guide/replication-controller)，它们也可以使用标签选择器去指定其他资源的集合，例如 [pods](https://kubernetes.io/docs/user-guide/pods)。
+某些 Kubernetes 对象，例如 [services](https://v1-11.docs.kubernetes.io/docs/user-guide/services) 和 [replicationcontrollers](https://v1-11.docs.kubernetes.io/docs/user-guide/replication-controller)，它们也可以使用标签选择器去指定其他资源的集合，例如 [pods](https://v1-11.docs.kubernetes.io/docs/user-guide/pods)。
 
 #### Service 和 ReplicationController
 
@@ -175,7 +175,7 @@ selector:
 
 #### 支持基于集合的需求的资源
 
-Kubernetes 较新的资源，例如 [Job](https://kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/)、[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)、[Replica Set](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 和 [Daemon Set](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)，也支持基于集合的需求。
+Kubernetes 较新的资源，例如 [Job](https://v1-11.docs.kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/)、[Deployment](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment/)、[Replica Set](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 和 [Daemon Set](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/daemonset/)，也支持基于集合的需求。
 
 ```yaml
 selector:
@@ -190,4 +190,4 @@ selector:
 
 #### 选择节点的集合
 
-一个通过标签选择的使用场景是约束 Pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)。
+一个通过标签选择的使用场景是约束 Pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://v1-11.docs.kubernetes.io/docs/concepts/configuration/assign-pod-node/)。

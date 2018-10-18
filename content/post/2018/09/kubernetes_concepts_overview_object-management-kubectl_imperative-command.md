@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
 
 直接使用内置于 `kubectl` 命令行工具的命令式指令，可以快速地创建、更新和删除 Kubernetes 对象。本文介绍了任何组织这些命令，以及如何使用它们管理实时对象。
 
@@ -29,7 +29,7 @@ keywords:
 - 命令式对象配置
 - 声明式对象配置
 
-在 [Kubernetes 对象管理](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
+在 [Kubernetes 对象管理](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
 
 ## 如何创建对象
 

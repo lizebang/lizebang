@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/
 
 通过使用 `kubectl` 命令以及 YAML 或 JSON 格式编写的对象配置文件可以创建、更新和删除 Kubernetes 对象。本文介绍了如何使用配置文件定义和管理对象。
 
@@ -29,11 +29,11 @@ keywords:
 - 命令式对象配置
 - 声明式对象配置
 
-在 [Kubernetes 对象管理](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
+在 [Kubernetes 对象管理](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
 
 ## 如何创建对象
 
-你可以使用 `kubectl create -f` 通过一个配置文件创建一个对象。详细内容请参考 [Kubernetes API 参考](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/)。
+你可以使用 `kubectl create -f` 通过一个配置文件创建一个对象。详细内容请参考 [Kubernetes API 参考](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/)。
 
 - `kubectl create -f <filename|url>`
 

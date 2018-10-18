@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-原文：https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 
 这篇文章是 Kubernetes 的概述。
 
@@ -39,9 +39,9 @@ Kubernetes 提供了以容器为中心的管理环境。它把代表用户工作
 
 尽管 Kubernetes 提供了许多功能，总会有新的场景受益于新特性。它可以简化应用程序的工作流，加快开发速度。被大家认可的应用编排通常需要有较强的自动化能力。这就是为什么 Kubernetes 被设计作为构建组件和工具的生态系统平台，以便更轻松地部署、扩展和管理应用程序。
 
-[Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) 允许用户按照自己的方式组织管理对应的资源。 [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 使用户能够以自定义的描述信息来修饰资源，以适用于自己的工作流，并为管理工具提供检查点状态的简单方法。
+[Labels](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/) 允许用户按照自己的方式组织管理对应的资源。 [Annotations](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) 使用户能够以自定义的描述信息来修饰资源，以适用于自己的工作流，并为管理工具提供检查点状态的简单方法。
 
-此外，[Kubernetes 控制平台](https://kubernetes.io/docs/concepts/overview/components/) 是构建在相同的、开发人员和用户都可以使用的 [APIs](https://kubernetes.io/docs/reference/using-api/api-overview/) 上面。用户可以编写自己的控制器，例如[schedulers](https://github.com/kubernetes/community/blob/master/contributors/devel/scheduler.md)，有他们的 [APIs](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) 并可以被通用的 [命令行工具](https://kubernetes.io/docs/user-guide/kubectl-overview/) 访问到。
+此外，[Kubernetes 控制平台](https://v1-11.docs.kubernetes.io/docs/concepts/overview/components/) 是构建在相同的、开发人员和用户都可以使用的 [APIs](https://v1-11.docs.kubernetes.io/docs/reference/using-api/api-overview/) 上面。用户可以编写自己的控制器，例如[schedulers](https://github.com/kubernetes/community/blob/master/contributors/devel/scheduler.md)，有他们的 [APIs](https://v1-11.docs.kubernetes.io/docs/concepts/api-extension/custom-resources/) 并可以被通用的 [命令行工具](https://v1-11.docs.kubernetes.io/docs/user-guide/kubectl-overview/) 访问到。
 
 这种 [设计](https://git.k8s.io/community/contributors/design-proposals/architecture/architecture.md) 使得许多其他系统能够在 Kubernetes 上面构建。
 
