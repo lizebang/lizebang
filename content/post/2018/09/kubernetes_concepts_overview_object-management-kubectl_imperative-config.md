@@ -39,7 +39,7 @@ keywords:
 
 ## 如何更新对象
 
-> 警告：使用 `replace` 命令更新对象将删除配置文件中规约未指定的所有部分。它不应该用于集群部分管理规约的对象，例如，`LoadBalancer` 类型的 Services，其 `externalIPs` 字段是独立于配置文件管理的。必须将独立管理的字段复制到配置文件中，以防止 `replace` 删除它们。
+> 警告：使用 `replace` 命令更新对象将删除配置文件中规格（spec）未指定的所有部分。它不应该用于集群部分管理规格的对象，例如，`LoadBalancer` 类型的 Services，其 `externalIPs` 字段是独立于配置文件管理的。必须将独立管理的字段复制到配置文件中，以防止 `replace` 删除它们。
 
 你可以使用 `kubectl replace -f` 通过配置文件更新实时对象。
 

@@ -53,7 +53,7 @@ keywords:
 - [控制对 Kubernetes API 的访问](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/controlling-access/) 介绍了如何为用户和服务帐户设置权限。
 - [身份验证](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/authentication/) 介绍了 Kubernetes 中的身份验证，包括各种身份验证选项。
 - [授权](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/authorization/) 与身份验证分开，并控制 HTTP 调用的处理方式。
-- [使用许可控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) 介绍了在认证和授权后拦截对 Kubernetes API 服务器的请求的插件。
+- [使用许可 admission 控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) 介绍了在认证和授权后拦截对 Kubernetes API 服务器的请求的插件。
 - [在 Kubernetes 集群中使用 Sysctls](https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/sysctl-cluster/) 介绍了管理员如何使用 `sysctl` 命令 行工具设置内核参数。
 - [审计](https://v1-11.docs.kubernetes.io/docs/tasks/debug-application-cluster/audit/) 介绍了如何与 Kubernetes 的审计日志进行交互。
 

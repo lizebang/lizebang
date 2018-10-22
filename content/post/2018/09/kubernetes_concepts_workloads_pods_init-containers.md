@@ -224,7 +224,7 @@ myapp-pod   1/1       Running   0          9m
 
 如果 Pod 被 [重启](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/init-containers/#pod-restart-reasons)，所有的 Init 容器必须再执行一次。
 
-对 Init 容器规约的修改仅限于容器镜像字段。更改 Init 容器的镜像字段，等价于重启该 Pod。
+对 Init 容器规格（spec）的修改仅限于容器镜像字段。更改 Init 容器的镜像字段，等价于重启该 Pod。
 
 因为 Init 容器可以被重启、重试或者重新执行，所以 Init 容器的代码应该是幂等的。特别的是，被写到 `EmptyDirs` 上文件中的代码应该对输出文件已经存在的可能性做好准备。
 

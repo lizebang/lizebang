@@ -71,7 +71,7 @@ kubectl create deployment nginx --image nginx
 
 更多对象定义的细节请看 [API 参考](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/)
 
-> 警告：命令式的 `replace` 命令会用新提供的规约替换目前的规约，同时移除所有不再在配置文件中的对象。此方法不应该用于那些规约对立于配置文件进行更新的资源类型。例如，`LoadBalancer` 类型的 Service 资源，它们的 `externalIPs` 字段是独立于配置，由集群进行更新的。
+> 警告：命令式的 `replace` 命令会用新提供的规格（spec）替换目前的规格，同时移除所有不再在配置文件中的对象。此方法不应该用于那些规格对立于配置文件进行更新的资源类型。例如，`LoadBalancer` 类型的 Service 资源，它们的 `externalIPs` 字段是独立于配置，由集群进行更新的。
 
 ### 示例
 

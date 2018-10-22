@@ -29,7 +29,7 @@ keywords:
 
 - 容器的 `imagePullPolicy` 设置为 `Always`。
 - 使用 `:latest` 作为镜像使用的标签。
-- 开启 [AlwaysPullImages](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 准入控制器。
+- 开启 [AlwaysPullImages](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission 控制器。
 
 如果你没有指定镜像的标签，则将其视为 `:latest`，相应的镜像拉取策略为 `Always`。
 
@@ -308,12 +308,12 @@ spec:
 
   3.拥有专有镜像的集群，其中一些需要更严格的访问控制。
 
-- 确保 [AlwaysPullImages 准入控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages admission 控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 将敏感数据移动到 "Secret" 资源中，而不是将其打包在镜像中。
 
   4.多租户集群，每个租户都需要自己的私有仓库。
 
-- 确保 [AlwaysPullImages 准入控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages admission 控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 运行需要授权的私有仓库。
 - 为每个租户生成仓库凭证，将其放到 secret 中，并将 secret 填充到每个租户命名空间。
 - 租户将 secret 添加到每个命名空间的 imagePullSecrets 中。
