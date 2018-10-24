@@ -26,7 +26,7 @@ keywords:
 
 grpc-gateway 是一个 [protoc](http://github.com/google/protobuf) 的插件。它读取 [gRPC](http://github.com/grpc/grpc-common) 服务定义，生成反向代理服务器，将 RESTful JSON API 翻译成 gRPC。
 
-![gRPC Gateway](images/2018/10/grpc-gateway.png)
+![gRPC Gateway](/images/2018/10/grpc-gateway.png)
 
 ## 安装
 

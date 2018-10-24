@@ -1,10 +1,10 @@
 ---
 title: 'MapReduce'
 date: 2018-10-04
+draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
-draft: true
 categories:
   - skill
   - distributed

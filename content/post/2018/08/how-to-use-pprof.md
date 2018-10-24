@@ -195,7 +195,7 @@ Showing top 5 nodes out of 89
 (pprof) web
 ```
 
-[the full graph](images/cpuprofile1.svg)
+![the full graph](/images/cpuprofile1.svg)
 
 ![cpuprofile1](/images/2018/08/cpuprofile1.svg)
 

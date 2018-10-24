@@ -75,25 +75,25 @@ open /Applications/Utilities/Keychain\ Access.app
 
 2.创建证书
 
-![Create Certificate](images/2018/09/create-certificate.png)
+![Create Certificate](/images/2018/09/create-certificate.png)
 
 3.输入证书名、身份类型、证书类型，并勾选默认覆盖。
 
-![Step Three](images/2018/09/create-certificate-step-one.png)
+![Step Three](/images/2018/09/create-certificate-step-one.png)
 
 4.一直确认完成创建。
 
 5.将 Login 中刚刚创建的证书导出。
 
-![Step Five](images/2018/09/create-certificate-step-two.png)
+![Step Five](/images/2018/09/create-certificate-step-two.png)
 
 6.将导出的证书导入到 System 中。
 
-![Step Six](images/2018/09/create-certificate-step-three.png)
+![Step Six](/images/2018/09/create-certificate-step-three.png)
 
 7.信任证书，选择 "Always Trust"。
 
-![Step Seven](images/2018/09/create-certificate-step-four.png)
+![Step Seven](/images/2018/09/create-certificate-step-four.png)
 
 8.将证书授予 gdb。
 

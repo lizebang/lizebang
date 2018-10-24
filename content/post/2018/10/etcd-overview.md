@@ -1,6 +1,7 @@
 ---
 title: 'etcd Overview'
 date: 2018-10-06
+draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

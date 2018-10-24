@@ -2,10 +2,10 @@
 title: 'Raft'
 slug: raft
 date: 2018-10-09
+draft: true
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
-draft: true
 categories:
   - skill
   - distributed
@@ -23,4 +23,4 @@ Paxos 算法在很长一段时间一直统治着一致性算法这一领域，�
 
 ## 复制状态机
 
-![Replicated State Machines](images/2018/10/raft-figure-1.png)
+![Replicated State Machines](/images/2018/10/raft-figure-1.png)
