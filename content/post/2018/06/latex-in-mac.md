@@ -66,6 +66,12 @@ Can't locate Log/Log4perl.pm in @INC (you may need to install the Log::Log4perl 
 (@INC contains: ...
 ```
 
+4.（2019 年 1 月 1 日）出现问题 -- `LaTeX fatal error: spawn xelatex ENOENT, . Does the executable exist?`
+
+```shell
+brew install expect
+```
+
 解决方法
 
 ```shell
