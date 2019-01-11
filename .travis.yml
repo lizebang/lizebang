@@ -1,0 +1,13 @@
+os:
+  - linux
+
+sudo: required
+
+before_install:
+  - sudo apt-get install -y hugo
+
+script:
+  - hugo
+  - rm public/images/cover.jpg public/images/cover-v1.2.0.jpg
+  - ssh ${SSH_USER}@${SSH_HOST} "rm -rf /root/lizebang.top/blog/*"
+  - scp -r public/* ${SSH_USER}@${SSH_HOST}:/root/lizebang.top/blog
