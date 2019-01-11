@@ -1,15 +1,14 @@
 dist: xenial
-
 before_install:
-  - openssl aes-256-cbc -K $encrypted_10e4029bfd69_key -iv $encrypted_10e4029bfd69_iv
-    -in id_rsa.enc -out ~\/.ssh/id_rsa -d
-
+- openssl aes-256-cbc -K $encrypted_10e4029bfd69_key -iv $encrypted_10e4029bfd69_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- echo -e "Host ${SSH_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 addons:
   snaps:
-    - hugo
-
-script:
   - hugo
-  - rm public/images/cover.jpg public/images/cover-v1.2.0.jpg
-  - ssh ${SSH_USER}@${SSH_HOST} 'rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog'
-  - scp -r public/* ${SSH_USER}@${SSH_HOST}:/root/lizebang.top/blog
+script:
+- hugo
+- rm public/images/cover.jpg public/images/cover-v1.2.0.jpg
+- ssh ${SSH_USER}@${SSH_HOST} 'rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog'
+- scp -r public/* ${SSH_USER}@${SSH_HOST}:/root/lizebang.top/blog
