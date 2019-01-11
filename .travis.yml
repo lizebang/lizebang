@@ -4,7 +4,7 @@ os:
 sudo: required
 
 before_install:
-  - sudo apt-get install -y hugo
+  - GO111MODULE=on go get github.com/gohugoio/hugo.git
   - sudo apt-get install -y sshpass
 
 script:
