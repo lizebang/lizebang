@@ -1,14 +1,15 @@
 dist: xenial
 
+before_install:
+  - openssl aes-256-cbc -K $encrypted_10e4029bfd69_key -iv $encrypted_10e4029bfd69_iv
+    -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+
 addons:
   snaps:
     - hugo
-  apt:
-    packages:
-      - sshpass
 
 script:
   - hugo
   - rm public/images/cover.jpg public/images/cover-v1.2.0.jpg
-  - sshpass -p ${SSH_PASS} ssh ${SSH_USER}@${SSH_HOST} 'rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog'
-  - sshpass -p ${SSH_PASS} scp -r public/* ${SSH_USER}@${SSH_HOST}:/root/lizebang.top/blog
+  - ssh ${SSH_USER}@${SSH_HOST} 'rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog'
+  - scp -r public/* ${SSH_USER}@${SSH_HOST}:/root/lizebang.top/blog
