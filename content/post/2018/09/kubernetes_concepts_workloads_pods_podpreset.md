@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/podpreset/
+原文：https://kubernetes.io/docs/concepts/workloads/pods/podpreset/
 
 本文是关于 PodPresets 的概述，该对象在创建时将特定信息注入到 pod 对象中。该消息可以包含 secrets、volumes、volume mounts 以及 environment variables。
 
@@ -23,7 +23,7 @@ keywords:
 
 ## 理解 Pod Presets
 
-`Pod Presets` 是一种 API 资源，用于在创建时将运行时需要的其他资源注入到 Pod 中。你可以使用 [label selectors](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors) 指定要应用给定 Pod Preset 的 Pods。
+`Pod Presets` 是一种 API 资源，用于在创建时将运行时需要的其他资源注入到 Pod 中。你可以使用 [label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors) 指定要应用给定 Pod Preset 的 Pods。
 
 使用 Pod Preset 允许 pod 模版作者不必明确提供每个 pod 的所有信息。这样，使用特定服务的 pod 模版的作者不需要知道有关服务的所有细节。
 

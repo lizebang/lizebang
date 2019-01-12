@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/
+原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/
 
 命令行工具 `kubectl` 支持几种不同的方法来创建和管理 Kubernetes 对象。本文简单介绍了一下这几种不同的方法。
 
@@ -69,7 +69,7 @@ kubectl create deployment nginx --image nginx
 
 在命令式对象配置中，kubectl 命令指定操作（创建、替换等）、可选标志和至少一个文件名。指定的文件必须包含一个 YAML 或 JSON 格式的对象的完整定义。
 
-更多对象定义的细节请看 [API 参考](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/)
+更多对象定义的细节请看 [API 参考](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/)
 
 > 警告：命令式的 `replace` 命令会用新提供的规格（spec）替换目前的规格，同时移除所有不再在配置文件中的对象。此方法不应该用于那些规格对立于配置文件进行更新的资源类型。例如，`LoadBalancer` 类型的 Service 资源，它们的 `externalIPs` 字段是独立于配置，由集群进行更新的。
 
@@ -124,15 +124,17 @@ kubectl replace -f nginx.yaml
 
 ### 示例
 
-处理 `configs` 目录中的所有对象的配置文件，并创建或修改实时对象：
+处理 `configs` 目录中的所有对象的配置文件，并创建或修改实时对象，你可以使用 `diff` 查看将会做出哪些改变，然后：
 
 ```shell
+kubectl diff -f configs/
 kubectl apply -f configs/
 ```
 
 递归处理目录：
 
 ```shell
+kubectl diff -R -f configs/
 kubectl apply -R -f configs/
 ```
 

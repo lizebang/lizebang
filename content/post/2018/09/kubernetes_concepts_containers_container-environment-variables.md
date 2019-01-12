@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/containers/container-environment-variables/
+原文：https://kubernetes.io/docs/concepts/containers/container-environment-variables/
 
 本文介绍了容器环境中对容器可用的资源。
 
@@ -25,7 +25,7 @@ keywords:
 
 Kubernetes 容器环境为容器提供了几类重要的资源：
 
-- 一个文件系统，其中包含一个 [镜像](https://v1-11.docs.kubernetes.io/docs/concepts/containers/images/) 和一个或多个 [卷](https://v1-11.docs.kubernetes.io/docs/concepts/storage/volumes/)。
+- 一个文件系统，其中包含一个 [镜像](https://kubernetes.io/docs/concepts/containers/images/) 和一个或多个 [卷](https://kubernetes.io/docs/concepts/storage/volumes/)。
 - 容器本身相关的信息。
 - 集群中其他对象相关的信息。
 
@@ -33,7 +33,7 @@ Kubernetes 容器环境为容器提供了几类重要的资源：
 
 容器的 hostname 是容器所在的 Pod 名称。它可以通过 `hostname` 命令或调用 libc 中的 [gethostname](http://man7.org/linux/man-pages/man2/gethostname.2.html) 函数来获取。
 
-Pod 的名称和命名空间可以通过 [downward API](https://v1-11.docs.kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/) 作为环境变量使用。
+Pod 的名称和命名空间可以通过 [downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/) 作为环境变量使用。
 
 与 docker 镜像中任何静态指定的环境变量一样，Pod 中用户定义的环境变量也可用于容器。
 

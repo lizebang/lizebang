@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+原文：https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
 
 这篇介绍了 Pod 的生命周期。
 
@@ -23,7 +23,7 @@ keywords:
 
 ## Pod `phase`
 
-Pod 的状态字段是一个 [PodStatus](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podstatus-v1-core) 对象，它带有一个 `phase` 字段。
+Pod 的状态字段是一个 [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podstatus-v1-core) 对象，它带有一个 `phase` 字段。
 
 Pod 的阶段是 Pod 在其生命周期中的简单、高级的概述。Pod 的阶段不是为了对 Container 或 Pod 状态的进行全面地综合汇总，也不是为了做全面的状态机。
 
@@ -41,7 +41,7 @@ Pod 阶段的数值和含义是严格指定的。除了本文中列举的内容�
 
 ## Pod 条件
 
-Pod 由一个 PodStatus 对象，此对象包含一个 [PodConditions](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podcondition-v1-core) 数组。每个 PodCondition 数组元素包含六个可能的字段：
+Pod 由一个 PodStatus 对象，此对象包含一个 [PodConditions](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podcondition-v1-core) 数组。每个 PodCondition 数组元素包含六个可能的字段：
 
 - `lastProbeTime` 字段提供了最后一次探测 Pod 条件的时间戳。
 - `lastTransitionTime` 字段提供了 Pod 最后一次状态转换的时间戳。
@@ -51,17 +51,17 @@ Pod 由一个 PodStatus 对象，此对象包含一个 [PodConditions](https://v
 - `type` 字段是一个带有下列可能值的字符串:
   - `PodScheduled`：Pod 已经被调度到一个节点上。
   - `Ready`：Pod 可以处理请求，并且应该被添加到所有匹配服务的负载均衡池中。
-  - `Initialized`：所有 [Init 容器](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/init-containers) 都已经成功启动。
+  - `Initialized`：所有 [Init 容器](https://kubernetes.io/docs/concepts/workloads/pods/init-containers) 都已经成功启动。
   - `Unschedulable`：调度器现在不能调度 Pod，例如缺少资源或其他限制。
   - `ContainersReady`：Pod 中的所有容器都已准备就绪。
 
 ## 容器探针
 
-[探针](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#probe-v1-core) 是由 [kubelet](https://v1-11.docs.kubernetes.io/docs/admin/kubelet/) 定期执行的诊断。为了执行诊断，kubelet 调用了由容器实现的 [Handler](https://godoc.org/k8s.io/kubernetes/pkg/api/v1#Handler)。处理程序有三种类型：
+[探针](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#probe-v1-core) 是由 [kubelet](https://kubernetes.io/docs/admin/kubelet/) 定期执行的诊断。为了执行诊断，kubelet 调用了由容器实现的 [Handler](https://godoc.org/k8s.io/kubernetes/pkg/api/v1#Handler)。处理程序有三种类型：
 
-- [ExecAction](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#execaction-v1-core)：在容器内部执行指定的命令。如果命令以状态码 0 退出，则诊断为成功。
-- [TCPSocketAction](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#tcpsocketaction-v1-core)：对容器 IP 地址的指定端口执行 TCP 检查。如果端口是打开的，则诊断为成功。
-- [HTTPGetAction](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#httpgetaction-v1-core)：对容器 IP 地址的指定端口和路径执行 HTTP GET 请求。如果响应的状态码大于等于 200 且小于 400，则诊断为成功。
+- [ExecAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#execaction-v1-core)：在容器内部执行指定的命令。如果命令以状态码 0 退出，则诊断为成功。
+- [TCPSocketAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#tcpsocketaction-v1-core)：对容器 IP 地址的指定端口执行 TCP 检查。如果端口是打开的，则诊断为成功。
+- [HTTPGetAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#httpgetaction-v1-core)：对容器 IP 地址的指定端口和路径执行 HTTP GET 请求。如果响应的状态码大于等于 200 且小于 400，则诊断为成功。
 
 每个探针的结果有下面三种：
 
@@ -71,7 +71,7 @@ Pod 由一个 PodStatus 对象，此对象包含一个 [PodConditions](https://v
 
 kubelet 可以选择在运行的容器上执行两种探测并做出反应：
 
-- `livenessProbe`：指示容器是否运行。如果存活探测失败，kubelet 会杀死容器，并且容器将收到其 [重启策略](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy) 的影响。如果容器没有提供存活探针，其默认状态是 `Success`。
+- `livenessProbe`：指示容器是否运行。如果存活探测失败，kubelet 会杀死容器，并且容器将收到其 [重启策略](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy) 的影响。如果容器没有提供存活探针，其默认状态是 `Success`。
 - `readinessProbe`：指示容器是否准备好处理请求。如果就绪探测失败，endpoint 控制器会从与 Pod 匹配的所有服务的端点中删除 Pod 的 IP 地址。初始延迟之前的就绪状态的默认值为 `Failure`。如果容器不提供就绪探针，则默认状态为 `Success`。
 
 ### 何时应该使用存活探针和就绪探针？
@@ -88,17 +88,17 @@ kubelet 可以选择在运行的容器上执行两种探测并做出反应：
 
 注意，如果你只是想在 Pod 被删除是能够排除请求，则不一定需要使用就绪探针。在删除 Pod 时，无论是否存在就绪探针 Pod 都会自动将自身置于未完成状态。在等待 Pod 中的容器停止时，Pod 会处于未完成状态。
 
-更多有关如何设置存活探针和就绪探针的信息，请查看 [配置存活探针和就绪探针](https://v1-11.docs.kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。
+更多有关如何设置存活探针和就绪探针的信息，请查看 [配置存活探针和就绪探针](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。
 
 ## Pod 和 Container 的状态
 
-有关 Pod Container 状态的详细信息，请查看 [PodStatus](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podstatus-v1-core) 和 [ContainerStatus](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#containerstatus-v1-core)。注意，报告 Pod 状态的信息取决于当前的 [ContainerState](https://k8smeetup.github.io/docs/resources-reference/v1.7/#containerstatus-v1-core)。
+有关 Pod Container 状态的详细信息，请查看 [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#podstatus-v1-core) 和 [ContainerStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#containerstatus-v1-core)。注意，报告 Pod 状态的信息取决于当前的 [ContainerState](https://k8smeetup.github.io/docs/resources-reference/v1.7/#containerstatus-v1-core)。
 
 ## Pod readiness gate
 
 **FEATURE STATE**：`Kubernetes v1.11` `alpha`
 
-为了通过将额外的反馈或信号注入到 `PodStatus` 来增加 Pod 就绪探针的扩展性，Kubernetes 1.11 引入了一个名为 [Pod ready++](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready++.md) 的功能。你可以在 `PodSpec` 中使用新字段 `ReadinessGate` 指定 Pod 就绪探针进行评估附加条件。如果 Kubernetes 不能在 Pod 的 `status.conditions` 字段中找到这样一个条件，那么条件的默认状态为 `False`。下面是一个例子：
+为了通过将额外的反馈或信号注入到 `PodStatus` 来增加 Pod 就绪探针的扩展性，Kubernetes 1.11 引入了一个名为 [Pod ready++](https://github.com/kubernetes/enhancements/blob/master/keps/sig-network/0007-pod-ready++.md) 的功能。你可以在 `PodSpec` 中使用新字段 `ReadinessGate` 指定 Pod 就绪探针进行评估附加条件。如果 Kubernetes 不能在 Pod 的 `status.conditions` 字段中找到这样一个条件，那么条件的默认状态为 `False`。下面是一个例子：
 
 ```yaml
 Kind: Pod
@@ -122,7 +122,7 @@ status:
 ......
 ```
 
-新的 Pod 条件必须符合 Kubernetes [标签的格式](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set)。由于 `kubectl patch` 命令仍然不支持对象状态，新的 Pod 条件必须使用 [KubeClient 库](https://v1-11.docs.kubernetes.io/docs/reference/using-api/client-libraries/) 通过 `PATH` 操作注入进去。
+新的 Pod 条件必须符合 Kubernetes [标签的格式](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set)。由于 `kubectl patch` 命令仍然不支持对象状态，新的 Pod 条件必须使用 [KubeClient 库](https://kubernetes.io/docs/reference/using-api/client-libraries/) 通过 `PATH` 操作注入进去。
 
 随着新的 Pod 条件的引入，只有当下面两个条件都成立时才会认为 Pod 准备就绪：
 
@@ -131,11 +131,15 @@ status:
 
 为了便于 Pod 就绪探针对此作出改变，引入新的 Pod 条件 `ContainersReady` 来捕获旧的 Pod `Ready` 条件。
 
-作为 alpha 功能，必须通过将 `PodReadinessGates` [feature gate](https://v1-11.docs.kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) 设置为 True 来显示地启用 "Pod Ready++" 功能。
+In K8s 1.11, as an alpha feature, the "Pod Ready++" feature has to be explicitly enabled by setting the PodReadinessGates feature gate to true.
+
+在 K8s 1.11 中，作为 alpha 功能，必须通过将 `PodReadinessGates` [feature gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) 设置为 True 来显示地启用 "Pod Ready++" 功能。
+
+在 K8s 1.12 中，默认情况下启用该功能。
 
 ## 重启策略
 
-PodSpec 有一个 `restartPolicy` 字段，其可能值有 Always、OnFailure 和 Never。此字段的默认值为 Always。`restartPolicy` 适用于 Pod 中的所有容器。`restartPolicy` 只是指通过同一节点上的 kubelet 重启容器。退出的容器有 kubelet 以五分钟为上限的指数退避延迟重新启动（10s、20s、40s...），指数退避延迟在成功执行十分钟后重置。如 [Pod 文档](https://v1-11.docs.kubernetes.io/docs/user-guide/pods/#durability-of-pods-or-lack-thereof) 中描述的，一旦绑定到一个节点上，Pod 将永远不会重新绑定到另一个节点上。
+PodSpec 有一个 `restartPolicy` 字段，其可能值有 Always、OnFailure 和 Never。此字段的默认值为 Always。`restartPolicy` 适用于 Pod 中的所有容器。`restartPolicy` 只是指通过同一节点上的 kubelet 重启容器。退出的容器有 kubelet 以五分钟为上限的指数退避延迟重新启动（10s、20s、40s...），指数退避延迟在成功执行十分钟后重置。如 [Pod 文档](https://kubernetes.io/docs/user-guide/pods/#durability-of-pods-or-lack-thereof) 中描述的，一旦绑定到一个节点上，Pod 将永远不会重新绑定到另一个节点上。
 
 ## Pod 的生命周期
 
@@ -143,9 +147,9 @@ PodSpec 有一个 `restartPolicy` 字段，其可能值有 Always、OnFailure �
 
 有三种可用的控制器类型：
 
-- 使用 [Job](https://v1-11.docs.kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/) 运行预期会终止的 Pod，例如批量计算。Job 只适用于具有 `restartPolicy` 为 OnFailure 或 Never 的 Pod。
-- 使用 [ReplicationController](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/)、[ReplicaSet](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 或 [Deployment](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment/) 运行预期不会终止的 Pod，例如 web 服务器。ReplicationControllers 只适用于具有 `restartPolicy` 为 Always 的 Pod。
-- 使用 [DaemonSet](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/daemonset/) 运行需要为每台机器运行一个的 Pod，因为它提供特定于机器的系统服务。
+- 使用 [Job](https://kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/) 运行预期会终止的 Pod，例如批量计算。Job 只适用于具有 `restartPolicy` 为 OnFailure 或 Never 的 Pod。
+- 使用 [ReplicationController](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/)、[ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 或 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) 运行预期不会终止的 Pod，例如 web 服务器。ReplicationControllers 只适用于具有 `restartPolicy` 为 Always 的 Pod。
+- 使用 [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) 运行需要为每台机器运行一个的 Pod，因为它提供特定于机器的系统服务。
 
 所有这三种类型的控制器都包含一个 PodTemplate。建议创建适当的控制器，让它们来创建 Pod，而不是直接自己创建 Pod。这是因为单独的 Pod 在机器故障的情况下没有办法自动复原，而控制器却可以。
 

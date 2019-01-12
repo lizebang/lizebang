@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
+原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
 
 直接使用内置于 `kubectl` 命令行工具的命令式指令，可以快速地创建、更新和删除 Kubernetes 对象。本文介绍了任何组织这些命令，以及如何使用它们管理实时对象。
 
@@ -29,7 +29,7 @@ keywords:
 - 命令式对象配置
 - 声明式对象配置
 
-在 [Kubernetes 对象管理](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
+在 [Kubernetes 对象管理](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
 
 ## 如何创建对象
 
@@ -106,7 +106,7 @@ kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run | k
 
 1.`kubectl create service -o yaml --dry-run` 命令为 Service 创建配置，但将其以 YAML 格式打印到 stdout，而不是将其发送到 Kubernetes API 服务器。
 
-2.`kubectl set --local -f - -o yaml` 命令从 stdin 中读取配置，并将更新后的配置作为 YAML 写入 stdout。
+2.`kubectl set selector --local -f - -o yaml` 命令从 stdin 中读取配置，并将更新后的配置作为 YAML 写入 stdout。
 
 3.`kubectl create -f -` 命令使用由 stdin 提供的配置创建对象。
 

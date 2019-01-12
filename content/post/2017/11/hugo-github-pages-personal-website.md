@@ -8,8 +8,9 @@ metaAlignment: center
 categories:
   - blog
 tags:
-  - hugo
+  - tool
 keywords:
+  - tool
   - hugo
   - github pages
 ---

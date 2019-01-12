@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
+原文：https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
 
 Kubernetes 对象可以通过在目录中存储多个对象配置文件来创建、更新和删除，并使用 `kubectl apply` 按需递归创建和更新这些对象。此方法保留对实时对象所做的写入操作, 而不将更改合并回对象配置文件中。
 
@@ -29,14 +29,14 @@ Kubernetes 对象可以通过在目录中存储多个对象配置文件来创建
 - 命令式对象配置
 - 声明式对象配置
 
-在 [Kubernetes 对象管理](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
+在 [Kubernetes 对象管理](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/) 中讨论了每一种对象管理方式的优缺点。
 
 ## 开始前
 
 声明式对象配置要求对 Kubernetes 对象定义和配置有深刻对理解。如果没有，请先完整阅读下面对文档：
 
-- [使用命令式指令管理 Kubernetes 对象](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/)
-- [使用配置文件对 Kubernetes 对象的命令式管理](https://v1-11.docs.kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/)
+- [使用命令式指令管理 Kubernetes 对象](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/)
+- [使用配置文件对 Kubernetes 对象的命令式管理](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/)
 
 以下是本文中使用对术语对定义：
 

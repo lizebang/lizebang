@@ -1,5 +1,6 @@
 ---
 title: 'MapReduce'
+slug: mapreduce
 date: 2018-10-04
 draft: true
 autoThumbnailImage: false

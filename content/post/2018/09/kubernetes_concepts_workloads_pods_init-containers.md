@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/init-containers/
+原文：https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 
 本文提供了 Init 容器概览，它是在应用容器之前运行的专用容器，并且包含应用镜像中没有的工具和安装脚本。
 
@@ -23,7 +23,7 @@ keywords:
 
 ## 理解 Init 容器
 
-[Pod](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 能具有多个运行应用的容器，它也能有一个或多个在应用容器启动前运行的 Init 容器。
+[Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 能具有多个运行应用的容器，它也能有一个或多个在应用容器启动前运行的 Init 容器。
 
 Init 容器与普通的容器非常像，除了下面两点：
 
@@ -32,11 +32,11 @@ Init 容器与普通的容器非常像，除了下面两点：
 
 如果 Pod 的 Init 容器失败，则 Kubernetes 不断地重启 Pod 直到 Init 容器成功。然而，如果 Pod 的 `restartPolicy` 值为 Never 时，它将不会重启。
 
-要指定容器为 Init 容器，只要在 PodSpec 中添加 `initContainers` 字段，在应用 `containers` 数组旁添加 [Container](https://v1-11.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#container-v1-core) 类型对象的 JSON 数组。Init 容器的状态在 `status.initContainerStatuses` 字段中以容器状态数组的格式返回（和 `.status.containerStatuses` 字段相同）。
+要指定容器为 Init 容器，只要在 PodSpec 中添加 `initContainers` 字段，在应用 `containers` 数组旁添加 [Container](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#container-v1-core) 类型对象的 JSON 数组。Init 容器的状态在 `status.initContainerStatuses` 字段中以容器状态数组的格式返回（和 `.status.containerStatuses` 字段相同）。
 
 ### 和普通容器的区别
 
-Init 容器支持所有应用容器的字段和功能，包括资源限制、数据卷以及安全设置。然而，Init 容器对资源请求和限制的处理稍有不同，下面的 [资源](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/init-containers/#resources) 有说明。Init 容器也不支持就绪探针，因为它们必须在 Pod 准备好之前运行完成。
+Init 容器支持所有应用容器的字段和功能，包括资源限制、数据卷以及安全设置。然而，Init 容器对资源请求和限制的处理稍有不同，下面的 [资源](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#resources) 有说明。Init 容器也不支持就绪探针，因为它们必须在 Pod 准备好之前运行完成。
 
 如果 Pod 中指定了多个 Init 容器，这些容器会按顺序一次运行一个。每个 Init 容器必须运行成功，下一个才能运行。当所有 Init 容器运行完成时，Kubernetes 初始化 Pod 并像平常一样运行应用容器。
 
@@ -66,7 +66,7 @@ Init 容器支持所有应用容器的字段和功能，包括资源限制、数
 - 克隆 git 仓库到数据卷。
 - 将配置值放到配置文件中，运行模版工具为主应用容器动态生成配置文件。例如，在配置文件中存放 POD_IP 值，并使用 Jinja 生成主要的应用配置文件。
 
-更多详细用法示例，可以在 [StatefulSet 文档](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/statefulset/) 和 [生产环境 Pod 指南](https://v1-11.docs.kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/) 中找到。
+更多详细用法示例，可以在 [StatefulSet 文档](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) 和 [生产环境 Pod 指南](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/) 中找到。
 
 ### Init 容器的使用
 
@@ -222,7 +222,7 @@ myapp-pod   1/1       Running   0          9m
 
 在所有 Init 容器成功之前，Pod 的状态不会变为 `Ready`。Init 容器上的端口不会被聚集到服务上。正在初始化中的 Pod 处于 `Pending` 状态，但应将条件 `Initializing` 设置为 true。
 
-如果 Pod 被 [重启](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/pods/init-containers/#pod-restart-reasons)，所有的 Init 容器必须再执行一次。
+如果 Pod 被 [重启](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#pod-restart-reasons)，所有的 Init 容器必须再执行一次。
 
 对 Init 容器规格（spec）的修改仅限于容器镜像字段。更改 Init 容器的镜像字段，等价于重启该 Pod。
 

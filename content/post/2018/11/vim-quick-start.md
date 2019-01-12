@@ -1,5 +1,6 @@
 ---
 title: 'Vim Quick Start'
+slug: vim-quick-start
 date: 2018-11-06
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

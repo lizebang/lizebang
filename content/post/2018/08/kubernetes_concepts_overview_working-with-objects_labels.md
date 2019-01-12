@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
 Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指定对用户有意义且相关对象的标识属性，但不对核心系统直接使用隐含语义。标签可用于组织和选择对象的子集。标签可以在创建时关联到对象上，也可以在之后的任何时间添加和修改。每个对象都可以定义一组键值标签。每个对象标签的 key 必须唯一。
 
@@ -30,7 +30,7 @@ Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指�
 }
 ```
 
-我们最终为了有效的查询和监视将把标签进行索引和反向索引，使用索引和反向索引通过接口（UI 和 CLI 等）排序和分组。我们不想让不具有标识性的，尤其是大的或结构化的数据破坏了标签。不具有标识性的信息应该使用 [注解](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)。
+Labels 允许高效的查询和监视，非常适合在 UIs 和 CLIs 中使用。记录非识别性的信息时应使用[注解](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)。
 
 ## 动机
 
@@ -50,13 +50,13 @@ Labels 是关联到像 Pod 这样对象上的键值对。标签旨在用于指�
 
 ## 语法和字符集
 
-**Labels** 是键值对。有效的标签 key 有两个部分：可选的前缀和名称，它们用斜杠分隔 `/` 。名称部分是必须的，并且必须在 63 个字符以内，起始必须是字母（大小写都可以）或数字，中间还可以使用破折号、下划线和句点（即 `^[:alnum:][\w-.]{0,61}[:alnum:]?$`）。前缀是可选的。如果指定的话，前缀必须是 DNS 子域：一系列由点 `.` 分隔的 DNS 标签，总长度不超过 253 个字符，后面跟着一个斜线 `/`。如果省略了前缀，这个标签的 key 会被推断为用户私有。自动化系统组件（例如，`kube-scheduler`、`kube-controller-manager`、`kube-apiserver`、`kubectl` 或第三方自动化组件），它们添加到最终用户对象上的标签必须指定前缀。`kubernetes.io/` 前缀是为 Kubernetes 核心组件预留的。
+**Labels** 是键值对。有效的标签 key 有两个部分：可选的前缀和名称，它们用斜杠分隔 `/` 。名称部分是必须的，并且必须在 63 个字符以内，开始和结尾的字符必须是字母（大小写都可以）或数字，中间还可以使用破折号、下划线和句点（即 `^[:alnum:][\w-.]{0,61}[:alnum:]$`）。前缀是可选的。如果指定的话，前缀必须是 DNS 子域：一系列由点 `.` 分隔的 DNS 标签，总长度不超过 253 个字符，后面跟着一个斜线 `/`。如果省略了前缀，这个标签的 key 会被推断为用户私有。自动化系统组件（例如，`kube-scheduler`、`kube-controller-manager`、`kube-apiserver`、`kubectl` 或第三方自动化组件），它们添加到最终用户对象上的标签必须指定前缀。`kubernetes.io/` 和 `k8s.io/` 前缀是为 Kubernetes 核心组件预留的。
 
-有效的标签 value 必须在 63 个字符以内，值必须为空或起始是字母（大小写都可以）或数字，中间还可以使用破折号、下划线和句点。
+有效的标签 value 必须在 63 个字符以内，值可以为空，也可以是字符串，字符串开始和结尾的字符是字母（大小写都可以）或数字，中间还可以使用破折号、下划线和句点。
 
 ## 标签选择器
 
-不像 [名称和 UIDs](https://v1-11.docs.kubernetes.io/docs/user-guide/identifiers)，标签不保证唯一性。通常情况下，我们希望很多对象携带相同的标签。
+不像 [名称和 UIDs](https://kubernetes.io/docs/user-guide/identifiers)，标签不保证唯一性。通常情况下，我们希望很多对象携带相同的标签。
 
 通过标签选择器，客户端/用户可以指定一个对象集合。标签选择器是 Kubernetes 中的核心分组原语。
 
@@ -150,7 +150,7 @@ $ kubectl get pods -l 'environment,environment notin (frontend)'
 
 ### 设置 API 对象的参考
 
-某些 Kubernetes 对象，例如 [services](https://v1-11.docs.kubernetes.io/docs/user-guide/services) 和 [replicationcontrollers](https://v1-11.docs.kubernetes.io/docs/user-guide/replication-controller)，它们也可以使用标签选择器去指定其他资源的集合，例如 [pods](https://v1-11.docs.kubernetes.io/docs/user-guide/pods)。
+某些 Kubernetes 对象，例如 [services](https://kubernetes.io/docs/user-guide/services) 和 [replicationcontrollers](https://kubernetes.io/docs/user-guide/replication-controller)，它们也可以使用标签选择器去指定其他资源的集合，例如 [pods](https://kubernetes.io/docs/user-guide/pods)。
 
 #### Service 和 ReplicationController
 
@@ -175,7 +175,7 @@ selector:
 
 #### 支持基于集合的需求的资源
 
-Kubernetes 较新的资源，例如 [Job](https://v1-11.docs.kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/)、[Deployment](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment/)、[Replica Set](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 和 [Daemon Set](https://v1-11.docs.kubernetes.io/docs/concepts/workloads/controllers/daemonset/)，也支持基于集合的需求。
+Kubernetes 较新的资源，例如 [Job](https://kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/)、[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)、[Replica Set](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 和 [Daemon Set](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)，也支持基于集合的需求。
 
 ```yaml
 selector:
@@ -190,4 +190,4 @@ selector:
 
 #### 选择节点的集合
 
-一个通过标签选择的使用场景是约束 Pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://v1-11.docs.kubernetes.io/docs/concepts/configuration/assign-pod-node/)。
+一个通过标签选择的使用场景是约束 Pod 可以调度的节点集。更多信息请看文档 -- [node selection](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)。

@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
 你可以使用 Kubernetes 注解将任何非标识性元数据关联到对象上。使用客户端（如工具和库）可以检索到这些元数据。
 
@@ -45,5 +45,14 @@ annotation 和 label 一样都是 key/value 键值对映射结构：
 - 用户信息，以及工具或系统来源信息。例如：来自其他生态系统组件相关对象的 URL。
 - 轻量级部署工具元数据。例如：配置或检查点。
 - 负责人的电话或联系方式、能找到相关信息的目录条目信息（例如，团队网站）。
+- 从终端用户到最终实现的指令，用于修改行为或使用非标准特性。
 
 如果不使用注解，你也可以将以上类型的信息存放在外部数据库或目录中，但这样做不利于创建用于部署、管理、内部检查的共享工具和客户端库。
+
+## 语法和字符集
+
+_Annotations_ 是键/值对。有效的 annotation 键有两部分：可选的前缀和名称，用斜杠（`/`）分隔。名称部分是必须的，并且必须小于等于 63 个字符，开始和结尾的字符必须是字母或数字，中间可以使用字母、数字、破折号、下划线或句点（即，名称满足正则 `^[:alnum:][\w-.]{0,61}[:alnum:]$`）。前缀是可选的。如果指定定话，前缀必须是 DNS 子域：一系列由点 `.` 分隔的 DNS 标签，总长度不超过 253 个字符，后面跟着一个斜线 `/`。
+
+如果省略了前缀，这个标签的 key 会被推断为用户私有。自动化系统组件（例如，`kube-scheduler`、`kube-controller-manager`、`kube-apiserver`、`kubectl` 或第三方自动化组件），它们添加到最终用户对象上的标签必须指定前缀。
+
+`kubernetes.io/` 和 `k8s.io/` 前缀是为 `Kubernetes` 核心组件预留的。

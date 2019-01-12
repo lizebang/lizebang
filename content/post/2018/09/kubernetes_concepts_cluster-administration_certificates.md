@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/cluster-administration/certificates/
+原文：https://kubernetes.io/docs/concepts/cluster-administration/certificates/
 
 使用客户端证书身份验证时，可以通过 `easyrsa`、`openssl` 和 `cfssl` 手动生成证书。
 
@@ -271,4 +271,4 @@ done.
 
 ## 证书 API
 
-你可以使用 `certificates.k8s.io` API 来提供 x509 证书以用于身份验证，参考 [文档](https://v1-11.docs.kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster)。
+你可以使用 `certificates.k8s.io` API 来提供 x509 证书以用于身份验证，参考 [文档](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster)。

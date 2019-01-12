@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
+原文：https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
 
 你可以使用除了 kubectl 和 dashboard 之外的更多工具可视化和管理 Kubernetes 对象。一组以所有工具都能理解的方式描述对象的通用标签允许工具相互工作。
 
@@ -23,9 +23,9 @@ keywords:
 
 除了支持工具之外，推荐标签还以可查询的方式描述应用程序。
 
-- [标签](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels)
-- [应用和应用实例](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#applications-and-instances-of-applications)
-- [例子](https://v1-11.docs.kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#examples)
+- [标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels)
+- [应用和应用实例](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#applications-and-instances-of-applications)
+- [例子](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#examples)
 
 元数据围绕应用程序的概念进行组织。Kubernetes 不是一个服务平台（PaaS），没有也不限定应用程序的范围。相反，应用程序是任意的并用元数据进行描述。应用程序所包含内容的定义是宽松的。
 

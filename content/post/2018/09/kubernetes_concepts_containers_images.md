@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/containers/images/
+原文：https://kubernetes.io/docs/concepts/containers/images/
 
 你可以构建 docker 镜像并将它推到仓库中，以供之后 Kubernetes Pod 使用。
 
@@ -29,7 +29,7 @@ keywords:
 
 - 容器的 `imagePullPolicy` 设置为 `Always`。
 - 使用 `:latest` 作为镜像使用的标签。
-- 开启 [AlwaysPullImages](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission 控制器。
+- 开启 [AlwaysPullImages](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission 控制器。
 
 如果你没有指定镜像的标签，则将其视为 `:latest`，相应的镜像拉取策略为 `Always`。
 
@@ -94,7 +94,7 @@ kubelet 将获取并定期刷新 ECR 凭证。它需要以下权限才能执行�
 故障排查：
 
 - 验证是否上面所有要求。
-- 在工作组上获取 $REGION（如 `us-west-2`）凭证。通过 SSH 进入主机，并使用这些凭证手动运行 docker。它能运行吗？
+- 在工作组上获取 \$REGION（如 `us-west-2`）凭证。通过 SSH 进入主机，并使用这些凭证手动运行 docker。它能运行吗？
 - 确定 kubelet 是用 `--cloud-provider=aws` 运行的。
 - 查看 kubelet 日志（例如 `journalctl -u kubelet`）中类似下面这样的日志行：
   - `plugins.go:56] Registering credential provider: aws-ecr-key`
@@ -238,7 +238,7 @@ Pod 只能在自己的命名空间使用拉取镜像用的 secrets，因此每�
 
 #### 绕过 kubectl 创建 secrets
 
-如果由于某种原因你需要多个项在同一个 `.docker/config.json` 中，或者需要上面命令没有提供的控制，那么你可以 [使用 json 或 yaml 创建 secret](https://v1-11.docs.kubernetes.io/docs/user-guide/secrets/#creating-a-secret-manually)。
+如果由于某种原因你需要多个项在同一个 `.docker/config.json` 中，或者需要上面命令没有提供的控制，那么你可以 [使用 json 或 yaml 创建 secret](https://kubernetes.io/docs/user-guide/secrets/#creating-a-secret-manually)。
 
 请确保：
 
@@ -281,7 +281,7 @@ spec:
 
 这需要对每个使用私有仓库的 Pod 进行操作。
 
-但是，通过在 [serviceAccount](https://v1-11.docs.kubernetes.io/docs/user-guide/service-accounts) 资源中设置 imagePullSecrets，可以自动设置此字段。
+但是，通过在 [serviceAccount](https://kubernetes.io/docs/user-guide/service-accounts) 资源中设置 imagePullSecrets，可以自动设置此字段。
 
 你可以将其与每个节点的 `.docker/config.json` 结合使用。凭证将会被合并。这种方法适用于 Google Kubernetes 引擎。
 
@@ -299,7 +299,7 @@ spec:
   2.集群运行一些专有镜像，这些镜像应该对公司以外用户进行隐藏，但对所有集群用户都是可见的。
 
 - 使用托管的私有 [docker 仓库](https://docs.docker.com/registry/)。
-  - 它可能被托管在 [docker hub](https://hub.docker.com/account/signup/) 上，或其他地方。
+  - 它可能被托管在 [docker hub](https://hub.docker.com/signup/) 上，或其他地方。
   - 像上面描述的那样在每个节点上手动配置 .docker/config.json。
 - 或者，在防火墙后面运行内部私有仓库，并打开读取访问权限。
   - 不需要 Kubernetes 配置。
@@ -308,12 +308,12 @@ spec:
 
   3.拥有专有镜像的集群，其中一些需要更严格的访问控制。
 
-- 确保 [AlwaysPullImages admission 控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages admission 控制器](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 将敏感数据移动到 "Secret" 资源中，而不是将其打包在镜像中。
 
   4.多租户集群，每个租户都需要自己的私有仓库。
 
-- 确保 [AlwaysPullImages admission 控制器](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
+- 确保 [AlwaysPullImages admission 控制器](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) 打开。否则，所有 Pod 都可能访问所有镜像。
 - 运行需要授权的私有仓库。
 - 为每个租户生成仓库凭证，将其放到 secret 中，并将 secret 填充到每个租户命名空间。
 - 租户将 secret 添加到每个命名空间的 imagePullSecrets 中。

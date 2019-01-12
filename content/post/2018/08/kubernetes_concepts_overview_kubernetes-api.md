@@ -15,7 +15,7 @@ keywords:
   - concepts
 ---
 
-**Kubernetes v1.11** 原文：https://v1-11.docs.kubernetes.io/docs/concepts/overview/kubernetes-api/
+原文：https://kubernetes.io/docs/concepts/overview/kubernetes-api/
 
 Kubernetes 本身被分解为多个组件，这些组件通过其 API 进行交互。
 
@@ -23,17 +23,17 @@ Kubernetes 本身被分解为多个组件，这些组件通过其 API 进行交�
 
 [API 约定文档](https://git.k8s.io/community/contributors/devel/api-conventions.md) 中描述了总体 API 约定。
 
-[API 参考](https://v1-11.docs.kubernetes.io/docs/reference) 中描述了 API 端点，资源类型和示例。
+[API 参考](https://kubernetes.io/docs/reference) 中描述了 API 端点，资源类型和示例。
 
-[控制 API 访问文档](https://v1-11.docs.kubernetes.io/docs/reference/access-authn-authz/controlling-access/) 中讨论了对 API 的远程访问。
+[控制 API 访问文档](https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/) 中讨论了对 API 的远程访问。
 
-Kubernetes API 还可以作为系统声明性配置架构的基础。 [kubectl](https://v1-11.docs.kubernetes.io/docs/reference/kubectl/overview/) 命令行工具可用于创建、更新、删除和获取 API 对象。
+Kubernetes API 还可以作为系统声明性配置架构的基础。 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 命令行工具可用于创建、更新、删除和获取 API 对象。
 
 Kubernetes 还可以根据 API 资源存储其序列化状态（当前在 [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd/) 中）。
 
 ## API 的更新
 
-根据经验，任何成功的系统都需要随着新的使用场景出现或现有的使用场景发生变化的情况下进行相应的发展和调整。因此，我们希望 Kubernetes API 能够不断变化和发展。同时，我们也希望在较长一段时间内不破坏与现有客户端的兼容性。一般情况下，添加新的 API 资源和资源字段不会发生兼容性问题。但是删除现有资源或字段将必须遵循 [API 弃用流程](https://v1-11.docs.kubernetes.io/docs/reference/using-api/deprecation-policy/)。
+根据经验，任何成功的系统都需要随着新的使用场景出现或现有的使用场景发生变化的情况下进行相应的发展和调整。因此，我们希望 Kubernetes API 能够不断变化和发展。同时，我们也希望在较长一段时间内不破坏与现有客户端的兼容性。一般情况下，添加新的 API 资源和资源字段不会发生兼容性问题。但是删除现有资源或字段将必须遵循 [API 弃用流程](https://kubernetes.io/docs/reference/using-api/deprecation-policy/)。
 
 [API 更新文档](https://git.k8s.io/community/contributors/devel/api_changes.md) 详细说明了兼容性变更的要素以及如何变更 API 的流程。
 
@@ -100,13 +100,13 @@ Kubernetes 实现了另一种基于 Protobuf 的序列化格式，该格式主�
 
 1.核心组，通常被称为遗留组，位于 REST 路径 `/api/v1` 并使用 `apiVersion: v1`。
 
-2.命名组，位于 REST 路径 `/apis/$GROUP_NAME/$VERSION`，并使用 `apiVersion: $GROUP_NAME/$VERSION`（例如 `apiVersion: batch/v1`）。在 [Kubernetes API 参考](https://v1-11.docs.kubernetes.io/docs/reference/) 中可以看到支持的 API 组的完整列表。
+2.命名组，位于 REST 路径 `/apis/$GROUP_NAME/$VERSION`，并使用 `apiVersion: $GROUP_NAME/$VERSION`（例如 `apiVersion: batch/v1`）。在 [Kubernetes API 参考](https://kubernetes.io/docs/reference/) 中可以看到支持的 API 组的完整列表。
 
-有以下两种方式来提供 [自定义资源](https://v1-11.docs.kubernetes.io/docs/concepts/api-extension/custom-resources/) 对 API 进行扩展：
+有以下两种方式来提供 [自定义资源](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) 对 API 进行扩展：
 
-1.[CustomResourceDefinition](https://v1-11.docs.kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/) 适用于具有非常基本的 CRUD 需求的用户。
+1.[CustomResourceDefinition](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/) 适用于具有非常基本的 CRUD 需求的用户。
 
-2.需要完整 Kubernetes API 语义的用户可以实现自己的 apiserver，并使用 [聚合器](https://v1-11.docs.kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/) 为客户端提供无缝的服务。
+2.需要完整 Kubernetes API 语义的用户可以实现自己的 apiserver，并使用 [聚合器](https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/) 为客户端提供无缝的服务。
 
 ## 启用 API 组
 
@@ -116,8 +116,8 @@ Kubernetes 实现了另一种基于 Protobuf 的序列化格式，该格式主�
 
 ## 启用组中资源
 
-DaemonSets、Deployments、HorizontalPodAutoscalers、Ingress、Jobs 和 ReplicaSets 是默认启用的。其他扩展资源可以通过在 apiserver 上设置 `--runtime-config` 来启用。`--runtime-config` 接受逗号分隔的值。例如：要禁用 deployments 和 ingress，可以设置：
+DaemonSets、Deployments、HorizontalPodAutoscalers、Ingresses、Jobs 和 ReplicaSets 是默认启用的。其他扩展资源可以通过在 apiserver 上设置 `--runtime-config` 来启用。`--runtime-config` 接受逗号分隔的值。例如：要禁用 deployments 和 Ingresses，可以设置：
 
 ```shell
---runtime-config=extensions/v1beta1/deployments=false,extensions/v1beta1/ingress=false
+--runtime-config=extensions/v1beta1/deployments=false,extensions/v1beta1/ingresses=false
 ```
