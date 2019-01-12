@@ -11,6 +11,5 @@ script:
   - hugo
   - rm public/images/cover.jpg public/images/cover-v1.2.0.jpg
   - tar -czvf public.tar.gz public
-  - ssh ${SSH_USER}@${SSH_HOST} 'rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog'
   - travis_wait scp public.tar.gz ${SSH_USER}@${SSH_HOST}:/root/public.tar.gz
-  - ssh ${SSH_USER}@${SSH_HOST} "tar -zxvf /root/public.tar.gz && rm -rf /root/lizebang.top/blog/* && mv /root/public/* /root/lizebang.top/blog && rm -rf /root/public /root/public.tar.gz"
+  - ssh ${SSH_USER}@${SSH_HOST} "tar -zxvf /root/public.tar.gz && rm -rf /root/lizebang.top/blog && mkdir -p /root/lizebang.top/blog && mv /root/public/* /root/lizebang.top/blog && rm -rf /root/public /root/public.tar.gz"
