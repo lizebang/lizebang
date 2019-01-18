@@ -47,3 +47,10 @@ func main() {
 ```
 
 因为 `people{}` 只是一个临时变量，不能取到它的地址，所以无法调用 `(p *people) hello()`。然而，`p.hello()` 中 `p` 的地址是事实存在的，使用可以调用 `(p *people) hello()`。
+
+## Reference
+
+- https://reading.developerlearning.cn/reading/20180321/readme/
+- https://stackoverflow.com/questions/10535743/address-of-a-temporary-in-go
+- https://stackoverflow.com/questions/40926479/take-the-address-of-a-character-in-string
+- https://golang.org/ref/spec#Address_operators
