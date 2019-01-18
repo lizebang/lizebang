@@ -6,14 +6,14 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
   - library
   - grpc
   - proto3
 keywords:
-  - go
+  - golang
   - library
   - grpc
   - proto3

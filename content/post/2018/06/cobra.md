@@ -6,13 +6,13 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
   - library
   - cobra
 keywords:
-  - go
+  - golang
   - library
   - cobra
 ---

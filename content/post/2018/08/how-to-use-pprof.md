@@ -7,14 +7,14 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
   - tool
 tags:
-  - go
+  - golang
   - tool
   - pprof
 keywords:
-  - go
+  - golang
   - tool
   - pprof
 ---

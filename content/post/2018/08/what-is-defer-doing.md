@@ -7,12 +7,12 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
   - defer
 keywords:
-  - go
+  - golang
   - defer
 ---
 

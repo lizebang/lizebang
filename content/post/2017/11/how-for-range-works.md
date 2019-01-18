@@ -6,11 +6,11 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
 keywords:
-  - go
+  - golang
 ---
 
 for range 是一个非常常用的遍历数组切片的方法，但是它有一些比较奇怪的特性，让我们了解一下。

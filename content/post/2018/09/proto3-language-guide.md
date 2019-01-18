@@ -8,7 +8,7 @@ metaAlignment: center
 categories:
   - tool
 tags:
-  - go
+  - golang
   - proto3
   - guide
 keywords:

@@ -6,12 +6,12 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
   - standard library
 keywords:
-  - go
+  - golang
   - standard library
   - os/exec
 ---

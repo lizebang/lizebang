@@ -6,13 +6,13 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - go
+  - golang
 tags:
-  - go
+  - golang
   - concurrent
   - memory model
 keywords:
-  - go
+  - golang
   - concurrent
   - memory model
 ---
