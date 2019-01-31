@@ -9,10 +9,10 @@ categories:
   - golang
 tags:
   - golang
-  - standard library
+  - standard-library
 keywords:
   - golang
-  - standard library
+  - standard-library
   - flag
 ---
 

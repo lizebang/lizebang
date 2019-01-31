@@ -10,10 +10,10 @@ categories:
   - skill
 tags:
   - skill
-  - assembly language
+  - assembly-language
 keywords:
   - skill
-  - assembly language
+  - assembly-language
 ---
 
 ATT 格式的汇编根据 AT&T 命名，AT&T 是运营贝尔实验室多年的公司。
@@ -128,7 +128,7 @@ Intel 用术语 `字` (word)表示 16 位数据类型。称 32 位数为 `双字
 | --------------- | ------- | ------------ |
 | %rax            | `0x100` | `寄存器`     |
 | 0x104           | `0xAB`  | `绝对地址`   |
-| $0x108          | `0x108` | `立即数`     |
+| \$0x108         | `0x108` | `立即数`     |
 | (%rax)          | `0xFF`  | `地址 0x100` |
 | 4(%rax)         | `0xAB`  | `地址 0x104` |
 | 9(%rax, %rdx)   | `0x11`  | `地址 0x10C` |
