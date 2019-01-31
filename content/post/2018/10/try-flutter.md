@@ -118,7 +118,7 @@ $ flutter run
 
 然后，你就能在手机上看到如下内容。
 
-![flutter starter app android](images/2018/10/flutter-starter-app-android.png)
+![flutter starter app android](/images/2018/10/flutter-starter-app-android.png)
 
 ## 我遇到的两大神坑
 
