@@ -67,9 +67,9 @@ Cobra 是用于创建 CLI 应用程序的库，同时提供了用于生成应用
 
 那非标志性和标志型参数有什么区别呢？
 
-> 看 `docker rm mysql mongo` 参数(mysql、mongo)对于命令(docker rmi)来说并没有什么区别(除移除的顺序)，更不会改变 `docker rmi` 这一命令的行为有  任何影响。而标志型参数(-e MYSQL_ROOT_PASSWORD=my-secret-pw 等)则会对命令(docker run) 的运行造成影响。
+> 看 `docker rm mysql mongo` 参数(mysql、mongo)对于命令(docker rmi)来说并没有什么区别(除移除的顺序)，更不会改变 `docker rmi` 这一命令的行为有任何影响。而标志型参数(-e MYSQL_ROOT_PASSWORD=my-secret-pw 等)则会对命令(docker run)的运行造成影响。
 
-> 如果不能理解，再举一例 `docker rm job1 job2` 和 `docker rm -f job1 job2`，-f 是一个标志型参数，它有默认值为 true，-f 等同于 -f=1。如果 job1 和 job2 正在运行，则 `docker rm job1 job2` 不能将它们移除，而 `docker rm -f job1 job2`  可以将他们强制移除。由此看来，标志型参数往往具有特殊意义 ，可以对命令的行为。
+> 如果不能理解，再举一例 `docker rm job1 job2` 和 `docker rm -f job1 job2`，-f 是一个标志型参数，它有默认值为 true，-f 等同于 -f=1。如果 job1 和 job2 正在运行，则 `docker rm job1 job2` 不能将它们移除，而 `docker rm -f job1 job2` 可以将他们强制移除。由此看来，标志型参数往往具有特殊意义，可以对命令的行为。
 
 ## Cobra 的使用
 

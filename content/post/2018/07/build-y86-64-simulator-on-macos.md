@@ -26,7 +26,7 @@ keywords:
 
 在《深入理解计算机（第三版）》的官网就可以找到所有章节所需要的资料：http://csapp.cs.cmu.edu/3e/students.html 源码下载：[sim.tar](http://csapp.cs.cmu.edu/3e/sim.tar)
 
-我已经将在 macOS 上编译时需要的变量修改过并打包  放到了 GitHub 上，地址：https://github.com/lizebang/Y86-Simulator-macOS
+我已经将在 macOS 上编译时需要的变量修改过并打包放到了 GitHub 上，地址：https://github.com/lizebang/Y86-Simulator-macOS
 
 GitHub 上下载的直接编译即可，下面讲讲从官网上下载的怎样编译。
 
@@ -54,7 +54,7 @@ Y86-64 模拟器编译成 `终端` 和 `图形界面` 两种。
 
 | ![makefile](/images/2018/07/makefile.png) | ![makefile tty](/images/2018/07/makefile-tty.png) |
 | :---------------------------------------: | :-----------------------------------------------: |
-| 修改前                                    | 修改后                                            |
+|                  修改前                   |                      修改后                       |
 
 编译
 
@@ -74,7 +74,7 @@ make clean; make
 
 | ![makefile](/images/2018/07/makefile.png) | ![makefile gui](/images/2018/07/makefile-gui.png) |
 | :---------------------------------------: | :-----------------------------------------------: |
-| 修改前                                    | 修改后                                            |
+|                  修改前                   |                      修改后                       |
 
 #### 错误 ld: library not found for -lfl
 

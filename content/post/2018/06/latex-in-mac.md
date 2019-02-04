@@ -27,7 +27,7 @@ macOS 上使用的是 MacTex，TUG 推荐完整的 MacTeX。完整的 MacTex 虽
 
 [BasicTex](http://www.tug.org/mactex/morepackages.html) 的网站，点击 [Download](http://tug.org/cgi-bin/mactex-download/BasicTeX.pkg) 可直接下载，和其他 Apple 软件包一样安装即可。
 
-## vscode
+## vscode
 
 我使用 vscode 作为我的编辑器，我选择的插件是 [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)，你可用点击链接，也可用通过在 vscode 中按住 `command + p` 然后输入 `ext install latex workshop` 进行安装。
 
@@ -57,7 +57,7 @@ sudo tlmgr install latexindent
 
 解决方法
 
- 打开 vscode 的 settings 将 `latex-workshop.latexindent.path` 设置成绝对路径，例如: `"latex-workshop.latexindent.path": "/usr/local/texlive/2018basic/bin/x86_64-darwin/latexindent"`
+打开 vscode 的 settings 将 `latex-workshop.latexindent.path` 设置成绝对路径，例如: `"latex-workshop.latexindent.path": "/usr/local/texlive/2018basic/bin/x86_64-darwin/latexindent"`
 
 3.接着编译，又有报错，需要安装 Log::Log4perl 模块（根据之后的几次报错还需安装其他几个模块）
 
@@ -86,7 +86,7 @@ cpan Unicode::GCString
 
 我使用的时候缺少了几个模版以下是安装过程。
 
- 编译时的报错
+编译时的报错
 
 ```shell
 ...

@@ -78,7 +78,7 @@ func getZore() int {
 }
 ```
 
-这次将 `fmt.Println("defer", getZore())` 这个函数放到 defer 列表中让它在 example 返回后输出。但是，它 Println 中调用了 getZore()，那么 getZore() 什么时候被调呢？ 它会和 Println 一样在 example 返回后调用吗？
+这次将 `fmt.Println("defer", getZore())` 这个函数放到 defer 列表中让它在 example 返回后输出。但是，它 Println 中调用了 getZore()，那么 getZore() 什么时候被调呢？它会和 Println 一样在 example 返回后调用吗？
 
 事实上并不是这样的，他会在设置 defer 的时候就被调用。defer 会将 Println 及它的直接参数放到 defer 列表中。
 
@@ -128,7 +128,7 @@ defer2: obj 2, obj address 0x1040c140; obj.str 0x1040c128, obj.str address 0x104
 
 从输出来看，defer1 的 obj 地址和 example 的 obj 地址一样，得出 defer1 Printf 并没有拷贝 obj。
 
-而 defer2 闭包函数的 obj 地址和 example 的 obj 不同发生了参数拷贝，并且 obj.str 的 address 也不相同发生了拷贝，但是 defer2 的 obj.str  仅仅拷贝了 example 的 obj.str 的指针值，并不是深度拷贝，所以他们只想同一个 string -- s。当 s 的值发生改变，defer2 也同样会发生改变。
+而 defer2 闭包函数的 obj 地址和 example 的 obj 不同发生了参数拷贝，并且 obj.str 的 address 也不相同发生了拷贝，但是 defer2 的 obj.str 仅仅拷贝了 example 的 obj.str 的指针值，并不是深度拷贝，所以他们只想同一个 string -- s。当 s 的值发生改变，defer2 也同样会发生改变。
 
 ## Reference
 
