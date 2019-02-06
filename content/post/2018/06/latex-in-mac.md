@@ -65,7 +65,7 @@ sudo tlmgr install latexindent
 
 打开 vscode 的 settings 将 `latex-workshop.latexindent.path` 设置成绝对路径，例如: `"latex-workshop.latexindent.path": "/usr/local/texlive/2018basic/bin/x86_64-darwin/latexindent"`
 
-### 缺少 perl 的模块
+### perl 缺少模块
 
 接着编译，又有报错，需要安装 Log::Log4perl 模块（根据之后的几次报错还需安装其他几个模块）
 
@@ -84,7 +84,7 @@ cpan File::HomeDir
 cpan Unicode::GCString
 ```
 
-### 缺少模版
+### LaTeX 缺少模版
 
 我使用的时候缺少了几个模版以下是安装过程。
 
