@@ -1,5 +1,5 @@
 ---
-title: 'Latex in Mac'
+title: 'LaTeX in Mac'
 slug: latex-in-mac
 date: 2018-06-27
 autoThumbnailImage: false
@@ -27,9 +27,15 @@ macOS 上使用的是 MacTex，TUG 推荐完整的 MacTeX。完整的 MacTex 虽
 
 [BasicTex](http://www.tug.org/mactex/morepackages.html) 的网站，点击 [Download](http://tug.org/cgi-bin/mactex-download/BasicTeX.pkg) 可直接下载，和其他 Apple 软件包一样安装即可。
 
+或者，使用 HomeBrew 进行安装。
+
+```shell
+brew cask install basictex
+```
+
 ## vscode
 
-我使用 vscode 作为我的编辑器，我选择的插件是 [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)，你可用点击链接，也可用通过在 vscode 中按住 `command + p` 然后输入 `ext install latex workshop` 进行安装。
+我使用 vscode 作为我的编辑器，我选择的插件是 [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)，你可用点击链接，也可用通过在 vscode 中按住 `command + p` 然后输入 `ext install latex workshop` 进行安装。
 
 ## 安装缺少的组件
 
@@ -59,17 +65,13 @@ sudo tlmgr install latexindent
 
 打开 vscode 的 settings 将 `latex-workshop.latexindent.path` 设置成绝对路径，例如: `"latex-workshop.latexindent.path": "/usr/local/texlive/2018basic/bin/x86_64-darwin/latexindent"`
 
-3.接着编译，又有报错，需要安装 Log::Log4perl 模块（根据之后的几次报错还需安装其他几个模块）
+### 缺少 perl 的模块
+
+接着编译，又有报错，需要安装 Log::Log4perl 模块（根据之后的几次报错还需安装其他几个模块）
 
 ```shell
 Can't locate Log/Log4perl.pm in @INC (you may need to install the Log::Log4perl module)
 (@INC contains: ...
-```
-
-4.（2019 年 1 月 1 日）出现问题 -- `LaTeX fatal error: spawn xelatex ENOENT, . Does the executable exist?`
-
-```shell
-brew install expect
 ```
 
 解决方法
@@ -109,9 +111,21 @@ sudo tlmgr install genmisc
 
 至此，你就可以愉快地在 macOS 上使用 LaTeX 了。
 
+### 问题补充
+
+（2019 年 1 月 1 日）出现问题 -- `LaTeX fatal error: spawn xelatex ENOENT, . Does the executable exist?`
+
+解决方法
+
+```shell
+brew install expect
+```
+
 ## 后续
 
-推荐一款 macOS 上非常友好的 app -- [Texpad](https://www.texpad.com/)
+1.推荐一款 macOS 上非常友好的 app -- [Texpad](https://www.texpad.com/)。
+
+2.使用 `brew cask install mactex-no-gui` 代替 `brew cask install basictex`。
 
 ## Reference
 
