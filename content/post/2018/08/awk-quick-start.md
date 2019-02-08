@@ -7,7 +7,7 @@ autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center
 categories:
-  - awk
+  - skill
 tags:
   - awk
   - script
@@ -86,7 +86,7 @@ awk -f progfile optional-list-of-files
 { print }
 ```
 
-因为 $0 表示一整行，所以下面程序完成同样的工作。
+因为 \$0 表示一整行，所以下面程序完成同样的工作。
 
 ```awk
 { print $0 }
@@ -274,11 +274,11 @@ END { print "highest hourly rate:", maxrate, "for", maxemp }
 END { print names }
 ```
 
-拼接方式类似：names = names + $1 + " "
+拼接方式类似：names = names + \$1 + " "
 
 ### 打印最后一行
 
-虽然在 END 动作里，NR 的值被保留了下来，但是 $0 却不会。
+虽然在 END 动作里，NR 的值被保留了下来，但是 \$0 却不会。
 
 ```awk
     { last = $0 }
@@ -306,7 +306,7 @@ awk 提供有内建变量，这些变量可以用来维护经常需要用到的�
 END { print NR, "lines,", nw, "words,", nc, "characters" }
 ```
 
-每一个输入行末尾的换行符加 1，这是因为 $0 不包含换行符。
+每一个输入行末尾的换行符加 1，这是因为 \$0 不包含换行符。
 
 ## 流程控制语句
 
@@ -361,7 +361,7 @@ while 后面被括号包围起来的表达式是条件判断，循环体是跟�
 }
 ```
 
-初始化语句 i = 1 只执行一次。接下来，判断条件 i <= $3 是否成立，如果测试结果为真，循环体的 printf 语句被执行。执行完循环体之后，增值语句 i = i + 1 执行，循环的下一次迭代从条件的另一次测试开始。代码很紧凑，因为循环体只有一条语句，也就不再需要花括号。
+初始化语句 i = 1 只执行一次。接下来，判断条件 i <= \$3 是否成立，如果测试结果为真，循环体的 printf 语句被执行。执行完循环体之后，增值语句 i = i + 1 执行，循环的下一次迭代从条件的另一次测试开始。代码很紧凑，因为循环体只有一条语句，也就不再需要花括号。
 
 ### 数组
 
@@ -445,7 +445,7 @@ $NF > 4
 END { print nlines }
 ```
 
-9.打印具有最大值的第一个字段，以及包含它的行（假设 $1 总是 正的）
+9.打印具有最大值的第一个字段，以及包含它的行（假设 \$1 总是 正的）
 
 ```awk
 $1 > max { max = $1; maxline = $0 }
