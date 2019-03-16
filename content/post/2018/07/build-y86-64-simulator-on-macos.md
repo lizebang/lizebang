@@ -1,5 +1,5 @@
 ---
-title: 'macOS 上编译 Y86-64 模拟器'
+title: "macOS 上编译 Y86-64 模拟器"
 slug: build-y86-64-simulator-on-macos
 date: 2018-07-30
 autoThumbnailImage: false

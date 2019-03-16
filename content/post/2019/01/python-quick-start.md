@@ -1,5 +1,5 @@
 ---
-title: 'Python 的正确打开方式'
+title: "Python 的正确打开方式"
 slug: python-quick-start
 date: 2019-01-26
 autoThumbnailImage: false
@@ -154,8 +154,6 @@ brew install pipenv
 vim ~/.bash_profile
 
 export PIPENV_VERBOSITY=-1
-alias prpy="pipenv run python"
-alias prpi="pipenv run pip"
 ```
 
 下面介绍了几个常用的 pipenv 命令。
@@ -186,26 +184,26 @@ pipenv run python <file> # prpy <file>
 
 ```json
 	// python
-	"python.jediEnabled": false,
-	"python.linting.flake8Enabled": true,
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
 ```
 
 **2.创建虚拟环境**
 
 ```shell
-pyenv virtualenv 3.6.8 <name>
+pipenv --python 3.6.8
 ```
 
 **3.设置 Workspace Settings**
 
 ```json
 {
-	"python.pythonPath": "~/.pyenv/versions/<name>/bin/python"
+  "python.pythonPath": "/Users/lizebang/.local/share/virtualenvs/<name>/bin/python"
 }
 ```
 
 **4.安装依赖**
 
 ```shell
-prpi install <name>
+pipenv install <name>
 ```

@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 推荐标签'
+title: "Kubernetes 推荐标签"
 slug: kubernetes_concepts_overview_working-with-objects_common-labels
 date: 2018-09-01
 autoThumbnailImage: false

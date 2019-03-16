@@ -1,5 +1,5 @@
 ---
-title: '使用配置文件对 Kubernetes 对象的命令式管理'
+title: "使用配置文件对 Kubernetes 对象的命令式管理"
 slug: kubernetes_concepts_overview_object-management-kubectl_imperative-config
 date: 2018-09-03
 autoThumbnailImage: false

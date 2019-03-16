@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 证书'
+title: "Kubernetes 证书"
 slug: kubernetes_concepts_cluster-administration_certificates
 date: 2018-09-05
 autoThumbnailImage: false

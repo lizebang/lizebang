@@ -1,5 +1,5 @@
 ---
-title: 'Regular Expressions'
+title: "Regular Expressions"
 slug: regular-expressions
 date: 2018-05-10
 autoThumbnailImage: false

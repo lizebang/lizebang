@@ -1,5 +1,5 @@
 ---
-title: 'go temporary address'
+title: "go temporary address"
 slug: go-temporary-address
 date: 2019-01-18
 autoThumbnailImage: false

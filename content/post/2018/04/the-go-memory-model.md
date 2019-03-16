@@ -1,5 +1,5 @@
 ---
-title: 'The Go Memory Model'
+title: "The Go Memory Model"
 slug: the-go-memory-model
 date: 2018-04-19
 autoThumbnailImage: false

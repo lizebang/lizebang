@@ -1,5 +1,5 @@
 ---
-title: 'os/exec Go 源码解析'
+title: "os/exec Go 源码解析"
 slug: go-standard-library-os-exec
 date: 2017-12-02
 autoThumbnailImage: false

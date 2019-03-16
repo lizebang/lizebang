@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Concepts Content'
+title: "Kubernetes Concepts Content"
 slug: kubernetes-concepts
 date: 2019-01-10
 autoThumbnailImage: false

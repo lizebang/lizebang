@@ -1,5 +1,5 @@
 ---
-title: '使用配置文件对 Kubernetes 对象的声明式管理'
+title: "使用配置文件对 Kubernetes 对象的声明式管理"
 slug: kubernetes_concepts_overview_object-management-kubectl_declarative-config
 date: 2018-09-03
 autoThumbnailImage: false

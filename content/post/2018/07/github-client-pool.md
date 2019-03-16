@@ -1,5 +1,5 @@
 ---
-title: 'GitHub Client Pool'
+title: "GitHub Client Pool"
 slug: github-client-pool
 date: 2018-07-12
 draft: true

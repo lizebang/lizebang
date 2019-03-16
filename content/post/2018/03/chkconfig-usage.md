@@ -1,5 +1,5 @@
 ---
-title: '在 Linux 设置开机启动项'
+title: "在 Linux 设置开机启动项"
 slug: chkconfig-usage
 date: 2018-03-21
 autoThumbnailImage: false

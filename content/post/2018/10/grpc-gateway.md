@@ -1,5 +1,5 @@
 ---
-title: 'gRPC Gateway'
+title: "gRPC Gateway"
 slug: grpc-gateway
 date: 2018-10-04
 autoThumbnailImage: false

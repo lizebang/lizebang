@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 注解'
+title: "Kubernetes 注解"
 slug: kubernetes_concepts_overview_working-with-objects_annotations
 date: 2018-09-01
 autoThumbnailImage: false

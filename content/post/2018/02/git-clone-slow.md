@@ -1,5 +1,5 @@
 ---
-title: 'git clone 速度很慢的解决方法'
+title: "git clone 速度很慢的解决方法"
 slug: git-clone-slow
 date: 2018-02-24
 autoThumbnailImage: false

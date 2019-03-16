@@ -1,5 +1,5 @@
 ---
-title: 'LaTeX in Mac'
+title: "LaTeX in Mac"
 slug: latex-in-mac
 date: 2018-06-27
 autoThumbnailImage: false

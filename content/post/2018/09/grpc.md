@@ -1,5 +1,5 @@
 ---
-title: 'gRPC in Go'
+title: "gRPC in Go"
 slug: grpc
 date: 2018-09-28
 autoThumbnailImage: false

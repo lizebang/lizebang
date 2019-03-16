@@ -1,5 +1,5 @@
 ---
-title: 'apt、dpkg && yum、rpm && pacman 使用详解'
+title: "apt、dpkg && yum、rpm && pacman 使用详解"
 slug: apt-dpkg-yum-rpm-pacman-usage
 date: 2017-12-24
 autoThumbnailImage: false

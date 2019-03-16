@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 标签和选择器'
+title: "Kubernetes 标签和选择器"
 slug: kubernetes_concepts_overview_working-with-objects_labels
 date: 2018-08-31
 autoThumbnailImage: false

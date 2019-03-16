@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Pod 的生命周期'
+title: "Kubernetes Pod 的生命周期"
 slug: kubernetes_concepts_workloads_pods_pod-lifecycle
 date: 2018-09-14
 autoThumbnailImage: false

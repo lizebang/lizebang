@@ -1,5 +1,5 @@
 ---
-title: 'UML 类图中的关系'
+title: "UML 类图中的关系"
 slug: uml-class-diagram
 date: 2018-12-05
 autoThumbnailImage: false

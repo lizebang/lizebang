@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 命名空间'
+title: "Kubernetes 命名空间"
 slug: kubernetes_concepts_overview_working-with-objects_namespaces
 date: 2018-08-30
 autoThumbnailImage: false

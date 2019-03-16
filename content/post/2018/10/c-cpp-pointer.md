@@ -1,5 +1,5 @@
 ---
-title: 'C/CPP Pointer'
+title: "C/CPP Pointer"
 slug: c-cpp-pointer
 date: 2018-10-05
 autoThumbnailImage: false

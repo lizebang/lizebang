@@ -1,5 +1,5 @@
 ---
-title: 'Shell Script 快速入门'
+title: "Shell Script 快速入门"
 slug: shell-script-quick-start
 date: 2019-02-06
 autoThumbnailImage: false

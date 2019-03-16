@@ -1,5 +1,5 @@
 ---
-title: 'flag 中的 Go 函数指针'
+title: "flag 中的 Go 函数指针"
 slug: function-pointer-in-flag
 date: 2019-01-31
 autoThumbnailImage: false

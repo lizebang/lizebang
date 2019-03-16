@@ -1,5 +1,5 @@
 ---
-title: 'Try Flutter'
+title: "Try Flutter"
 slug: try-flutter
 date: 2018-10-26
 autoThumbnailImage: false

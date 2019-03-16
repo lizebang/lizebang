@@ -1,5 +1,5 @@
 ---
-title: '耦合与解耦'
+title: "耦合与解耦"
 slug: couple-and-decouple
 date: 2018-03-16
 autoThumbnailImage: false

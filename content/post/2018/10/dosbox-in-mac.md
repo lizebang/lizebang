@@ -1,5 +1,5 @@
 ---
-title: '安装 DOSBox 及配置'
+title: "安装 DOSBox 及配置"
 slug: dosbox-in-mac
 date: 2018-10-24
 autoThumbnailImage: false

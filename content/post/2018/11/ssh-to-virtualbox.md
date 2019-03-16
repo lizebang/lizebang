@@ -1,5 +1,5 @@
 ---
-title: 'SSH 连接到 VirtualBox'
+title: "SSH 连接到 VirtualBox"
 slug: ssh-to-virtualbox
 date: 2018-11-18
 autoThumbnailImage: false

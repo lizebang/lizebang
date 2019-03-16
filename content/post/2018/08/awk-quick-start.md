@@ -1,8 +1,8 @@
 ---
-title: 'AWK 快速入门'
+title: "AWK 快速入门"
 slug: awk-quick-start
-date: 2018-08-27
 mathjax: true
+date: 2018-08-27
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

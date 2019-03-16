@@ -1,5 +1,5 @@
 ---
-title: '怎样使用 glide'
+title: "怎样使用 glide"
 slug: how-to-use-glide
 date: 2017-11-22
 autoThumbnailImage: false

@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Pod Preset'
+title: "Kubernetes Pod Preset"
 slug: kubernetes_concepts_workloads_pods_podpreset
 date: 2018-09-17
 autoThumbnailImage: false

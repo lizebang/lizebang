@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes API'
+title: "Kubernetes API"
 slug: kubernetes_concepts_overview_kubernetes-api
 date: 2018-08-28
 autoThumbnailImage: false

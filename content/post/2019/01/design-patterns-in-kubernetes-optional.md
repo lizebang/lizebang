@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 中的设计模式 -- 选项模式'
+title: "Kubernetes 中的设计模式 -- 选项模式"
 slug: design-patterns-in-kubernetes-optional
 draft: true
 date: 2019-01-10

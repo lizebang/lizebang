@@ -1,5 +1,5 @@
 ---
-title: 'Travis CI 初体验'
+title: "Travis CI 初体验"
 slug: travis-ci
 draft: true
 date: 2019-01-10

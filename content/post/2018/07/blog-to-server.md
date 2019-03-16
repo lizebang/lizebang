@@ -1,5 +1,5 @@
 ---
-title: '把博客迁移到服务器上'
+title: "把博客迁移到服务器上"
 slug: blog-to-server
 date: 2018-07-15
 autoThumbnailImage: false

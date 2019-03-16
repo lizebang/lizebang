@@ -1,5 +1,5 @@
 ---
-title: 'gdb on macOS'
+title: "gdb on macOS"
 slug: using-gdb-on-macos
 date: 2018-09-20
 autoThumbnailImage: false

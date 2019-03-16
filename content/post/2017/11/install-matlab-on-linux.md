@@ -1,5 +1,5 @@
 ---
-title: 'linux 安装 Matlab'
+title: "linux 安装 Matlab"
 slug: install-matlab-on-linux
 date: 2017-11-29
 autoThumbnailImage: false

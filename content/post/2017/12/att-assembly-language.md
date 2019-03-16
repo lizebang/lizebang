@@ -1,8 +1,8 @@
 ---
-title: 'AT&T 汇编（一）'
+title: "AT&T 汇编（一）"
 slug: att-assembly-language
-date: 2017-12-13
 mathjax: true
+date: 2017-12-13
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg
 metaAlignment: center

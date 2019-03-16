@@ -1,5 +1,5 @@
 ---
-title: '使用命令式指令管理 Kubernetes 对象'
+title: "使用命令式指令管理 Kubernetes 对象"
 slug: kubernetes_concepts_overview_object-management-kubectl_imperative-command
 date: 2018-09-02
 autoThumbnailImage: false

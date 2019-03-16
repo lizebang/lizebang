@@ -1,5 +1,5 @@
 ---
-title: '使用 deb 包在 manjaro 上安装 mongodb-compass'
+title: "使用 deb 包在 manjaro 上安装 mongodb-compass"
 slug: install-mongodb-compass-on-manjaro
 date: 2018-03-06
 autoThumbnailImage: false

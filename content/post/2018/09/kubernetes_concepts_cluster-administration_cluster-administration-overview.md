@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 群集管理概述'
+title: "Kubernetes 群集管理概述"
 slug: kubernetes_concepts_cluster-administration_cluster-administration-overview
 date: 2018-09-05
 autoThumbnailImage: false

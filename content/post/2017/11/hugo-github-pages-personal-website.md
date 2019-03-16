@@ -1,5 +1,5 @@
 ---
-title: '使用 Hugo + Github Pages 搭建个人博客'
+title: "使用 Hugo + Github Pages 搭建个人博客"
 slug: hugo-github-pages-personal-website
 date: 2017-11-02
 autoThumbnailImage: false

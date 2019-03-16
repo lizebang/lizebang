@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Pods'
+title: "Kubernetes Pods"
 slug: kubernetes_concepts_workloads_pods_pod
 date: 2018-09-12
 autoThumbnailImage: false

@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 镜像'
+title: "Kubernetes 镜像"
 slug: kubernetes_concepts_containers_images
 date: 2018-09-08
 autoThumbnailImage: false

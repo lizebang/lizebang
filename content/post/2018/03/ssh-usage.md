@@ -1,5 +1,5 @@
 ---
-title: 'ssh 的使用'
+title: "ssh 的使用"
 slug: ssh-usage
 date: 2018-03-17
 autoThumbnailImage: false

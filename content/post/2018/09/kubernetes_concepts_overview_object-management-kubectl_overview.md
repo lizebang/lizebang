@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 对象管理'
+title: "Kubernetes 对象管理"
 slug: kubernetes_concepts_overview_object-management-kubectl_overview
 date: 2018-09-02
 autoThumbnailImage: false

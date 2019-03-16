@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 对象名称'
+title: "Kubernetes 对象名称"
 slug: kubernetes_concepts_overview_working-with-objects_names
 date: 2018-08-30
 autoThumbnailImage: false

@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 中的设计模式 -- 组合模式'
+title: "Kubernetes 中的设计模式 -- 组合模式"
 slug: design-patterns-in-kubernetes-composite
 draft: true
 date: 2019-01-10

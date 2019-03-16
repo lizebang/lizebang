@@ -1,5 +1,5 @@
 ---
-title: 'Cobra 使用入门'
+title: "Cobra 使用入门"
 slug: how-to-use-cobra
 date: 2018-06-15
 autoThumbnailImage: false

@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Init 容器'
+title: "Kubernetes Init 容器"
 slug: kubernetes_concepts_workloads_pods_init-containers
 date: 2018-09-15
 autoThumbnailImage: false

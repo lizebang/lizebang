@@ -1,6 +1,7 @@
 ---
-title: 'Proto3 语言指南'
+title: "Proto3 语言指南"
 slug: proto3-language-guide
+mathjax: true
 date: 2018-09-24
 autoThumbnailImage: false
 coverImage: /images/cover.jpeg

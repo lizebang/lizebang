@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes 管理资源'
+title: "Kubernetes 管理资源"
 slug: kubernetes_concepts_cluster-administration_manage-deployment
 date: 2018-09-05
 autoThumbnailImage: false
